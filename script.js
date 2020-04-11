@@ -80,35 +80,48 @@ function clearStatusClass(element) {
 
 const questions = [
   {
-    question: 'What is 2 + 2?',
+    question: '说出ntr的全称',
     answers: [
-      { text: '4', correct: true },
-      { text: '22', correct: false }
+      { text: 'netorase', correct: false },
+      { text: 'netorareta', correct: false },
+      { text: 'netorare', correct: true},
+      { text: 'netori', correct: false}
     ]
   },
   {
-    question: 'Who is the best YouTuber?',
+    question: '最高等级牛头人一般将自己代入哪个角色?',
     answers: [
-      { text: 'Web Dev Simplified', correct: true },
-      { text: 'Traversy Media', correct: true },
-      { text: 'Dev Ed', correct: true },
-      { text: 'Fun Fun Function', correct: true }
+      { text: '苦主', correct: false },
+      { text: '黄毛', correct: false },
+      { text: '女主', correct: true },
+      { text: '其他人', correct: false }
     ]
   },
   {
-    question: 'Is web development fun?',
+    question: '以下哪部游戏作品不是ntr题材?',
     answers: [
-      { text: 'Kinda', correct: false },
-      { text: 'YES!!!', correct: true },
-      { text: 'Um no', correct: false },
-      { text: 'IDK', correct: false }
+      { text: '对魔忍', correct: false },
+      { text: '爱妻日记', correct: false },
+      { text: '光翼戦姫エクスティア', correct: false },
+      { text: '秋色之空', correct: true }
     ]
   },
   {
-    question: 'What is 4 * 2?',
+    question: '以下哪个作者不是ntr画师?',
     answers: [
-      { text: '6', correct: false },
-      { text: '8', correct: true }
+      { text: '水龙敬', correct: false },
+      { text: '武田弘光', correct: false },
+      { text: 'あらくれ', correct: false },
+      { text: '生クリームびより', correct: true }
+    ]
+  },
+  {
+    question: '以下哪部同人作品不是ntr题材?',
+    answers: [
+      { text: 'みだれうち', correct: false },
+      { text: 'カラミざかり', correct: false },
+      { text: 'ずっと信じてる', correct: false },
+      { text: '週末のたわわ', correct: false }
     ]
   }
 ]
