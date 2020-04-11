@@ -3,6 +3,7 @@ const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
+const title = document.getElementById('Title')
 
 let shuffledQuestions, currentQuestionIndex
 
@@ -17,6 +18,7 @@ function startGame() {
   shuffledQuestions = questions.sort(() => Math.random() - .5)
   currentQuestionIndex = 0
   questionContainerElement.classList.remove('hide')
+  title.classList.add('hide')
   setNextQuestion()
 }
 
