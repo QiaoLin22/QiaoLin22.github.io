@@ -121,7 +121,7 @@ const questions = [
       { text: 'みだれうち', correct: false },
       { text: 'カラミざかり', correct: false },
       { text: 'ずっと信じてる', correct: false },
-      { text: '週末のたわわ', correct: false }
+      { text: '週末のたわわ', correct: true }
     ]
   }
 ]
