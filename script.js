@@ -56,11 +56,14 @@ function selectAnswer(e) {
   Array.from(answerButtonsElement.children).forEach(button => {
     setStatusClass(button, button.dataset.correct)
   })
-  if (5 > currentQuestionIndex + 1) {
+  if (shuffledQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove('hide')
   } else {
-    startButton.innerText = 'Restart'
-    startButton.classList.remove('hide')
+    var elem = document.querySelector('body');
+    elem.style.display = 'none';
+    document.write('<html><body><h1>Finish</h1></body></html>');
+    // startButton.innerText = 'Restart'
+    // startButton.classList.remove('hide')
   }
 }
 
