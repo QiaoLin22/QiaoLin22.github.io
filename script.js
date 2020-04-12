@@ -59,10 +59,8 @@ function selectAnswer(e) {
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove('hide')
   } else {
-    var elem = document.querySelector('body');
-    elem.style.display = 'none';
-
     window.alert("Finished");
+    document.write('<html><body></body></html>')
     // startButton.innerText = 'Restart'
     // startButton.classList.remove('hide')
   }
