@@ -83,3 +83,9 @@ body.wrong {
 .hide {
   display: none;
 }
+
+.finish {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -61,7 +61,8 @@ function selectAnswer(e) {
   } else {
     var elem = document.querySelector('body');
     elem.style.display = 'none';
-    document.write('<html><body><h1>Finish</h1></body></html>');
+
+    window.alert("Finished");
     // startButton.innerText = 'Restart'
     // startButton.classList.remove('hide')
   }
