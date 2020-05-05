@@ -39,7 +39,6 @@ body {
     color: #069;
     font-size: 1rem;
     margin: 1rem;
-    border-color: black;
     border-radius: 10000rem;
     transition-duration: 0.1s;
 }
