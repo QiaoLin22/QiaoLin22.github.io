@@ -9,7 +9,7 @@ body {
 }
 
 .header {
-    background-color: #069;
+    background-color:#013262;
     color: white;
     text-align: center;
     padding: 1.5rem;
@@ -26,7 +26,7 @@ body {
 }
 
 .section-accent {
-    background-color: #069;
+    background-color: #013262;
     color: white;
 }
 
@@ -97,7 +97,7 @@ body {
 }
 
 .footer {
-    background-color: #069;
+    background-color: #013262;
     color: white;
     font-size: 1.25rem;
     padding: 1.5rem;
@@ -162,5 +162,6 @@ body {
     background-position-y: 65%;
     color: white;
     font-style: oblique;
+    font-weight: bold;
     margin-left: 0;
 }
