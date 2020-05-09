@@ -150,8 +150,10 @@ body {
     color: #333
 }
 
-img {
-    margin-left: 0;
+.introduction img {
+    width: 180px;;
+    height: 220px;
+    motion-offset: 0;
 }
 
 .introduction {
@@ -159,4 +161,6 @@ img {
     background-size: cover;
     background-position-y: 65%;
     color: white;
+    font-style: oblique;
+    margin-left: 0;
 }
