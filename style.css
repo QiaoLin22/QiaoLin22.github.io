@@ -23,6 +23,8 @@ body {
 .section {
     padding: 1rem 1rem;
     margin: 0;
+    background-color: #333;
+    color: white;
 }
 
 .section-accent {
@@ -40,8 +42,8 @@ body {
 }
 
 .button {
-    background-color:white;
-    color: #069;
+    background-color:#069;
+    color:white;
     font-size: 1rem;
     margin: 1rem;
     border-radius: .5em;
