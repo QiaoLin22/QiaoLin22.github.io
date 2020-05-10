@@ -137,7 +137,7 @@ body {
 }
 
 .leetcodemain {
-    background-color: #AAA;
+    background-color: #333;
 }
 
 .hr {
@@ -146,11 +146,11 @@ body {
 
 .leetcodelink {
     text-decoration: none;
-    color: black
+    color: white
 }
 
 .leetcodelink:hover {
-    color: #333
+    color: #069
 }
 
 .introduction img {

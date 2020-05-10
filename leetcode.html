@@ -26,20 +26,40 @@
             </h2>
             <h3>官方思路:</h3>
             <ul>
-                <li></li>
-                <li></li>
-            </ul>
-            <h3>巧解：</h3>
-            <ul>
-                <li class = "link"><a href = './index.html'>Home</a></li>
-                <li class = "link"><a href = "https://github.com/QiaoLin22">GitHub</a></li>
-                <li class = "link"><a href = './leetcode.html'>Leetcode</a></li>
+                <li>双重循环，比较简单略过</li>
+                <li>两次循环的hashmap实现，第一次循环把键值对一次放入，第二次循环查找。</li>
+                <li>一次循环的hashmap实现</li>
             </ul>
             <h3>思路整理：</h3>
-            
-            <div>
-                哈哈
-            </div>
+            <p>
+                比较容易想到双循环的思路，但复杂度n方不是最优解。我首先想到的是思路二两次循环hashmap，速度从74ms提升至2ms。这里需要<br>
+                注意的是判断目标数字下标位置时需要避开当前位置。举个例子【3，6，3】target = 6时不注意的话第一个3会匹配到自己而不是第二个<br>
+                3。第三个思路巧妙在于不直接一股脑把键值对全塞进去，而是仅在当前元素没查到对应值时才把当前元素和下标存入hashmap。举个例子<br>
+                官方例子中首先检查2，没查到7于是2，0键值对进入hashmap，接着检查7就直接查到了满足条件的键2于是算法直接返回。此方法阻止了<br>
+                在构建整个hashmap时无畏的浪费时间，将速度提升至1ms。
+            </p>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/add-two-numbers/ target="blank" class = "leetcodelink">
+                    1.Add Two Numbers
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>双重循环，比较简单略过</li>
+                <li>两次循环的hashmap实现，第一次循环把键值对一次放入，第二次循环查找。</li>
+                <li>一次循环的hashmap实现</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                比较容易想到双循环的思路，但复杂度n方不是最优解。我首先想到的是思路二两次循环hashmap，速度从74ms提升至2ms。这里需要<br>
+                注意的是判断目标数字下标位置时需要避开当前位置。举个例子【3，6，3】target = 6时不注意的话第一个3会匹配到自己而不是第二个<br>
+                3。第三个思路巧妙在于不直接一股脑把键值对全塞进去，而是仅在当前元素没查到对应值时才把当前元素和下标存入hashmap。举个例子<br>
+                官方例子中首先检查2，没查到7于是2，0键值对进入hashmap，接着检查7就直接查到了满足条件的键2于是算法直接返回。此方法阻止了<br>
+                在构建整个hashmap时无畏的浪费时间，将速度提升至1ms。
+            </p>
         </section>
     </main>
 </body>
