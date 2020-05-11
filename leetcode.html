@@ -57,6 +57,46 @@
                 遍历完成时carry不是0的情况，要在结果末尾额外添加一个值为1的listnode。
             </p>
         </section>
+
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/longest-substring-without-repeating-characters/ target="blank" class = "leetcodelink">
+                    3. Longest Substring Without Repeating Characters
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>暴力解法，略过</li>
+                <li>经典滑动窗口遍历法，i，j一头一尾通过在不同情况下更新 i和 j的值至 i+1或 j+1完成对所有符合要求子字符串的遍历。</li>
+                <li>方法三为方法二的优化使用了hashmap存储char和下标键值对，每次跳跃更新 i的值以达到更快速度。</li>
+            <h3>思路整理：</h3>
+            <img src = "./src/images/leetcode3.png" height = 500px, width = 1200px alt = "leetcode"/>
+            <p>
+                我首先想到并通过的解法，但可以看到速度并不算很快。字符串操作速度肯定不如hashset来的快，所以判断重复肯定用hashset是最快的。除此之外我的方法应该和官方答案方法二是等效的，因为都一定要
+                完整遍历完整个字符串。至于为什么答案用了双边窗口而这种方法只有单边是因为答案二使用 i和 j配合完成对set的更新，而同样的更新如果用字符串完全可以只用一个标记 i就完成更新。方法三的巧妙之处
+                在于跳过了一些不需要考虑的情况。就拿最简单的b c a a举例子，方法二遍历到第二个a是发现重复了，但此时集合里有b c a必须依次删除所有元素直到集合里没有a，也就是要删除三次。实际上完全可以把
+                标记i的下标直接从0也就是b移动到3也就是第二个a的位置，效果是相同的。而要达到这种效果必要的是记录每个char的下标所以很自然想到用hashmap存储char和下标的键值对。另外一点就是我发现答案三
+                的写法有点迷惑因为hashmap存放的并不是直接的键值对而是char和下标位置+1，这样做应该是为了更新i时不用+1但感觉有点本末倒置。如下写法一样可以通过。
+            </p>
+            <img src = "./src/images/leetcode3-2.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/longest-palindromic-substring/ target="blank" class = "leetcodelink">
+                    5. Longest Palindromic Substring
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            <h3>思路整理：</h3>
+            <p>
+                
+            </p>
+        </section>
     </main>
 </body>
 </html>
