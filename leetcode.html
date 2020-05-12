@@ -104,6 +104,32 @@
             </p>
             <img src = "./src/images/leetcode5.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/zigzag-conversion/ target="blank" class = "leetcodelink">
+                    6. ZigZag Conversion
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>方法一行锁定法</li>
+                <li>方法二官方叫做行访问法，其实我觉得叫行构建法更直观，因为该方法的答案string是顺序构建出来的。</li>
+            <h3>思路整理：</h3>
+            <p>
+                这种找规律为主的题对数学基础好的应该不难。我首先就发现了规律并按照取模运算的规律做出如下写法，但可见速度很慢。问题在于遍历时没有优化，遍历了很多不需要遍历的字符。
+            </p>
+            <img src = "./src/images/leetcode6.png" height = 500px, width = 1200px alt = "leetcode"/>
+            <p>
+                参考答案二的思路，我完全可以省略第二个循环里的if判断而直接定位到要append的字符。核心思路还是一样的，找到了原始字符串每n * 2 - 2个字符为一组的规律。方法二主要的优化在于在第二轮循环中j 基于i当前的
+                位置直接定位到需要遍历的位置。答案表示把整个string分成三部分即第一行的，最后一行的和其他所有中间的。我感觉这种说法有点迷惑，因为其实所有纵列上的字符被append进入答案时逻辑是相同的而只有处于斜线上的
+                字符是通过内循环中的if判断进入答案的。所以说分成两大类即纵列上的和斜线上的我认为更合适。
+                
+                再看答案一，核心思路是先构建出所有的非空行，注意如果string长度比n还要小的情况即可。此时的状态可以看成是构建了刚刚好个数的stringbuilder待写入。剩下需要做的就是遍历完整string并依次判断哪个字符需要append
+                到哪一行，即填充到哪个待填充的stringbuilder中去。使用两个变量当前行数和当前方向来定位需要填充到哪一行。curow初始值为0，初始方向为向上，每次到达第一行或者最后一行改变方向，每次更新curow需要参考方向的boolean值，
+                向上即-1，向下即+1，可谓是很自然。两个变量在大循环中互相配合把每个字符append到对应的行中。最后把所有行的stringbuilder串起来就大功告成。个人认为这种想法不是很自然。
+            </p>
+        </section>
     </main>
 </body>
 </html>
