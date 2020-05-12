@@ -130,6 +130,24 @@
                 向上即-1，向下即+1，可谓是很自然。两个变量在大循环中互相配合把每个字符append到对应的行中。最后把所有行的stringbuilder串起来就大功告成。个人认为这种想法不是很自然。
             </p>
         </section>
+
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/reverse-integer/discuss/4060/My-accepted-15-lines-of-code-for-Java target="blank" class = "leetcodelink">
+                    7. Reverse Integer
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>官方解法略迷，推荐下链接里的解法。</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                这位老哥巧妙运用了在不overflow的前提下数学算式算式的恒等变换恒成立这一性质。说白了就是就是对一个数做了什么操作得到了什么结果，对结果你操作就应该得回那个数。如果不是就只能说明发生了overflow。还有一个朴实点的方法
+                就是用long来存储答案，当答案越过int的存储界限时返回0。最后强制转型成int返回，不然会因为损失精度报错（其实没有损失，只是java不支持不安全的转型）。如下：
+            </p>
+            <img src = "./src/images/leetcode7.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
