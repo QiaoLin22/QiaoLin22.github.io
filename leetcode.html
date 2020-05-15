@@ -148,6 +148,24 @@
             </p>
             <img src = "./src/images/leetcode7.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/string-to-integer-atoi/ target="blank" class = "leetcodelink">
+                    8. String to Integer (atoi)
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>官方没有解法。</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                非常无聊的一个ifelse练习，只有几个地方要注意。第一去掉空格可以用trim方法，这样可以不用单独去判断空格。第二正负号的判断，正号判断意义不明但是依然要做判断，注意只需要在去掉空格后判断一次即可，后面出现再多正负号也和字母一样当作杂音处理
+                立刻返回结果即可。第三是整数overflow判断，预先把结果保存在long变量中，在返回前判断是否overflow即可。
+            </p>
+            <img src = "./src/images/leetcode8.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
