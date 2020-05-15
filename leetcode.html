@@ -166,6 +166,25 @@
             </p>
             <img src = "./src/images/leetcode8.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/palindrome-number/ target="blank" class = "leetcodelink">
+                    9. Palindrome Number
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>while循环中每次取mod10，乘上10，x/10，循环后如果结果和初始的x相等则为回文数，比较简单就是利用回文数的性质。</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                我首先想到的是转换成字符串再比较的方法，速度并不快。猜测原因为java中字符串操作比arithmetic慢，因为int，double等均为原始数据类型，jvm初始化时直接为该类型分配内存地址。而string则是对象。感觉能用primitive data type解决就不要用
+                object类型。
+            </p>
+            <img src = "./src/images/leetcode9.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+
     </main>
 </body>
 </html>
