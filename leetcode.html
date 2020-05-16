@@ -184,6 +184,49 @@
             </p>
             <img src = "./src/images/leetcode9.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/container-with-most-water/ target="blank" class = "leetcodelink">
+                    11. Container With Most Water
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>暴力解法</li>
+                <li>双指针一次循环遍历</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                很容易想到的双指针循环遍历法，初始指针设置在两侧，每次判断两侧夹板的长短，奖短的一侧往相反方向移动（移动长的一侧并不能改变当前最大容积），实时更新max即可。官方答案有一段清晰的解释：Initially we consider the area constituting the exterior most lines.
+                Now, to maximize the area, we need to consider the area between the lines of larger lengths. If we try to move the pointer at the longer line inwards, we won't gain any increase in area, since it is limited by the shorter line.
+                But moving the shorter line's pointer could turn out to be beneficial, as per the same argument, despite the reduction in the width. 
+                This is done since a relatively longer line obtained by moving the shorter line's pointer might overcome the reduction in area caused by the width reduction.
+            </p>
+            <img src = "./src/images/leetcode11.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/integer-to-roman/ target="blank" class = "leetcodelink">
+                    12. Integer to Roman
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>贪婪算法</li>
+                <li>hardcode</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                贪婪算法本质是每一步取当前的局部最优解从而去近似全局最优解。在这里贪婪算法是准确的，即最终结果就是全局最优解。在题目给定范围内罗马字母和他们对应的数字一共只有十三种情况。每次减掉当前所能减掉的
+                最大的数字直到减为0。实现如下。（评论区看到的比较自然的一种写法，官方答案里第一个for循环就很迷）
+
+                hardcode法干脆连循环都省了，利用了可以取到每一位上的数字这个特性为个十百千位分别hardcode了一个数组，接下来依次计算各个数位上的具体数字再根据数字append对应数组上对应位置的罗马数字即可。
+                个人很不喜欢这种思想，从软件设计角度来看这种做法是不利于维护的。比如像哪一天罗马数字的规则改变了那么所有数组可能都要大改，相对的第一种解法只需维护一个数组即可。官方答案也提到了这一点。
+            </p>
+            <img src = "./src/images/leetcode12.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
 
     </main>
 </body>
