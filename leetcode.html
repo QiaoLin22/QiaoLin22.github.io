@@ -227,6 +227,25 @@
             </p>
             <img src = "./src/images/leetcode12.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/roman-to-integer/ target="blank" class = "leetcodelink">
+                    13. Roman to Integer
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>从左至右循环，hashmap，每次检查下一个字符和当前字符比较，顺序则加上当前值，发现逆序则改为加上下一个字符的值与当前字符值之差。</li>
+                <li>从左至右循环改良版。将两个字符组成的罗马符号和对应数字键值对也加入hashmap，循环时检查是否出现两个字符组成的罗马符号，出现则加上其值，未出现则是普通情况，同样加上其值。</li>
+                <li>从右至左循环，每次只需要当前字符的值而无需考虑两个字符的情况。利用了两个字符一组时右侧的单个字符的值永远为正这一性质，避免了每次判断下一个字符是否越界的计算量。即省去了这一判断：if (i < s.length() - 1)</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                当看到这种有序键值对的时候hashmap是一种自然的想法。个人感觉方法一和三没有本质的区别。二稍显的有点不自然。每次通过观察当前字符的值和后一个或前一个字符对应的值的大小关系来处理逆序的情况是
+                很自然一种想法，至少我第一下想到的是这种思路。剩下的要点就是要马上想到用hashmap，不然要判断逆序情况会比较麻烦。
+            </p>
+        </section>
 
     </main>
 </body>
