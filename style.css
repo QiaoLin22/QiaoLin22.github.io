@@ -19,7 +19,6 @@ body {
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
     transform: scale(0);
-
 }
 
 .header-title {
@@ -130,7 +129,6 @@ body {
 
 .link {
     padding: .5rem;
-
 }
 
 .link a{
@@ -192,16 +190,19 @@ body {
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
     transform: scale(0);
+    animation-delay: 300ms;
 }
 
 .nav li:first-child {
     animation-name: nav-first-link-load;
-    transform: translateX(-1000%);
+    transform: translateX(-10000%);
+    animation-delay: 300ms;
 }
 
 .nav li:last-child {
     animation-name: nav-last-link-load;
     transform: translateX(1000%);
+    animation-delay: 300ms;
 }
 
 .leetcodenav li {
@@ -210,6 +211,19 @@ body {
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
     transform: scale(0);
+    animation-delay: 300ms;
+}
+
+.leetcodenav li:first-child {
+    animation-name: nav-first-link-load;
+    transform: translateX(-10000%);
+    animation-delay: 300ms;
+}
+
+.leetcodenav li:last-child {
+    animation-name: nav-last-link-load;
+    transform: translateX(1000%);
+    animation-delay: 300ms;
 }
 
 @keyframes header-load {
@@ -257,3 +271,45 @@ body {
     }
 }
 
+h2{
+    animation: article-load 300ms ease-in;
+    animation-delay: 300ms;
+    animation-fill-mode: forwards;
+    transform: translateY(-20px);
+    opacity: 0;
+}
+
+h3{
+    animation: article-load 300ms ease-in;
+    animation-delay: 300ms;
+    animation-fill-mode: forwards;
+    transform: translateY(-20px);
+    opacity: 0;
+}
+
+p {
+    animation: article-load 300ms ease-in;
+    animation-delay: 500ms;
+    animation-fill-mode: forwards;
+    transform: translateY(-20px);
+    opacity: 0;
+}
+ ul {
+    animation: article-load 300ms ease-in;
+    animation-delay: 300ms;
+    animation-fill-mode: forwards;
+    transform: translateY(-20px);
+    opacity: 0;
+ }
+
+@keyframes article-load {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
