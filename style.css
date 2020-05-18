@@ -302,6 +302,10 @@ p {
     opacity: 0;
  }
 
+ a {
+     color: #00FFFF;
+ }
+
 @keyframes article-load {
     0% {
         transform: translateY(-20px);

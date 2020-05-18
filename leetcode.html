@@ -263,10 +263,30 @@
             </ul>
             <h3>思路整理：</h3>
             <p>
-                重点看下前两种方法。纵向扫描的优势在于如果数组末尾存在一个很短的string，横向扫描的效率就会变的很低。普通情况下横纵向扫描复杂度是一样的，只是纵向提高了下限而已。
+                重点看下前两种方法。纵向扫描的优势在于如果数组末尾存在一个很短的string，横向扫描的效率就会变的很低。普通情况下横纵向扫描复杂度是一样的，只是纵向提高了下限而已。后两种想法可行但是感觉放在这里实在不太自然。
             </p>
             <img src = "./src/images/leetcode14.png" height = 500px, width = 1200px alt = "leetcode"/>
             <img src = "./src/images/leetcode14-1.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/3sum/ target="blank" class = "leetcodelink">
+                    15. 3Sum
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>双指针，把问题拆解成一个单循环和一个twosum问题。不是很喜欢答案的写法。推荐下面的写法。</li>
+                <a href="https://leetcode.com/problems/3sum/discuss/7399/Easiest-Java-Solution" target="blank">双指针</a>
+                <li>hashset，不喜欢答案的思路相当晦涩难懂，推荐下面的写法。</li>
+                <a href="https://leetcode.com/problems/3sum/discuss/143636/Java-with-set" target="blank">hashset</a>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                一开始尝试用二分查找，后来发现忽略了不能有重复的问题而二分查找无法很好地处理去重的问题。因此就必须锁定需要查找的区间，于是自然联想到双指针的思路。
+                另外想到提前对数组排序很重要可以让问题瞬间简化不少。此题有两种去重思路，一种是利用hashset自带的性质去重（集合不允许重复元素），代价是慢需要500ms左右。官方第二种解法优化后仍需要235ms。另一种是正常arraylist在循环时就跳过重复的元素，速度快只需20ms左右。
+            </p>
         </section>
     </main>
 </body>
