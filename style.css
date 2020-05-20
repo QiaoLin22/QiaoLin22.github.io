@@ -303,7 +303,12 @@ p {
  }
 
  a {
-     color: #00FFFF;
+    color: #00FFFF;
+    animation: article-load 300ms ease-in;
+    animation-delay: 300ms;
+    animation-fill-mode: forwards;
+    transform: translateY(-20px);
+    opacity: 0;
  }
 
 @keyframes article-load {
