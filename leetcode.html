@@ -346,6 +346,27 @@
             </p>
             <img src = "./src/images/leetcode18.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr/>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/remove-nth-node-from-end-of-list/ target="blank" class = "leetcodelink">
+                    19. Remove Nth Node From End of List
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>两遍循环</li>
+                <li>一遍循环</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                两边循环还是比较好想到的。第一遍循环找到总长度，第二遍循环找到需要删除的节点前一个节点的位置，将下一个节点连接到下下个节点即可，此时中间的节点相当于被删除了（没有指向它的引用，被当作垃圾回收）。
+                第二种思路一遍循环相对比较巧妙，用两个指针来遍历链表，初始距离一个指针设置在最开头（一般为dummy，指向head），第二个设置为距离第一个指针n个节点的位置。然后遍历链表直到第二个指针的下一个节点为空，
+                此时第一个节点的位置正是我们要找的位置，其他操作同方法一。
+            </p>
+            <img src = "./src/images/leetcode19.png" height = 500px, width = 1200px alt = "leetcode"/>
+            <img src = "./src/images/leetcode19-2.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
