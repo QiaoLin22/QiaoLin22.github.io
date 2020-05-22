@@ -308,6 +308,44 @@
             </p>
             <img src = "./src/images/leetcode16.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/letter-combinations-of-a-phone-number/ target="blank" class = "leetcodelink">
+                    17. Letter Combinations of a Phone Number
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>backtracking 回溯，推荐评论区看到的如下写法。</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                因为需要把数字映射到一组字符上，很自然想到建立hashmap。假设输入数字为23，2对应abc，3对应def，我们首先要把a对应到def，然后是b对应到def，最后是c。当输入数字很长时就需要一层层地按深度优先顺序找出所有组合。
+                backtracking正是解决这种有层次调用的有力工具。与recursion相同需要先想好一个退出条件，此题中当字符长度等于数字长度时即退出（找到了一个符合条件的组合）。用stringbuilder可以提高速度，因为不用创建多个string对象，而是对同一个sb对象反复修改，
+                但同时要注意在循环结束之前去掉当前sb对象的最后一个char，否则之后的sb对象会一直带着这个字符。下面以23为例将回溯过程过一遍，首先index初始值为0，初始sb为空，当前数字为2，对当前数字对应的所有字符（abc）做循环，sb添加当前字符后进入递归。首先添加a，index+1，对应数字3，
+                3对应字符为def，a添加d，达到退出条件，答案添加ad，删除d，a添加e，ae达到条件退出，删除e添加f，退出删除f，此时最大的循环即abc循环结束，删除a，添加b进入下一个小循环，同理添加bd，bd，bf，删除b添加c，进入最后一个大循环添加cd，ce，cf，整个循环结束返回结果。
+            </p>
+            <img src = "./src/images/leetcode17.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/4sum/ target="blank" class = "leetcodelink">
+                    18. 4Sum
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>没有官方标答</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                借鉴了15题的思路，拆分成两个循环和一个双指针循环，去重选择了hashset虽然速度较慢但无需考虑诸多边界情况（比如何时跳过当前元素），只要遇到和为target的数组就放进hashset，hashset会自动帮你去重。
+                如果追求速度用arraylist就要注意当当前元素和上一个元素相同时跳过当前元素来去重。
+            </p>
+            <img src = "./src/images/leetcode18.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
