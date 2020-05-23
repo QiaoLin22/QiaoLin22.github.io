@@ -367,6 +367,24 @@
             <img src = "./src/images/leetcode19.png" height = 500px, width = 1200px alt = "leetcode"/>
             <img src = "./src/images/leetcode19-2.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/remove-nth-node-from-end-of-list/ target="blank" class = "leetcodelink">
+                    20. Valid Parentheses
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>stack + hashmap</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                stack的思路不难想到，个人感觉用string还是hashmap无所谓。唯一难点在于提前考虑到种种边界情况，一开始漏掉了stack为空的情况，即只有右括号没有做括号，简单debug后给出了如下答案。
+                需要保证的是每当遇到一个右括号且stack非空是弹出的stack顶元素是对应的左括号（是空说明没有左括号直接返回false），stack先进先出的数据结构正适合这一思路。
+            </p>
+            <img src = "./src/images/leetcode20.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
