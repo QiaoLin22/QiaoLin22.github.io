@@ -385,6 +385,27 @@
             </p>
             <img src = "./src/images/leetcode20.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/merge-two-sorted-lists/ target="blank" class = "leetcodelink">
+                    21. Merge Two Sorted Lists
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>recursion</li>
+                <li>循环链表</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                循环链表方法要注意当l1和l2的两个指针均不为空时才能继续循环，否则其中一个为空时循环继续当比较node值大小时会抛出空指针异常，其他就是依次比较当前两个指针对应node的值大小，将小的接入答案
+                然后对应指针后移一个node即可。最后注意将没遍历完成的链表接入答案中。迭代同理要注意两个终止条件，l1遍历完则返回l2剩下的，l2遍历完返回l1剩下的。迭代时遵循返回最小的头部 + merge剩下的
+                链表的准则。一个口诀就是每一步返回当前要做的事加上迭代调用一个范围缩小了一点的同样的问题。放在这里就是每一步找到两个链表较小的那个头部，把这个头部接上（这个头部之后的链表和另一条链表的merge），
+                然后返回这个头部。每一步不考虑之前或之后的事，只考虑此时该做的事。
+            </p>
+            <img src = "./src/images/leetcode21.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
