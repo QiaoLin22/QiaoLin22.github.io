@@ -406,6 +406,56 @@
             </p>
             <img src = "./src/images/leetcode21.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/generate-parentheses/ target="blank" class = "leetcodelink">
+                    22. Generate Parentheses
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>暴力解法</li>
+                <li>回溯</li>
+                <li>closure number：想法过于小众，不多做讨论</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                此题可以类比第17题，都是求某种条件下的全部组合，有一个明确的终止条件。想象一下每添加一个括号或者字符，就出现多个岔路（不同的选择），但是殊途同归，最后满足一定条件时添加结束。这种场景就是
+                回溯算法发挥作用之处，因为无需在每一步操作后思考之后的各种可能性，而是通过递归地操作将每一步及之后的每一种可能性一网打尽。终止条件很明显当长度为2n时停止，其他总共只有两种情况，左括号数量小于n
+                或者右括号数量小于左括号数量，分开成每一步考虑就是添加一个右括号后，既可以添加下一个右括号（右括号总数小于n），也可以添加一个左括号（前提左括号数量小于右括号）。之后只需要递归地调用添加方法即可。
+                习惯性用了stringbuilder，但在这里并不会改善速度因为即使用string也只是维护一个string没有创建多个string对象。需要注意的是stringbuilder在递归调用之后需要删除最后一个字符即可。
+            </p>
+            <img src = "./src/images/leetcode22.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/swap-nodes-in-pairs/ target="blank" class = "leetcodelink">
+                    24. Swap Nodes in Pairs
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>迭代</li>
+                <li>循环</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                先来看循环的思路，每次循环涉及到两个相邻的node，即firstnode和secondnode，但是同时我们还需要firstnode的前一个node，因为我们需要在单次循环中完成的是将firstnode的上一个node连在secondnode上，
+                firstnode连在secondnode的下一个node上，再把secondnode连在firstnode上。需注意这不是双向链表，所以secondnode的下一个node可以用next引用到，但是firstnode的上一个从哪里来呢？很自然一个想法是
+                从一开始就一直维护这样一个node的索引（题目中叫prevnode）。链接好这次循环中的链接后还需要为下一个循环作准备，即更新prevnode和head。此时下一组node的前一个node正是firstnode，所以更新prevnode为
+                firstnode，而head此时指向fistnode，所以只需要把head更新为firstnode的下一个node即可（画图对于找出各个链接的正确顺序及位置很有帮助）。一个需要注意的地方是在把secondnode指向firstnode之前，需要
+                先把firstnode链接到secondnode的下一个node上，不然如果先将secondnode的下一个node更改为fistnode就会丢失secondnode原来的下一个node的引用，firstnode此时就无法指向下一个node从而使链表循环断开。
+
+                迭代的思路相对比较抽象但是万变不离其宗，迭代的本质是解决当前（或者最初）需要解决的问题，并且把之后的问题推给一个范围缩小了一步的元问题。放在这道题，我们一开始需要做的就是把head和head的next交换。另firstnode
+                指向head，secondnode指向head.next，此时需要做的是把fistnode的连接到以secondnode.next为head的范围缩小一点的同一个问题，然后把secondnode链接到firstnode，然后返回secondnode即可（此时交换完成链表的首个node
+                变为secondnode），整个问题就结束了。看似只做了一次交换，其实后续所有的交换都会在下层栈中递归完成交换，只是我们无需关心而已，这正是递归的牛逼之处。终止条件是head为空或者head的下一个为空，自底向上完成递归（叫backtracking
+                其实也可以）。
+            </p>
+            <img src = "./src/images/leetcode24.png" height = 500px, width = 1200px alt = "leetcode"/>
+            <img src = "./src/images/leetcode24-2.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
