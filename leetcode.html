@@ -456,6 +456,41 @@
             <img src = "./src/images/leetcode24.png" height = 500px, width = 1200px alt = "leetcode"/>
             <img src = "./src/images/leetcode24-2.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/remove-duplicates-from-sorted-array/ target="blank" class = "leetcodelink">
+                    26. Remove Duplicates from Sorted Array
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>双指针</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                比较简单，因为不让用额外空间，也就说明只能改动原数组。可以类比选择排序的过程，很自然想到遍历数组的同时维护一个指针（从0或者1开始都行），使得指针左边永远是没有重复元素的状态。循环中每当遇到一个
+                之前有过的元素就直接跳过，遇到不一样的时候把它移动到指针位置（指针向后移动一位），这样一个个选择出每一个不重复的元素。这样遍历完成后，指针之前的数组全部是没有重复的。
+            </p>
+            <img src = "./src/images/leetcode26.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/remove-element/ target="blank" class = "leetcodelink">
+                    27. Remove Element
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>双指针</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                与上一题过于雷同，略。
+            </p>
+            <img src = "./src/images/leetcode27.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
