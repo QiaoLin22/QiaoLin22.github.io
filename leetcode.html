@@ -513,7 +513,32 @@
             </p>
             <img src = "./src/images/leetcode28.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
-
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/divide-two-integers/ target="blank" class = "leetcodelink">
+                    29. Divide Two Integers
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>循环递减</li>
+                <li>循环指数搜索</li>
+                <li>方法二改良</li>
+                <li>位运算</li>
+                <li>基于位运算的一种小众想法</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                很多地方值得注意的一道题。首先限定integer范围的这类题有一个大坑，即integer.MIN_VALUE -2147483648 的绝对值是 2147483647，即正反所能扩展的最大范围不是对称的，从而引起诸多边界条件下的问题。此题我总结了三点需要注意，
+                第一，当想要统一正负号时候一律往负数上统一，原因很简单，负数的包容范围比正数大1.使用两个负数可以组合出所有正数，而反之则不然。例如-2147483648就无法表示成正数。第二，避免使用乘法，我一开始为了判断负号个数将两个数乘积为
+                正分为一类，为负一类，结果导致了overflow。第三，最特殊的情况最先处理，例如此题（-2147483648，-1）这对组合就要最优先处理避免正数最大值溢出。第二和第三种方法都是基于幂运算来提升速度，主体思想是每次直接将divisor翻倍直到
+                divisor的某一个倍数超过了divident，然后直接在结果上加上2的对应次幂。重复此过程直到divisor的某一个倍数超过了divident，即找到了答案。方法三利用了缓存的思想，把方法二中计算过的divisor的二次幂倍数存放在一个动态数组中，
+                当翻倍后超过dividend时直接将指针向左移动依次填充已经缓存过的可用二次幂倍数直到无法再装下一个divisor为止。方法二和三都是logn级别复杂度，方法一则是o（n）。方法四提出不需要方法三中的数组缓存而可以直接通过位运算来取得需要
+                的值，即向右构造的数组中的值都可以在取得最大二次幂后通过向右位运算来取得，两者没有本质的区别而位运算效率更高速度更快。
+            </p>
+            <img src = "./src/images/leetcode28.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
