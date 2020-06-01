@@ -581,6 +581,26 @@
             </p>
             <img src = "./src/images/leetcode33.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/ target="blank" class = "leetcodelink">
+                    34. Find First and Last Position of Element in Sorted Array
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>线性扫描</li>
+                <a href="https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/discuss/14734/Easy-java-O(logn)-solution" target="blank">二分查找，推荐这种易懂写法</a>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                方法一比较简单，从头找一次从尾找一次即可，重点看下二分查找。优先要求logn数组又是有序的，也就是钦定了二分查找的思路。依旧是二分查找的一个变形，因为让找最靠左和靠右的两个target，所以需要在找到一个target后不立刻返回，而是
+                继续向左或者向右寻找，并在每次循环结束前更新最新一次匹配到target时的下标并最后返回即可。具体实现时向左找当nums【mid】大于等于target时继续向左缩小范围，向右找时当nums【mid】小于等于target时继续向右缩小范围，其余操作
+                与普通二分查找无异。最后分别将向左寻找和向右寻找的最后一次匹配到target时记录的下标存入数组返回即可。
+            </p>
+            <img src = "./src/images/leetcode33.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
