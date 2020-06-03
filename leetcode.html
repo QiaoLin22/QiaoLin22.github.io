@@ -601,6 +601,47 @@
             </p>
             <img src = "./src/images/leetcode33.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/search-insert-position/ target="blank" class = "leetcodelink">
+                    35. Search Insert Position
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>二分查找</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                答案思路是二分查找，个人意见是此题无需特意查找target，有则返回，没找到则返回第一个比target大的数字下标即可。注意当遇到整个数组都小于target的情况需返回数组长度，设置为默认值即可。当然一遍循环在最坏情况下（n）复杂度是要高于二分查找（logn）的。
+                二分查找思路为了处理找不到的情况也是将返回值默认设置为left，也就是第一个比target大的数字下标。
+            </p>
+            <img src = "./src/images/leetcode35.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+    </section>
+    <hr>
+    <section class = "section">
+        <h2>
+            <a href= target="blank" class = "leetcodelink">
+                
+            </a>
+        </h2>
+        <h3>官方思路:</h3>
+        <ul>
+            <li>一遍循环</li>
+        </ul>
+        <h3>思路整理：</h3>
+        <p>
+            根据题目规定，我们要做的就是对每一行每一列和每一个盒子做查重，没有重复就返回true，有则返回false。查重常用的数据结构就是hashmap，根据简直对数量来查重。hashet在这里并不适用，因为hashset不允许有重复的值，也就是说即使已经重复了我们也无法判断出来，
+            将已经有的值插入hashset并不会有任何变化，所以这里选择用hashmap来查重。那么现在就要建立三组hashmap，分别对应row，columns和box，根据九宫格性质每组需要九个hashmap元素。一个很自然的想法就是用三个长度为9的数组来存储这些hashmap，分别命名为rows，
+            columns和boxes。下一个问题出现了，行和列的下标都很好确定，盒子的下标如何确定呢？这就要靠找规律了，很快发现盒子对应数组下标的位置可以用（i/3）*3 + （j/3）来表示。这样所有思路就理清了。下一步只需要遍历这个二维数组开始装填我们的三个hashmap数组就
+            可以了。遍历中每一个元素（这里只关心不是“.”的元素即可）被分别装填到他所在行，列和盒子所在的hashmap数组的对应hashmap中。可以理解为有27个hashmap分别对应着9行，9列和9个盒子，这其中每一个hashmap都不能有任何一个键对应的值超过1（出现重复）。在每一轮
+            循环的最后加一个判断，当有任何数字被加进对应的三个hashmap并使得hashmap出现重复值时返回false。这里需要了解hashmap的getordefault方法，当遇到一个没见过的键时将其加入hashmap并且值设置为1，当遇到一个见过的键时直接更新其值为之前的值+1。
+        </p>
+        <img src = "./src/images/leetcode36.png" height = 500px, width = 1200px alt = "leetcode"/>
+    </section>
     </main>
 </body>
 </html>
