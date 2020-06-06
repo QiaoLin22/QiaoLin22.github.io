@@ -642,6 +642,70 @@
         </p>
         <img src = "./src/images/leetcode36.png" height = 500px, width = 1200px alt = "leetcode"/>
     </section>
+    <hr>
+    <section class = "section">
+        <h2>
+            <a href=https://leetcode.com/problems/count-and-say/ target="blank" class = "leetcodelink">
+                38. Count and Say
+            </a>
+        </h2>
+        <h3>官方思路:</h3>
+        <ul>
+            <li>滑动窗口</li>
+            <li>正则</li>
+        </ul>
+        <h3>思路整理：</h3>
+        <p>
+            推荐评论区看到的写法，比较易懂。这道题要求每次对上一个字符串做一定的操作，并且重复一定的次数后返回最终的结果字符串。那么就做双重循环，大循环做n次读取，小循环具体处理更在结果字符串的操作。那么很自然大循环一共n-1次，因为初始字符串无需读取，设置为1即可。
+            关键在于内循环如何读取并更在字符串。首先我们需要一个变量来存储当前字符出现了多少次，设为count初始值为1，设置一个初始的空stringbuilder sb来构造新字符串。此时注意在两种条件下需要更新sb，第一，出现了跟前一个字符不一样的字符，此时先append count，然后append
+            当前字符的前一个字符，最后重制count为1为下一次计数作准备。第二种情况就是当内循环指针j达到当前读取字符串长度时，需要做相同的操作，这种情况较容易忽略导致读取不完整。内循环结束后将结果更新为当前sb并进入下一次大循环即可。
+        </p>
+        <img src = "./src/images/leetcode38.png" height = 500px, width = 1200px alt = "leetcode"/>
+    </section>
+    <hr>
+</section>
+<hr>
+<section class = "section">
+    <h2>
+        <a href=https://leetcode.com/problems/combination-sum/ target="blank" class = "leetcodelink">
+            39. Combination Sum
+        </a>
+    </h2>
+    <h3>官方思路:</h3>
+    <ul>
+        <li>无</li>
+    </ul>
+    <h3>思路整理：</h3>
+    <p>
+        这种找出不定数目的组合题型立马想到backtracking，具体做法类似之前的17或者22题。主方法里为辅助方法传入初始值，在辅助方法里完成整个回溯是这种问题的一般结构，之后就是思考具体需要那些参数以及终止条件是什么。首先结果集和原始数组肯定
+        要传进来，其次就是每次迭代中生成单个arraylist（结果集候选人）的templist，其次需要一个指针来遍历candidates，记录每次回溯的位置避免重复或者漏掉，最后需要一个变量来记录当前templist的sum或者距离target还差多少，这里用了距离target
+        的差，用remain表示。终止条件自然就是当remain等于0也就是找到了一个满足条件的arraylist，加入结果集，当remain大于0时继续递归地尝试下一个组合。通过指针遍历candidates，顺序地加入templist并调用辅助方法寻找可能的结果，不论这次查找有没有
+        找到符合条件的结果，都要在循环结束时移除当前指针所指向的数字，因为这次没找到不代表之后也找不到。比如从3开始找的时候3，6加起来大于7来也就是没找到，但是后续的7直接就找到了。所谓回溯其实就是在没找到（或者找到）时沿着来的路返回一步，在当时
+        的其他分叉路口继续做尝试。有一个小细节可以提升这道题的速度，即把数组提前排序，在循环中检查remain是否已经比当前指针的数字小了，如果是的话直接结束当前循环。比如例子中从6开始尝试时，剩余的1已经比6要小了，说明后续不可能找到结果就直接进入下一轮循环，
+        这个细节可以提速不少。
+    </p>
+    <img src = "./src/images/leetcode39.png" height = 500px, width = 1200px alt = "leetcode"/>
+</section>
+<hr>
+<section class = "section">
+    <h2>
+        <a href=https://leetcode.com/problems/combination-sum-ii/ target="blank" class = "leetcodelink">
+            40. Combination Sum II
+        </a>
+    </h2>
+    <h3>官方思路:</h3>
+    <ul>
+        <li>无</li>
+    </ul>
+    <h3>思路整理：</h3>
+    <p>
+        同样还是回溯，这次不允许重复使用同一个元素，这就需要每次强制让index指针向后移动一位。但是这样依然有可能找到重复的元素，例如1，1，2，5，6，7，10找和为8，第一个1时找到125，第二个1时又会找到125，这是不允许的。为了解决去重复问题，
+        我们可以利用回溯的性质，当遍历中出现后一个数字和前一个数字相等并且此时i大于index时则跳过这次循环，只有当第一个数字所有可能性都被遍历并且回溯之后才可能出现i大于index的情况，因为此时index的值为0。换句话说就是出现了一个跟已经找过
+        的数字一样的数字，即跳过。初次找1的时候不可能出现这种情况，因为此时index值为1，i的值也为1，两者是相等的。只有当回溯后index值才会减少，此时i仍然从index处开始遍历，当遇到后一个数字和前一个数字相同是，这个数字的所有可能性必然都被
+        探索过了。非常巧妙的处理方法。
+    </p>
+    <img src = "./src/images/leetcode40.png" height = 500px, width = 1200px alt = "leetcode"/>
+</section>
     </main>
 </body>
 </html>
