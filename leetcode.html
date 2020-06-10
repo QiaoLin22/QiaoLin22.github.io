@@ -723,8 +723,24 @@
         5乘以123，得到百位的5，十位的10和个位的15，以此类推。如果不考虑进位的话每个两数之乘积的位置都是固定的，即i+j+1，有进位则只能进到i+j的位置。而要解决进位的问题也很容易，只需要在每次更新数组对应位置时，对i+j位置做一次对10取整操作，对i+j+1
         位置做一次为10取模操作。例如原本十位是5，新的乘积为9，则先更新十位为14，百位更新14/10等于1，数位随即更新为14%10等于4。其他要注意的点包括要从后向前遍历双循环，避免潜在的进位问题，因为进位是从右向左进位的。其次就是使用stringbuilder构建
         答案时注意把前面多余的0去掉，但是只有一个0的数组为特殊情况，作为corner case处理。
-        <j></j>
-        <1></1>
+    </p>
+    <img src = "./src/images/leetcode43.png" height = 500px, width = 1200px alt = "leetcode"/>
+</section>
+<hr>
+<section class = "section">
+    <h2>
+        <a href=https://leetcode.com/problems/permutations/ target="blank" class = "leetcodelink">
+            46. Permutations
+        </a>
+    </h2>
+    <h3>官方思路:</h3>
+    <ul>
+        <li>回溯</li>
+    </ul>
+    <h3>思路整理：</h3>
+    <p>
+        经典的回溯题，终止条件很明显就是当templist（每条线程中构建的list candidate）长度达到nums的长度时添加到答案集。然而保证正确性的前提是每次向templist添加的数字不能是之前添加过的，要保证这个也很简单，在添加之前判断下templist里是否已经包含某个
+        nums中的数字，有的话直接跳过即可。其他的操作就是常规回溯递归调用辅助方法，单个调用完成后移除templist最后一个数字达到回溯的目的。
     </p>
     <img src = "./src/images/leetcode43.png" height = 500px, width = 1200px alt = "leetcode"/>
 </section>
