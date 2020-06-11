@@ -744,6 +744,26 @@
     </p>
     <img src = "./src/images/leetcode46.png" height = 500px, width = 1200px alt = "leetcode"/>
 </section>
+<hr><section class = "section">
+    <h2>
+        <a href=https://leetcode.com/problems/permutations-ii/ target="blank" class = "leetcodelink">
+            47. Permutations II
+        </a>
+    </h2>
+    <h3>官方思路:</h3>
+    <ul>
+        <li>无</li>
+    </ul>
+    <h3>思路整理：</h3>
+    <p>
+        上一道题的变形，可以类比第40题。上一次初始数组既是无重复状态，所以去重复只需要判断数字在templist里是不是已经出现过，这道题就行不通了，比如1，1，2用这种方法就没法把第二个1正确添加进templist导致错误。为了解决不重复使用已经使用过的元素，可以构造一个
+        boolean值组成的数组visited爱专门记录哪些元素已经被添加进templist里了，需要注意在backtracking后和templist一起做回溯操作，即将visited【i】改为false。其次要注意的一点是光是不重复添加已经添加过的元素无法完美达到去重复的目的，当数组中有多个重复
+        数字时依然会产生重复的templist，比如1，1，1，2在顺序添加完1，1，1，2和1，1，2，1后便会找到第一个1，第三个1，第二个1和第四个2组成的另一个不同的1，1，1，2，显然我们要避免这种重复的出现。和第40题类似，我们在进入回溯前现将数组排好序，在遍历中一旦遇到
+        第i个数字和第i-1个数字相同的情况就跳过，这样就解决了重复添加的问题。有趣的是这样的话相当于每当出现多个重复的数字时选择的是逆序的那一个，比如第一个1，1，1，2的顺序其实是2，1，0，3，这样速度是不如直接选择正序快。要变成只添加正序的那一组排列只需要把visited【i-1】
+        变为！visited【i-1】即可，这样第一个1，1，1，2添加顺序就是首先找到的index 0，1，2，3后面重复的直接跳过了避免了浪费时间。如此操作只需要1ms，但是比较难想到因为利用了回溯的性质。
+    </p>
+    <img src = "./src/images/leetcode47.png" height = 500px, width = 1200px alt = "leetcode"/>
+</section>
     </main>
 </body>
 </html>
