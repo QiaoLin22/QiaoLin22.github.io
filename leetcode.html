@@ -786,6 +786,28 @@
     </p>
     <img src = "./src/images/leetcode48.png" height = 500px, width = 1200px alt = "leetcode"/>
 </section>
+<section class = "section">
+    <h2>
+        <a href=https://leetcode.com/problems/group-anagrams/ target="blank" class = "leetcodelink">
+            49. Group Anagrams
+        </a>
+    </h2>
+    <h3>官方思路:</h3>
+    <ul>
+        <li>通过根据字母顺序sort单个string来判断是否为anagram</li>
+        <li>通过比较string中每个char的个数是否一致来判断anagram</li>
+    </ul>
+    <h3>思路整理：
+        重点看下第一种方法。首先看到要求是按照anagram为一个给定数组中的string分组，每一组有一个共同点就是互为anagram，因此不难想到hashmap的数据结构，因为遍历数组时就可以根据当前string是否为某个已有的string的anagram来把这个string分到相应的组，这样一轮遍历就可以完成分组。
+        主要问题在于如何判断每个string是否为其他string的anagram呢，答案这里的思路很巧妙，当两个string按照字母顺序排序后一致则它们互为anagram。这里有两个api值得记住，第一个是string的tochararray，可以把一个string分解成若干char的数组方便排序。第二个是string的valueof
+        作用在char数组时需要注意得到的实际上是一个把所有char链接起来的单独string。这个api很独特容易和array的tostring（）方法搞混，后者返回的仍然是一个数组，只不过每个元素被替换为了string，并不适用与此题的场景。了解这些api后就可以很方便地为每个string创建一个hashmap键值对，
+        没遇到过的新anagram组就创建新的键值对并添加当前string进入arraylist，遇到过的anagram组则更新值，即添加当前string进入对应值的arraylist。这样一轮hashmap就构建完成，最后只需要将所有的值添加进一个大的arraylist就得到了我们要的二维数组答案。
+    </h3>
+    <p>
+        
+    </p>
+    <img src = "./src/images/leetcode49.png" height = 500px, width = 1200px alt = "leetcode"/>
+</section>
     </main>
 </body>
 </html>
