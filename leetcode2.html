@@ -26,19 +26,26 @@
     <main class = "leetcodemain">
         <section class = "section">
             <h2>
-                <a href= target="blank" class = "leetcodelink">
-                    
+                <a href=https://leetcode.com/problems/maximum-subarray/ target="blank" class = "leetcodelink">
+                    53. Maximum Subarray
                 </a>
             </h2>
             <h3>官方思路:</h3>
             <ul>
-                <li></li>
-                
+                <li>分治</li>
+                <li>贪心</li>
+                <li>动态规划</li>
             </ul>
             <h3>思路整理：</h3>
             <p>
-                
+                分治是一种可行的思路，不断将原始数组拆分成左半边右半边和跨越两边的总数组，迭代地寻找三个数组中最大的，最后返回的数字就是全局最大的答案，此方法时间复杂度不算最优，重点分析下后两种方法。
+                贪婪的核心思想是每一步去局部最优解进而在最后得到全局最优解。这里储存两个变量，一个局部最大连续和，一个全局最大和，接着遍历数组，每次顺次更新这两个变量最后得到的全局最大和就是答案。动态规划
+                在这里和贪心没有太大区别，核心思路是一致的。贪婪每次将局部最大和更新为当前看到的数字和此数字和当前局部最大和之和两者中的较大者（max（nums【i】，nums【i】+curr）），相当于用简单的取max
+                操作省去了一个当前curr是否小于0的判断，亦或是第三种方法中nums【i-1】是否大于0的判断。另一个区别是第三种没有使用变量存贮局部最大值而是将局部最大值随着nums的遍历一起更新到nums【i】中了。
+                从另一个角度考虑，当前curr小于0的时候只能将curr更新成当前看到的数字，因为无论这个数字是正还是负，这个数字都大于它自己与curr之和。当curr大于0时，统统加上当前看到的数字即可，即使这个数字
+                是负数也不影响全局最大和的更新。例如curr为2，看到一个-3，将curr更新为-1看似小了实则没有影响因为全局max已经看到过2了，只需要保证增大时能够正确更新即可。推荐如下写法，清晰易懂，这种写法和第二三种思路完全是等价的。
             </p>
+            <img src = "./src/images/leetcode53.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
         <hr>
     </main>
