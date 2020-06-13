@@ -182,6 +182,9 @@ body {
     align-items: center;
     font-style: italic;
     border: 3px solid black;
+    border-bottom: 0;
+    border-top: 0;
+
 }
 
 .nav li {
