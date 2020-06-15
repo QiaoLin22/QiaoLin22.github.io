@@ -74,6 +74,10 @@ body {
 
 .project-list-item {
     margin-bottom: 1rem;
+    color:white;
+}
+.project-list-item a {
+    text-decoration: none;
 }
 
 .project-list-item:last-child {
@@ -323,3 +327,4 @@ p {
         opacity: 1;
     }
 }
+
