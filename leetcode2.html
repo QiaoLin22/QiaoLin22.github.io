@@ -93,6 +93,7 @@
                 达到了终点。反之亦然，每次向前找到可达终点的位置，逐步缩小末尾位置，如果最后末尾达到0就说明起点可达终点。可以想像起点和终点一个往后够，一个往前够，如果最终能达到彼此就说明可达。
             </p>
             <img src = "./src/images/leetcode55.png" height = 500px, width = 1200px alt = "leetcode"/>
+            <hr>
         </section>
         <section class = "section">
             <h2>
@@ -113,6 +114,26 @@
                 指向的数组添加进答案就向后移动指针，即把当前数组复制给指针，然后进入下一次遍历。注意顺序，否则会丢失指针原有的引用。最后将list of array转换为2d array返回即可。
             </p>
             <img src = "./src/images/leetcode56.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/length-of-last-word/ target="blank" class = "leetcodelink">
+                    58. Length of Last Word
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>操作下标</li>
+                <li>一轮循环</li>
+                <li>内置函数</li>
+            </ul>
+            <h3>思路整理</h3>
+            <p>
+                很容易想到内置函数indexof，但是字符串结尾有一个或者多个0时会干扰到indexof的判断，提前将结尾的0截掉即可。不使用内置函数也可以用循环找出最后一个非空格数字的下标，并从那里向前找到第一个空格为止计算长度。
+                第二种思路将第一种中的两个循环合并成一个循环，从结尾向前找当找到一个非空格时记录这一串字符长度，当找到一个空格并且已经记录过长度时退出循环返回这个长度，其余情况即是仍然在遍历尾部的空格中。
+            </p>
+            <img src = "./src/images/leetcode58.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
     </main>
 </body>
