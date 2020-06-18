@@ -194,6 +194,24 @@
             </p>
             <img src = "./src/images/leetcode61.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/unique-paths/ target="blank" class = "leetcodelink">
+                    62. Unique Paths
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>dp</li>
+            </ul>
+            <h3>思路整理</h3>
+            <p>
+                经典dp问题，创建一个二维数组，初始化第一行和第一列为1（到达这些位置只有一种走法），然后遍历数组，剩下每个位置的走法数量为上面位置和左面位置走法数量之和。遍历结束后最右下角的
+                走法数量就是总的走法。答案将整个数组一起初始化为一个充满1的数组，调用了arrays api的fill方法，可以节省一些时间。
+            </p>
+            <img src = "./src/images/leetcode62.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
