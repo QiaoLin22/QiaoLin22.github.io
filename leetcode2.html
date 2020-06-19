@@ -251,6 +251,27 @@
             </p>
             <img src = "./src/images/leetcode64.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/plus-one/ target="blank" class = "leetcodelink">
+                    66. Plus One
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>遍历进位叠加法</li>
+            </ul>
+            <h3>思路整理</h3>
+            <p>
+                要注意没法先转换成int加1在转换为数组返回，因为会超出interger上限即使用long速度也很慢。遍历数组的思路锁定在如何处理进位的问题，稍作观察能发现当且仅当某位置为9时才会发生进位，
+                就利用这一点来处理进位的问题。进一步说，每次遍历有两种情况，不是9，当前位置加1，结束。是9，当前位置变为0，进位变为1并叠加到下一轮循环中。有了这个框架问题基本解决了，但还可以
+                稍作优化。观察到没有进位发生时我们不需要创建新的数组，在原有基础上改即可。有进位发生但是数组总长度不变时也一样。只有一种情况需要创建新数组即最高位发生了进位，例如99变成了100。
+                这种情况发生时不要急着将老数组搬运到新数组对应位置，观察发现该情况原数组每个位置全为0！因此只需要把新数组首个位置变为1，其他保留初始化默认值0即可。保留了自己的带有carry的写法，
+                认为这种更容易理解可读性高。
+            </p>
+            <img src = "./src/images/leetcode65.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
