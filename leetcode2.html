@@ -212,6 +212,45 @@
             </p>
             <img src = "./src/images/leetcode62.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/unique-paths-ii/ target="blank" class = "leetcodelink">
+                    63. Unique Paths II
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>dp</li>
+            </ul>
+            <h3>思路整理</h3>
+            <p>
+                上一道题的变形，障碍物的位置自然为0，那么障碍物会对其他位置的路径有什么影响呢。注意到如果障碍物不在第一行或者第一列上的时候对它们右边和下面的路径是没有影响的，因为右边和下边位置依然遵循
+                左边路径+上边路径的法则。只有在第一行或者第一列的时候障碍会导致所有右边或者下边路径均为0。所以这两种情况时我们将法则稍作改变即可。原本障碍物位置路径为0这一点不变，这些位置的路径是不可被改变的。
+                我们可以将目标矩阵初始化时障碍物位置为0，其他位置1，遍历矩阵时跳过障碍物位置保持0，不在第一行或者第一列时保持左+上法则。在第一行列的时候将路径数直接从左边或者上边继承，这样没碰到障碍时
+                保持1的状态，碰到后所有右边或者下边位置都将为0。注意0，0这个点要特殊处理，否则因为该点不存在左和上位置会抛出indexoutofbound错误。
+            </p>
+            <img src = "./src/images/leetcode63.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/minimum-path-sum/ target="blank" class = "leetcodelink">
+                    64. Minimum Path Sum
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>dp</li>
+                <li>原地dp</li>
+            </ul>
+            <h3>思路整理</h3>
+            <p>
+                因为可以在原理更改数组得到答案所以没必要特意构建新的数组浪费空间。基本思路很简单，遍历数组，左上角保持不变，第一行和第一列计算方式为自己加左边或者上边。其余位置
+                计算方式为取自己加左边和自己加上面二者中较小值。如此这般遍历完成后最短路径就在右下角位置。经典dp题型。
+            </p>
+            <img src = "./src/images/leetcode64.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
