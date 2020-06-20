@@ -272,6 +272,28 @@
             </p>
             <img src = "./src/images/leetcode66.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/add-binary/ target="blank" class = "leetcodelink">
+                    67. Add Binary
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>按位置计算</li>
+                <li>位运算</li>
+            </ul>
+            <h3>思路整理</h3>
+            <p>
+                按位置运算是自然的想法，我使用了先将对应位置转为int在进行加法运算更新答案和carry的方法，答案一直接通过某一位置上char 1出现的次数更新carry和答案，两者均可。答案一判断1出现的次数，一次则carry
+                为1，0次carry为0，2次carry为2，然后根据carry将答案更新carry%2，然后更新两个指针（注意预防空指针），carry更新为carry/2，进入下一轮循环。注意循环结束后carry仍为1要在结尾添加一个进位得来的1，
+                最后将答案反转即可得到需要的结果。方法二使用了纯粹的位运算，用biginteger表示a和b，观察到，加法操作在不考虑进位的情况下等价于xor位运算操作，而进位的问题又完美等价于and后左移一位的位运算。例如
+                11+1的问题，在不考虑进位下进行与或运算得到10，and左移运算计算进位得到010，恰好表示了进位的位置，进入下一轮，10和010与或运算得到00，进位得到100，再进行与或运算得到结果100，此时进位为0循环终止，
+                返回100即为答案。利用了在不使用加法运算时，加法可以用与或运算替代，进位可以用and后左移替代的特点，一个while循环解决了问题。
+            </p>
+            <img src = "./src/images/leetcode67.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
