@@ -294,6 +294,29 @@
             </p>
             <img src = "./src/images/leetcode67.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/sqrtx/ target="blank" class = "leetcodelink">
+                    69. Sqrt(x)
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>二分查找</li>
+                <li>迭代+位运算</li>
+                <li>newton method</li>
+            </ul>
+            <h3>思路整理</h3>
+            <p>
+                先看二分查找，通过观察发现答案被锁定在一定的区间内，即从2到x/2，只有两个例外即0和1，所以需要特殊处理。锁定区间后问题就被转换成了一个二分查找问题，我们可以通过比较指针（left + (right-left)/2）位置数字的平方和x大小关系来判断
+                如何移动指针，找到一致的就返回指针位置，否则循环结束后返回右指针。再看方法二，关键在于如何通过迭代来缩小范围，观察发现sqrt（n）和sqrt（n/4）之间存在某种联系。sqrt（n）总是可以表示成二倍的sqrt（n/4），我们将它命名为left，因为
+                left只是下限，或者left+1。具体是left还是left+1取决于left+1的平方和x的大小关系，例如16对应left4即为正确答案，而15的left则只为2，2+1才能得到3，只有当right平方大于x的时候返回left，其余情况返回right即可保证总是得到正确答案。
+                第三种newton 法则就是直接套公式，前提是了解公式，属于numerical analysis范畴。
+            </p>
+            <img src = "./src/images/leetcode69-1.png" height = 500px, width = 1200px alt = "leetcode"/>
+            <img src = "./src/images/leetcode69-2.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
