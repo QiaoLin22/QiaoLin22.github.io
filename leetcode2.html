@@ -317,6 +317,28 @@
             <img src = "./src/images/leetcode69-1.png" height = 500px, width = 1200px alt = "leetcode"/>
             <img src = "./src/images/leetcode69-2.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/climbing-stairs/ target="blank" class = "leetcodelink">
+                    70. Climbing Stairs
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>暴力</li>
+                <li>缓存迭代</li>
+                <li>动态规划</li>
+                <li>斐波那契</li>
+            </ul>
+            <h3>思路整理</h3>
+            <p>
+                方法二三四本质上都是都是一个自底向上的迭代方法。注意此题自顶向下迭代会超时，自底向上其实应用的就是缓存的思路，即重复利用之前计算过的值。方法二预先创建了一个数组并将
+                每一步计算值存入该数组并在下一次迭代时拿出来使用，但造成了无意义的栈资源浪费。方法三和二没有本质的区别只是动态的向预先创建的数组里添加计算过的值避免了栈资源开销，但
+                创建数组的额外空间造成了浪费。方法四没有额外空间开销从始至终只有两个int值，通过在循环中更新这两个值达到了和动态规划一样的效果。下图保留了将n为1和2都作为base case的写法。
+            </p>
+            <img src = "./src/images/leetcode70.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
