@@ -401,6 +401,26 @@
             </p>
             <img src = "./src/images/leetcode74.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/sort-colors/ target="blank" class = "leetcodelink">
+                    75. Sort Colors
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>一遍循环常数空间</li>
+            </ul>
+            <h3>思路整理</h3>
+            <p>
+                既然要求常数空间和一遍循环，很自然想到交换。一开始尝试了首尾两个指针互相交换，然而发现无法处理都是1时改如何移动指针，既然两个指针没法处理1的问题，一个指针能不能解决呢，答案是能。一个指针时只有三种情况，即0，1，2，
+                0时自然是换到开头，二时换到结尾，1时直接跳过即可无需处理，大大简化了双指针时所需处理的可能性。接着要注意一点是指针碰到0时交换后同时更新指针和开头位置，因为此时数组截止到curr为止是有序的，而指针碰到2时交换后则不一定保证有序性，
+                例如00120，进行到start1，curr2，结尾0时，curr和结尾交换得到00102，截止到curr的有序性被破坏了，此时只能更新end--而不能更新curr++，因为此时curr还未被确定，需要继续和start做比较。此处可以类比选择排序的过程。其余就是交换时可以直接让开头或者结尾的值覆盖
+                curr位置，然后把curr位置原先的0或者2赋值给开头或者结尾，不需要额外创建temp来存储curr原来的值，因为我们本来就知道这个值。
+            </p>
+            <img src = "./src/images/leetcode75.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
