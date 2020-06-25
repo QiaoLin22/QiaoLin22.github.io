@@ -505,6 +505,45 @@
             </p>
             <img src = "./src/images/leetcode80.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/search-in-rotated-sorted-array-ii/ target="blank" class = "leetcodelink">
+                    81. Search in Rotated Sorted Array II
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>无</li>
+            </ul>
+            <h3>思路整理</h3>
+            <p>
+                此题为33题一道变形，唯一不同在于数组中允许重复。33题中我们通过比较nums【mid】和nums【end】大小关系来判断如何更新start和end，此题仍然可以沿用这一思路，不过对于nums【mid】等于nums【end】这种情况需要做特殊处理。因为有了不特定多个重复值，
+                导致当mid处值和end处值相等时无法判断该往哪个方向走，例如311找3和1131找3两个情况，end和mid处值均相等然而一个目标在左侧一个在右侧。该如何单独处理呢，观察到该情况下target一定不可能是end处的值，否则就会在nums[mid] == target的判断中被找到
+                而返回true。如果在第一次判断mid值被判定不等于target而mid值又与end值相等，则end值一定不会被匹配，所以可以放心的将end向前移动推动主循环跳过重复元素继续寻找。
+            </p>
+            <img src = "./src/images/leetcode81.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/search-in-rotated-sorted-array-ii/ target="blank" class = "leetcodelink">
+                    81. Search in Rotated Sorted Array II
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>无</li>
+            </ul>
+            <h3>思路整理</h3>
+            <p>
+                可以用hashset来去重复但是速度较慢，重点看一轮双指针遍历和recursion迭代两种方法。首先双指针维护两个指针，一个cur从head开始负责去重复，另一个pre从head前一个位置开始去维护一个正确的无重复链表。当cur未监测到重复并且cur和pre两个指针相连时，说明没有问题直接向后移动两个指针到next位置。
+                如果cur监测到下一个位置有重复，跳过所有重复元素来到该重复数值的最后一个节点。此时如果pre的下一个链接不是cur则说明发生了去重复，我们需要重新链接指针的位置，此时需要特别小心，pre目前指向上一个没有重复的节点，cur指向下一组重复节点中的最后一个节点。例如题目中的1，2，3，3，4，4，5此时pre
+                指向2，cur指向第二个3，先连接pre到正确位置，pre。next = cur。next，此时pre已经指向第一个4，我们再把cur连接到同样的位置（pre。next或者cur。next）就可以了。注意先进行指针相对位置的连接操作再实际移动指针，避免空指针异常。再来看recursion的思路，核心思路是一致的，只维护一个指针head，
+                当监测到下一个位置出现重复时进行去重复，直接将head移动到下一个新的数字出现的节点，递归调用以该节点作为head的方法。如果没有监测到重复，直接将head的下一个位置作为新的head进入递归调用。最后head即可自顶向下构建出整个无重复的链表。
+            </p>
+            <img src = "./src/images/leetcode82.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
