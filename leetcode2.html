@@ -642,6 +642,45 @@
             <img src = "./src/images/leetcode90.png" height = 500px, width = 1200px alt = "leetcode"/>
             <img src = "./src/images/wechat2.png" height = 600px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/decode-ways/ target="blank" class = "leetcodelink">
+                    91. Decode Ways
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>动态规划</li>
+            </ul>
+            <h3>思路整理</h3>
+            <p>
+                观察到整个字符串从左至右每两个连续字符串和第三个字符之间的关系是有规律可循的，主要取决于后一个字符是否为0和这两个字符组成的数字和26的大小关系。第二个不是0数字也小于26时第三个位置的组合为前两个字符组合数之和，例如226第一个2有一种走法，第二个2有两种走法，而6继承了他们两个的全部走法
+                所以共3种走法。当第二个数不为0时从第二个数字到第三个的走法没有被切断所以第三个数继承了从第二个数字的走法，同理当组成数字小于等于26时第三个数字继承了第一个的走法。当任意一个条件不满足时第二个或者第一个数字到第三个的路径会被切断，两个都不满足时第三个数字没有可行的组合。
+                了解核心思想后构建一个长度为len+1的数组从左至右按上述法则计算到最后一个位置的累计走法最后返回最后一个位置就是总的可能的走法或者组合。
+            </p>
+            <img src = "./src/images/leetcode91.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/reverse-linked-list-ii/ target="blank" class = "leetcodelink">
+                    92. Reverse Linked List II
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>迭代</li>
+                <li>遍历反转拼接</li>
+            </ul>
+            <h3>思路整理</h3>
+            <p>
+                重点看第二种方法，要反转一对node不难想到双指针的思路，关键在于如何确保遍历能够进行下去。例如反转1，2，3，pre指向1，cur指向2，此时我把cur。next指向pre那么2就指向1，但是导致链表没法遍历了，因为1指向2而2指向1造成了循环。解决节点反转的方法是启用第三个节点专门用来记录cur节点的下一个节点
+                从而避免cur下一个节点丢失，这样之后只需要将pre指向cur，cur指向第三个节点就完成了交换节点。其他要注意的是拼接操作有两个特定节点需要提前记录避免丢失，就是进入反转的前一个节点和进入反转的第一个节点，即此题中的1和2节点，因为拼接是需要将1连接到反转遍历完成后pre所在的位置也就是4，2连接到
+                遍历完成后cur的位置也就是5，而4有刚刚被反转一路指向2，反转就完成了。注意在正确的位置进入反转循环即可。
+            </p>
+            <img src = "./src/images/leetcode92.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
