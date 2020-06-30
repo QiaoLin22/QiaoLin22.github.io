@@ -719,6 +719,45 @@
             </p>
             <img src = "./src/images/leetcode94.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/unique-binary-search-trees-ii/ target="blank" class = "leetcodelink">
+                    95. Unique Binary Search Trees II
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>迭代法</li>
+                <li>dp</li>
+            </ul>
+            <h3>思路整理</h3>
+            <p>
+                首先看迭代法，主要思路在于当一个数作为根节点时，他的左子树根节点一定是所有小于他的数字所组成的，同理右子树根节点只能存在于大于他的所有数字中，而以这个节点为根节点的所有树的可能性等于以他为根所有左子树可能+以他为根所有右子树可能。了解这一点后我们就可以自顶向下暴力迭代以每一个范围内数字为根的所有可能性。递归方法设置两个参数start和end，初始范围自然是从1到n，每次从当前根节点分为左子树（s，i-1）
+                和右子树（i+1，e）做一轮循环，相当于将范围内所有点作为根节点拆分为左右子树。但要得到每个节点处总的组合个数还需要将左右子树的所有情况组合并加入答案。dp的思路主要在于根据之前已有的组合和当前新加入的节点做组合并加入答案，如此循环n次。观察到在之前的已有的组合基础上每次新加入的n总是最大的，这就导致n只能加在根节点处或者之前组合某个节点的右孩子，并将那个节点之前的左孩子连接到新节点的右孩子（新节点总是最大的）。
+                在之前已有组合上添加就需要创建一个之前已有组合的复制并在复制基础上添加新的n节点，保证不破坏已有组合。我们知道某个组合要找到待插入右孩子的位置最多需要向右找n-1次，我们可以对之前每一次组合都向右找n-1次并在第一次达到null时提前结束，这样就确保找到了旧组合上待插入新节点的位置。之后进行拼接将原先连接待插入节点右边子树剪下来，插入新节点为右孩子并将剪下的原右子树拼接在新节点左子树，这样一个新的组合就处理完毕加入答案。
+                整理一下就是对于每个旧组合探究其每个旧组合可以插入新节点作为右孩子的所有节点，每找到一个就诞生一个新组合加入答案，这个找右孩子插入点的搜索最多有n-1次。（树为右链接linkedlist时需要找n-1次）。
+            </p>
+            <img src = "./src/images/leetcode95-1.png" height = 500px, width = 1200px alt = "leetcode"/>
+            <img src = "./src/images/leetcode95-2.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=hhttps://leetcode.com/problems/same-tree/submissions/ target="blank" class = "leetcodelink">
+                    100. Same Tree
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>迭代法</li>
+            </ul>
+            <h3>思路整理</h3>
+            <p>
+                首先想到同时遍历两棵树，并且每次向左走还是向右走也保持一致，时时观察此时两棵树节点是否一致，如果都一致则树相等，否则不想等。两棵树可用迭代同时遍历，当节点不一致时返回false，当同时为空时返回true，当仅有一个为空时说明不想等返回false。其余情况递归调用两棵树的左右子树并仅在左右子树均返回true时返回true，可以用&&连接两个递归调用的返回值来做到这一点。
+            </p>
+            <img src = "./src/images/leetcode100.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
