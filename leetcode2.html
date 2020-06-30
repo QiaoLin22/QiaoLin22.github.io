@@ -744,6 +744,24 @@
         <hr>
         <section class = "section">
             <h2>
+                <a href=https://leetcode.com/problems/unique-binary-search-trees/submissions/ target="blank" class = "leetcodelink">
+                    96. Unique Binary Search Trees
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>dp</li>
+            </ul>
+            <h3>思路整理</h3>
+            <p>
+                此题与上一题类似，n总共有多少种组合取决于从1到n每一个数字作为根节点时组合数之和。根据上一题我们知道每一点作为根节点时他的所有组合可以用他的所有可能左子树和右子树组合得到，这里因为只要求个数所以所谓组合其实就是乘积的关系，例如n=3时以2作为根节点时其组合数就是1作为根节点组合数乘以3作为节点组合数。但是当我们从2去推3的时候我们不知道3此时是多少，然而又需要3作为根节点时的组合数，怎么办呢。此题使用了一个基于对称思想的巧妙办法，
+                例如题目中123假如我们此时知道1和2作为根节点组合数，3本来要用1，2和3作为根的和来得到但是我们还不知道3，但是我们知道3和1的组合数肯定是一样的，或者说树其实不一样但是完全对称的所以组合数一样。有了这种思想我们就总是可以从前n-1个已知根节点组合数推导出第n个数组合数，dp也就完成了。通俗来讲当我们需要用到包括n的倒数k个节点组合数之和时就把这k个数映射到前k个数，从已知的前半部分数组得到未知的后半部分数组节点和。
+            </p>
+            <img src = "./src/images/leetcode96.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
                 <a href=hhttps://leetcode.com/problems/same-tree/submissions/ target="blank" class = "leetcodelink">
                     100. Same Tree
                 </a>
