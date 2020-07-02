@@ -88,6 +88,26 @@
             <img src = "./src/images/leetcode103.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
         <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/maximum-depth-of-binary-tree/ target="blank" class = "leetcodelink">
+                    104. Maximum Depth of Binary Tree
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>递归</li>
+                <li>迭代</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                递归比较容易想到，在任意一个节点处的最大深度可以总结为1+它左子树和右子树深度的较大者，当遇到空节点时返回深度0，其余情况递归调用1+max（root.left,root.right）即可。迭代法重用了前两题bfs的思路，用queue数据结构来实现每一层的bfs遍历。观察到
+                queue每一轮循环实现了一个旧层节点全部从头部出队列，新层节点全部进队列的过程，这个过程结束时一层dfs即处理完毕也就意味着层数+1.我们可以用一个变量来记录层数的变化，初始值为0，在一轮bfs结束前++即可追踪层数的变化。queue为空也就是循环结束时该变化自然
+                等于最大层数。
+            </p>
+            <img src = "./src/images/leetcode104-1.png" height = 500px, width = 1200px alt = "leetcode"/>
+            <img src = "./src/images/leetcode104-2.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
