@@ -46,6 +46,29 @@
             <img src = "./src/images/leetcode101-2.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
         <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/binary-tree-level-order-traversal/ target="blank" class = "leetcodelink">
+                    102. Binary Tree Level Order Traversal
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>递归</li>
+                <li>迭代</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                还是同样可以用递归和迭代两种方式解决，先来看递归。首先我们发现既然题目要求将同一层的节点放在一起，那我们必然需要在辅助方法中传入一个代表层数的参数来track递归到了哪一层，否则这个信息就无法跟踪。明确了helper method参数后
+                我们就要思考如何根据层数信息来构建答案所需的这个二维数组，我们每一个level肯定要有一个对应的arraylist，以后每递归到相同的level就向这个arraylist动态添加数字，所以我们在递归方法中首先要判断有没有当前level所对应的那个arraylist，
+                没有就创建出一个空的。具体来说是把level和当前的res。size（）做对比，level大于ressize就要创建一个空的待添加的arraylist。这样就保证了每一层都一定有一个对应的动态数组可以去添加。其他要做的就是通过arraylist的get方法拿到level对应的
+                那一层然后添加，接着按照inorder顺序递归traverse树即可，因为题目对每层顺序有要求所以必须是inorder先左支后右支。迭代的思路十分类似，与之前不同的是我们需要使用队列而不是stack，因为我们需要在不破坏当前层顺序的前提下添加下一层。其他要做的
+                就是在队列不为空时循环的将队列头部旧层的节点拿出，判断每一个节点左右是否为空并在非空时加入队列，先左后右的顺序不变。要拿到旧层每个节点只需要记录旧层节点总个数然后循环从队列头部poll那么多次即可，在每一层处理完毕后将该层节点数组加入答案。
+            </p>
+            <img src = "./src/images/leetcode102-1.png" height = 500px, width = 1200px alt = "leetcode"/>
+            <img src = "./src/images/leetcode102-2.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
     </main>
 </body>
 </html>
