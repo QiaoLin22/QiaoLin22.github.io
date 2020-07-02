@@ -69,6 +69,25 @@
             <img src = "./src/images/leetcode102-2.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
         <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/ target="blank" class = "leetcodelink">
+                    103. Binary Tree Zigzag Level Order Traversal
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>递归</li>
+                <li>迭代</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                与上一题基本雷同，唯一的区别在于奇数层保持顺序而欧树层需要变为逆序，我们只需要一个变量来记录当前是奇数层还是偶数层然后在向答案中添加arraylist前根据这个变量判断是否需要反转数组即可。用boolean或者int均可，这里使用了int。评论区看到一种通过
+                构建两个stack或者两个queue并每次修改添加的顺序从左节点右节点到右左来达到反转目的答案，是个有创意的思路。
+            </p>
+            <img src = "./src/images/leetcode103.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
     </main>
 </body>
 </html>
