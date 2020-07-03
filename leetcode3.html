@@ -108,6 +108,26 @@
             <img src = "./src/images/leetcode104-1.png" height = 500px, width = 1200px alt = "leetcode"/>
             <img src = "./src/images/leetcode104-2.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/ target="blank" class = "leetcodelink">
+                    105. Construct Binary Tree from Preorder and Inorder Traversal
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>递归</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+               首先观察到要求时按照左中右顺序也就是preorder顺序来构建树，因此我们通过在preorder数组上的递归来构建出树，然而对于每个preorder中的节点，它左子树和右子树所包含的节点存储在inorder数组中，也就是我们需要用preorder的根节点结合inorder的左右子树来递归构建成
+               完整的树。为了准确知道每个根节点左右子树包括哪些节点我们就需要四个指针以及一个map来实时跟踪这些信息。map用来存贮inorder数组的位置信息，避免每次都要单独搜索耽误时间（数组中搜索最快也要logn，map则是常数时间），因为每当我们拿到preorder中一个根节点时
+               我们都需要知道该节点在inorder中的位置进而拿到左右子树节点信息。四个指针分别记录prestart，preend，instart，inend，prestart和preend初始值为0和preorder的length-1，之后每次递归时根据当前根节点左右子树各包含多少个节点来更新prestart和preend到对应位置。
+               例如3左子树有一个节点9，右子树有三个节点，那么下一层递归就会分别被更新为（1，1）和（2，4），instart和inend也根据根节点位置被拆分成左子树和右子树分别包含的节点。可以理解为不停递归从preorder拿到根节点并从inorder拿到该节点左右子树的过程。
+            </p>
+            <img src = "./src/images/leetcode105.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
