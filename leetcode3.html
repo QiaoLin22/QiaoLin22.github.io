@@ -162,6 +162,24 @@
             </p>
             <img src = "./src/images/leetcode107.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/ target="blank" class = "leetcodelink">
+                    108. Convert Sorted Array to Binary Search Tree
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>递归</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+              答案给出了选取左mid，右mid和randommid三种方法，其实感觉必要性不大，都按照start+（end-start）/2来定位mid即可，设置start，end两个参数初始值设置为数组两边，然后递归地将数组拆分为组成左子树的数组，
+              root和组成右子树的数组，当start 大于 end时返回null即达到了叶子节点，其余情况每次将当前mid位置的值作为当前子树的root。递归创建左子树（start，mid-1）和右子树（mid+1，end）然后返回当前root。
+            </p>
+            <img src = "./src/images/leetcode108.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
