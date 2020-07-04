@@ -221,6 +221,23 @@
             </p>
             <img src = "./src/images/leetcode110.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/minimum-depth-of-binary-tree/ target="blank" class = "leetcodelink">
+                    111. Minimum Depth of Binary Tree
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>递归</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+              唯一一个要注意的点是当一个节点左子树或者右子树为空时，空的那边没有最小深度，不可以作为0去计算。观察到这两种特殊情况后就很简单了，当且仅当有一个子树为空时直接返回另一半子树的最小深度+1即可，空的那一边当作不存在处理。
+            </p>
+            <img src = "./src/images/leetcode111.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
