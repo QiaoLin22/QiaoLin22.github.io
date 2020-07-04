@@ -180,6 +180,47 @@
             </p>
             <img src = "./src/images/leetcode108.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/ target="blank" class = "leetcodelink">
+                    109. Convert Sorted List to Binary Search Tree
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>递归</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+              和上一题类似的逻辑，不过存贮节点的数据结构从array变为了linkedlist，也就导致我们不能通过index直接拿到mid处的值和左右两个子array了，我们需要用linkedlist的方式来解决这些问题。既然linkedlist不支持随机访问我们就只能从头开始找mid，
+              我们怎么知道什么时候到达了mid位置呢，我们可以用双指针，一个快指针一个慢指针，快指针每次前进两个节点（不越界前提）而慢指针只前进一个节点。这样当快指针越界时慢指针就恰好指向mid处所在的位置。那么分离操作如何进行呢，我们有头部指针head，中部
+              指针mid，那么mid。next就是后半部分链表，前半部分想要分离出来我们需要slow的前一个位置的指针，我们可以在之前找mid的循环中将这个prev指针一起定位好。设置prev初始值为空指针，每次在slow更新前将prev更新为slow即可。这样我们就拿到了slow结束时前面
+              指针的位置，然后将该指针指向null就达到了断开前半部分链表的效果。注意判断prev非空，因为当slow没有移动时（链表长度为1）prev为空，调用pre的next会抛出npe异常。
+            </p>
+            <img src = "./src/images/leetcode109.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/balanced-binary-tree/ target="blank" class = "leetcodelink">
+                    110. Balanced Binary Tree
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>top down递归</li>
+                <li>bottom up递归</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+              top down递归比较明显，一个递归方法计算每个节点最大深度，主方法递归判断每个节点是否是平衡的，这样做的缺点是对树进行了重复递归，因为本质上每次调用平衡递归和最大深度递归是在对树的同一部分进行递归，有没有办法在计算最大深度的递归完成时就顺带着比较
+              树是否平衡呢？观察到最大深度方法返回一个int而平衡返回一个boolean，这一点影响了我们将两个递归合并，那么我们可不可以用int来代替boolearn而达到同样的效果。我们可以在树平衡时正常递归计算树最大深度，而在不平衡时将节点的最大深度设置为-1。确保只在
+              两棵子树都平衡时正常更新为max（leftmax，rightmax），一旦遇到一颗不平衡子树则该父节点最大深度也为-1.这样进行递归时一旦遇到任意一个节点不平衡时都将导致最终结果返回-1，这正是我们想达到的效果。我们只需要在递归返回时判断是否为-1即可判断整个树
+              的平衡性。一次递归调用就解决所有问题而不是两个递归嵌套调用，节省了栈资源。
+            </p>
+            <img src = "./src/images/leetcode110.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
