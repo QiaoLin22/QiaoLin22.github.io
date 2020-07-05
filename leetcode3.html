@@ -274,6 +274,68 @@
             </p>
             <img src = "./src/images/leetcode113.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/flatten-binary-tree-to-linked-list/ target="blank" class = "leetcodelink">
+                    114. Flatten Binary Tree to Linked List
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>递归</li>
+                <li>迭代</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+              既然是树那么首先考虑递归的思路，先思考每一步要做什么。观察到不管左右支长成什么样子，我们要做的都是把一个根节点左子树剪下来，贴到右子树上，同时为了防止右子树丢失，提前存起来，然后接到之前添加好的新右子树的右子树，这样整个树就变成了一个完整的right skew的树。
+              一个特殊情况为当一个根节点有左子树却没有右子树时,我们直接将左子树接到右边即可。当两个子树都非空时具体拼接方法如下，首先剪下左右子树并存贮，然后左子树变为空，右子树首先接上原左子树，接着为了找到新右子树的尾巴，用一个loop来寻找，找到末尾后接上原右子树。之后
+              递归调用右子树即可。
+            </p>
+            <img src = "./src/images/leetcode114.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/populating-next-right-pointers-in-each-node/ target="blank" class = "leetcodelink">
+                    116. Populating Next Right Pointers in Each Node
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>迭代on空间，queue</li>
+                <li>迭代o1，no extra space</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+              第一种方法沿用了传统的迭代level order traverse也就是使用queue的数据结构每次拿到一整层的node再依次连接起来，比较trivial不做讨论。第二种方法达到了no extra space并且方法十分的巧妙，重点研究一下。第二种思路的核心思想在于我们可以利用某一层已经连接好next
+              的node在直接构建出下一层node所有next所需要的连接，观察到根节点恰好就是那个已经连接好next的层，所以我们可以顺次构建出第二层，在用同样逻辑从第二层构建第三层以此类推。那么具体每层如何构建出下一层呢，初始条件只有一个上一层第一个node，但是该node之后所有next已经
+              被连接好了，相当于一个linkedlist，我们可以通过next来直接遍历这一层。再观察发现下一层的连接有两种情况，同parent两个节点连接以及来自两个上层相邻parent左节点和右节点连接，不论那种情况都可以通过上层直接连接。假设我们上层负责遍历的节点叫head，那么同parent下层
+              节点可以直接用head.left.next = head.right连接。不同parent无外乎就是用head和head。next一起构建，也就是 head.right.next = head.next.left（注意判断head next非空）这样下层就连接完毕。同时我们从开始就维护一个每一层最左边的节点，leftmost作为每层
+              遍历的起点，在一层连接完毕后直接更新leftmost为leftmost。left即可，因为这是一颗完整的二叉树所以leftmost。left不可能为空。这样从根节点开始每一层从leftmost（根节点leftmost就是自己）开始遍历构建出下层next连接然后更新leftmost到left也就是下层第一个节点就可以完成整棵树的所有连接。
+            </p>
+            <img src = "./src/images/leetcode116.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/ target="blank" class = "leetcodelink">
+                    117. Populating Next Right Pointers in Each Node II
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>迭代on空间，queue</li>
+                <li>迭代o1，no extra space</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+              答案第二种思路写的相当繁琐，推荐一种网上看到的递归思路。首先沿用上一题思路，通过上一层next连接来构建下层next连接。对于每一个点它的左子树可能为空，右子树也可能为空，我们就要分类讨论，首先判断左子树是否为空，非空就简单了，直接root.left.next = root.right。
+              如果左边根本没有我们就不需要处理左分支了，递归到下一层即可。如果左边非空我们就要根据右子树情况判断当前最右边节点是rootleft还是rootright。之后在上层next中寻找rightmost的next节点，当上层next节点left非空时就连接到该节点，上层next的right非空时就连接到
+              right，找到后理解结束循环。这样每一次递归我们都在尝试将该节点左右节点中非空的那个连接到下一个正确的位置。如此递归左右子树即可。
+            </p>
+            <img src = "./src/images/leetcode117.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
