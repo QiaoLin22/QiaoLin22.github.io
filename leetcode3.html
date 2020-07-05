@@ -238,6 +238,42 @@
             </p>
             <img src = "./src/images/leetcode111.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/path-sum/submissions/ target="blank" class = "leetcodelink">
+                    112. Path Sum
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>递归</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+              同样可以妙用递归思想，递归树，每遇到一个非空节点就将当前sum值减去该节点值，当来到一个左右都为空且sum已经被减为0的节点时说明找到了这条path返回true，注意一边空一边非空时不返回，寻找还没有结束。其他情况均说明寻找没完成，
+              递归寻找左右子树并在任意子树返回true时返回true，所以用｜｜连接。
+            </p>
+            <img src = "./src/images/leetcode112.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/path-sum/submissions/ target="blank" class = "leetcodelink">
+                    113. Path Sum II
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>递归</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+              跟上一题思路基本雷同，有几个额外的地方需要注意。第一点是在找到一条路径后想答案添加时需要添加一个新的arraylist并将cur复制进去达到深拷贝的效果。第二点是由于我们在递归中返回到上一层时cur并不会自动pop返回上层时的状态，
+              我们需要在一个节点左右子树都寻找完时手动移除cur的最后一个（也就是刚刚探索完毕的那个节点）节点，否则每次cur加入答案时会带着之前寻找到目标之前找过的所有路径。
+            </p>
+            <img src = "./src/images/leetcode113.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
