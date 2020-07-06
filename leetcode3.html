@@ -354,6 +354,28 @@
             </p>
             <img src = "./src/images/leetcode118.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/pascals-triangle-ii/ target="blank" class = "leetcodelink">
+                    119. Pascal's Triangle II
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>dp</li>
+                <li>dp memory efficient</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+               这次我们只需要拿到最后一层而非所有的层，依然可以沿用上一题的思路从n层构建出n+1层，但这道题重点是如何节省空间，当然可以先构建整个金字塔（上题）然后只返回最底层，但是对空间造成了极大的浪费。先来看第一种较容易想到的dp，该思路从始至终只构建了两个arraylist res和pre，一个代表
+               上层一个代表下层，res初始值只有一个1而pre为空，然后每次先用res构建出下一层，使res指向下一层，然后pre指向原res就完成了从n-1，n层到n，n+1层的转移，这样循环rowindex次res就指向了最底层。再看第二种dp思路，该思路从始至终只构建了一个arraylist，通过不断修改该arraylist直到
+               拿到最底层，仅仅使用了必须的空间没有一点额外空间浪费。具体实现如下，初始arraylist大小直接设置为最终所需要的rowindex+1，并先添加一个1代表第一层。之后层从上层尾部开始逆向将上层j和j-1位置两两相加保留头部也就是1不变，最后在尾部添加1完成新层的构建。这样rowindex轮结束arraylist
+               正是我们要的最底层。概括下就是方法1每次将旧arraylist构建并放到一个全新arraylist中，然后抛弃旧的。第二种方法是直接在原地将旧的改成新的而没有复制操作。
+            </p>
+            <img src = "./src/images/leetcode119-1.png" height = 500px, width = 1200px alt = "leetcode"/>
+            <img src = "./src/images/leetcode119-2.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
