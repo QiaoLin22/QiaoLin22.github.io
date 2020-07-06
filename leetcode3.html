@@ -336,6 +336,24 @@
             </p>
             <img src = "./src/images/leetcode117.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/pascals-triangle/ target="blank" class = "leetcodelink">
+                    118. Pascal's Triangle
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>dp</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+              从这个金字塔的形状很容易想到dp也就是从上一层构建出下一层，那么我们要先把第一层写好并将第一层当作dp的初始值，这样从第二层开始所有层都可以从上一层顺次得出。设置一个当前层数level为2，当level小于等于numrows时进入while循环，每次拿到上一层两个值并相加并在头尾
+              添上1就等到了当前需要的这一层，将该层加入答案。这样循环结束时所有numrows层就都构建完毕。
+            </p>
+            <img src = "./src/images/leetcode118.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
