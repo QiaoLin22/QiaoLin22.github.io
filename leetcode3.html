@@ -376,6 +376,25 @@
             <img src = "./src/images/leetcode119-1.png" height = 500px, width = 1200px alt = "leetcode"/>
             <img src = "./src/images/leetcode119-2.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/triangle/ target="blank" class = "leetcodelink">
+                    120. Triangle
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>bottom up dp</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+               一开始尝试top down dp但是失败了，因为当树中有负数时我们无法简单的通过当前节点和左右中最小的那一边来判断出正确路径，但是bottom up则不然，top down中当前最小路径不一定和下一层中最小的相连接，bottom up中从底下向上找时由于我们已经在底层穷尽了所有情况，所以只需要放心的将当前层中所有
+               路径加进来即可。我们可以将dp数组初始值设置为最底层，因为此时底层自己就是到自己的的最短路径，没向上拿到一层，就将dp数组的前当前层个数个数据更新，更新方法为当前节点值加上上一层左右子节点中小的那一个。例如从第四层更新第三层时，根据第三层三个节点和它们分别在第四层中的子节点较小值更新dp中
+               前三个位置数据为当前最短路径。这样循环层数-1次后最终最短路径就在dp数组的第一个位置（因为每次更新dp的前层数节点数个位置，例如最后一次更新根节点时只有dp【0】被更新了）。
+            </p>
+            <img src = "./src/images/leetcode120.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
