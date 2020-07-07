@@ -395,6 +395,41 @@
             </p>
             <img src = "./src/images/leetcode120.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/best-time-to-buy-and-sell-stock/submissions/ target="blank" class = "leetcodelink">
+                    121. Best Time to Buy and Sell Stock
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>一轮遍历</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+               设置两个参数用来track全局最小值和全局最大收益，初始值最小值设置为一个很大的数而最大收益设置为0（根据题目不可能小于0）。之后对数组进行一轮遍历，没看到一个新的数字先判断是否要更新全局最小值，之后判断是否要更新全局最大收益即新数字与全局最小的差值是否大于旧的最大收益。这样一轮结束后
+               返回全局最大收益即可。
+            </p>
+            <img src = "./src/images/leetcode121.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/ target="blank" class = "leetcodelink">
+                    122. Best Time to Buy and Sell Stock II
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>一轮遍历</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+               观察到买股票的时机恰好是当某一天的价格高于前一天时，因为此时如果卖出一定能保证全局利益的最大化。那么我们遍历数组，每次判断当天价格是否比前一天大，如果是就说明该卖出了，结果加上当天和前天差值。价格比前一天小的情况无需处理。
+            </p>
+            <img src = "./src/images/leetcode122.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
