@@ -448,6 +448,26 @@
             </p>
             <img src = "./src/images/leetcode125.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/word-ladder/ target="blank" class = "leetcodelink">
+                    127. Word Ladder
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>BFS</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+               要理解这道题首先要明确几个概念。第一个是两个单词是相通的这一说法。当且仅当两个单词只有一个位置上的字母不同时我们称两个单词是相通的。另一点要明确某个单词相通的所有单词中哪些是需要被考虑的，第一是wordlist里一定要有，第二是这个单词之前没有看到过，
+               否则就会产生环。题目要求的是最短路径，因此不难想到用bfs的方式来进行搜索，同时记录当前来到了哪一层，这样当找到endword时层数就是最短路径。为了bfs遍历我们需要创建一个queue并将startword放进去开始搜索，其次为了记录哪些wordlist中的词已经遇到过，
+               我们需要一个visited set来记录，同时为了判断某一个相通的单词是否在wordlist中，我们需要将wordlist转换成set，最后将level数设置为1。之后开始进行搜索，每次弹出queue顶元素，通过遍历该单词每个位置并替换该位置为a到z中所有字母的方法来找到所有相通的
+               单词，首先判断是否找到了endword，其次判断哪些是wordlist中有的并且没遇到过的，加入queue和visited。如果一层都没有找到，level++后开始下一层的搜索，这样一旦找到endword只要返回当前level即可。
+            </p>
+            <img src = "./src/images/leetcode127.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
