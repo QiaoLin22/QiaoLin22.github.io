@@ -430,6 +430,24 @@
             </p>
             <img src = "./src/images/leetcode122.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/valid-palindrome/ target="blank" class = "leetcodelink">
+                    125. Valid Palindrome
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>双指针</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+               设置一头一尾两个指针，每次拿到两个指针对应的character后先判断是否有不是数字或者字母的其他字符，因为这种情况我们是不考虑的。这里有个叫Character.isLetterOrDigit()的api非常合适，推荐记住，不然就要用正则。碰到这种情况我们直接将指针
+               继续向前或者向后移动。当来到一个两个指针对应character都是char或者int时我们就要判断相等，但不要忘记先调用Character.toLowerCase转换成小写。如果相等继续移动指针，不想等说明不是回文数直接返回false。当两个指针相遇或者重叠时整个循环结束。
+            </p>
+            <img src = "./src/images/leetcode125.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
