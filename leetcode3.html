@@ -468,6 +468,47 @@
             </p>
             <img src = "./src/images/leetcode127.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/sum-root-to-leaf-numbers/ target="blank" class = "leetcodelink">
+                    129. Sum Root to Leaf Numbers
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>iteration</li>
+                <li>recursion</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+               来看递归方法，设置一个辅助方法存贮当前sum，当来到空节点时sum不变所以返回0，每个分支的结束条件为左右子树都为空，此时将当前结果乘10后加上该节点返回。其余情况都是可以继续递归的情况，返回左子树sum+右子树sum即可。
+            </p>
+            <img src = "./src/images/leetcode129.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/surrounded-regions/ target="blank" class = "leetcodelink">
+                    130. Surrounded Regions
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>iteration bfs</li>
+                <li>recursion dfs</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+              一道基于二维数组的搜索问题，重点看递归dfs和迭代bfs两种方法。先看dfs，我们的目标是要找到所有与border相连的o区域，因此入手点肯定是在边界上寻找o并且寻找所有与这个o相连的o，这些区域肯定是不改变的，其他内部的o我们不必考虑因为最后会变为x。
+              确定入手点后我们就可以开始在四条边境寻找o点，每找到一个就从这个点开始dfs搜索。为了防止循环找过的点我们把它标记为*，这样递归的终止条件就是越界或者来到一个不是o的点（可能是*或者x）其他情况递归该点上下左右的位置。这样对四条边界上所有o点
+              进行递归后我们就已经将最后确定会是o的点标记成了*，在进行对数组的遍历将*改为o，o改为x即可。接下来看bfs迭代的思路，采用了传统的queue数据结构来跟踪当前的点。这里定义了一个point类用来同时跟踪横纵坐标。还是从边界上所有的o点入手，将所有
+              边界o点入queue作为我们的第一层并将该点标记为*，接着在队列不为空时进入bfs循环。每次拿到queue头部的点，寻找它四周满足条件的点（不越界并且是o点），找到后入queue并标记为*。这样循环结束后就达到了和dfs一样的效果，最终o点被标记为了*点，最后进行
+              一轮总遍历将*改为o，o改为x即可。
+            </p>
+            <img src = "./src/images/leetcode130-1.png" height = 500px, width = 1200px alt = "leetcode"/>
+            <img src = "./src/images/leetcode130-2.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
