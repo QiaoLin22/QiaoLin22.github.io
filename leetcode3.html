@@ -509,6 +509,24 @@
             <img src = "./src/images/leetcode130-1.png" height = 500px, width = 1200px alt = "leetcode"/>
             <img src = "./src/images/leetcode130-2.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/palindrome-partitioning/ target="blank" class = "leetcodelink">
+                    131. Palindrome Partitioning
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>bt</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+               经典backtracking题型，设置一个start参数记录当前到达的位置，初始值为0。当start到达length时返回当前数组，其他情况从start开始截取之后所有可能的位置并判断截取的这一段是否是回文数，如果是加入当前数组，更新start值进入下一次递归。在递归结束后
+               弹出当前数组最末尾的元素继续回溯查找其他可能性。
+            </p>
+            <img src = "./src/images/leetcode131.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
