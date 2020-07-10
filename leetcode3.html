@@ -408,7 +408,7 @@
             </ul>
             <h3>思路整理：</h3>
             <p>
-               设置两个参数用来track全局最小值和全局最大收益，初始值最小值设置为一个很大的数而最大收益设置为0（根据题目不可能小于0）。之后对数组进行一轮遍历，没看到一个新的数字先判断是否要更新全局最小值，之后判断是否要更新全局最大收益即新数字与全局最小的差值是否大于旧的最大收益。这样一轮结束后
+               设置两个参数用来track全局最小值和全局最大收益，初始值最小值设置为一个很大的数而最大收益设置为0（根据题目不可能小于0）。之后对数组进行一轮遍历，每看到一个新的数字先判断是否要更新全局最小值，之后判断是否要更新全局最大收益即新数字与全局最小的差值是否大于旧的最大收益。这样一轮结束后
                返回全局最大收益即可。
             </p>
             <img src = "./src/images/leetcode121.png" height = 500px, width = 1200px alt = "leetcode"/>
@@ -526,6 +526,47 @@
                弹出当前数组最末尾的元素继续回溯查找其他可能性。
             </p>
             <img src = "./src/images/leetcode131.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/clone-graph/ target="blank" class = "leetcodelink">
+                    133. Clone Graph
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>iteration bfs</li>
+                <li>recursion dfs</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+              同样是基于图搜索的问题，看dfs递归和bfs迭代两种方法。观察到我们需要来原图和复制图中来回切换，每次从原图根节点拿到邻居节点，再创建每个邻居节点复制加入原图根节点复制的邻居中。因此我们需要一个hashmap数据结构来将原图节点和复制图对应复制节点存贮或者说关联起来。
+              进入递归后判断原图节点是否已经被复制过了，如果是直接返回复制，没有的话创建复制clonenode并将当前节点和clonenode加入hashmap。接下来要做的是复制neighbors，从原图找到每个neighbor并递归地将他们加入clonenode的邻居节点。每一次递归我们创建一个未见过的原图
+              节点的复制并将原图节点邻居加入复制节点的邻居，之后递归完成所有的复制。bfs方法还是使用queue来实现类似的过程。首先根节点入队，在queue非空时进入循环，每次拿到一个原图节点并将所有它的未见过的邻居创建复制后邻居入队，之后将每个邻居的复制加入原根节点的复制的邻居。
+              其实不论dfs还是bfs都是再重复一个过程，拿到一个原图根节点，创建复制，那我们怎么直到这个复制的邻居是谁呢，还需要从原图根节点的邻居去一个个复制并加入复制根节点的邻居。
+            </p>
+            <img src = "./src/images/leetcode133-1.png" height = 500px, width = 1200px alt = "leetcode"/>
+            <img src = "./src/images/leetcode133-2.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/gas-station/ target="blank" class = "leetcodelink">
+                    134. Gas Station
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>one pass</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+               此题有个很巧妙的一轮遍历，充分利用了只有一个答案的条件。我们从数组头开始设置两个值一个为cur当前油量一个为total记录总油量。每来到一个station就更新cur和total，当cur小于0时说明之前经过的station都不可能是正确答案，因此答案只能是从后面的station开始。此时
+               更新cur为0重新开始计数（从一个新的station出发）。但是注意后面的station只是可能成为答案却并不保证。当加的油小于总共需要的油时就没有答案，例如3，3，4 & 3，4，4最后一个4就不是答案。因此我们需要total来判断是否有答案，如果有那么第一个使得cur没有小于0过的station
+               就是答案需要的出发点。例如题目的-2，-2，-2，3，3数组，第一个使得cur没有小于0过的station是位置3并且total为0因此有答案并且该答案只能是第一个3，因为此时我们确信第一个3是一个答案并且题目告诉只有一个答案因此只能是第一个另cur不小于0的那个位置。
+            </p>
+            <img src = "./src/images/leetcode134.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
     </main>
 </body>
