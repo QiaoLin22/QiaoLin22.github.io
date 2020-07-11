@@ -589,6 +589,28 @@
             </p>
             <img src = "./src/images/leetcode136.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/single-number-ii/ target="blank" class = "leetcodelink">
+                    137. Single Number II
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>hashset</li>
+                <li>hashmap</li>
+                <li>bit wise</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+               此题主要考察第三种bitwise方法，稍微总结下其他方法。首先与上题一样可以排序，其次可以使用hashset中每一个不重复元素总合的三倍减去数组总合后得到目标数字的两倍这个方法，最后我们还是可以用hashmap来计数最后返回只出现一次的目标数字。接下来看bitwise方法，
+               通过xor运算我们可以得到出现过奇数次的数字，但是怎么区分1次和3次呢，我们只需要出现一次的，因此需要需要在某数字已经出现两次时将第三次出现抵消。我们可以使用两个变量，seenonce代表出现一次，seentwice代表出现两次初始值均设置为0.遇到一个相同的数字时将
+               seenonce与seemtwice的bitwise not做bit wise and操作，即 ~seenTwice & (seenOnce ^ num)，同理对seentwice做 ~seenOnce & (seenTwice ^ num)操作。我的理解是这样做是为了在遇到第二次时将第一次的记录复原为0，在第三次遇到时将第二次的记录复原为0
+               以达到当且仅当某数字只遇到过一次时是有记录的，更多次数时记录都被xor & ～的运算抵消掉了。这样我们就可以将三次的过滤掉只保留出现一次的。
+            </p>
+            <img src = "./src/images/leetcode136.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
