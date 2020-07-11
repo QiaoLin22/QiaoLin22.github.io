@@ -587,29 +587,28 @@
                除了bitwise其他方法都没有一开始尝试的sort + onepass效率高，重点看bit wise。观察到bit wise xor的一个性质是会将相同的两个数字抵消成0，而0和任何其他非零数字xor得到另一个数字。所以正适合这道题的场景，最终所有成对的数字在xor运算中抵消为0，而0和剩下那个单个的目标xor
                得到目标。因此我们直接把所有数字和0进行xor运算即可，十分巧妙高效的方法。
             </p>
-            <img src = "./src/images/leetcode136.png" height = 500px, width = 1200px alt = "leetcode"/>
+            <img src = "./src/images/leetcode137.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
         <hr>
         <section class = "section">
             <h2>
-                <a href= https://leetcode.com/problems/single-number-ii/ target="blank" class = "leetcodelink">
-                    137. Single Number II
+                <a href= https://leetcode.com/problems/copy-list-with-random-pointer/ target="blank" class = "leetcodelink">
+                    138. Copy List with Random Pointer
                 </a>
             </h2>
             <h3>官方思路:</h3>
             <ul>
-                <li>hashset</li>
-                <li>hashmap</li>
-                <li>bit wise</li>
+                <li>递归</li>
+                <li>迭代</li>
             </ul>
             <h3>思路整理：</h3>
             <p>
-               此题主要考察第三种bitwise方法，稍微总结下其他方法。首先与上题一样可以排序，其次可以使用hashset中每一个不重复元素总合的三倍减去数组总合后得到目标数字的两倍这个方法，最后我们还是可以用hashmap来计数最后返回只出现一次的目标数字。接下来看bitwise方法，
-               通过xor运算我们可以得到出现过奇数次的数字，但是怎么区分1次和3次呢，我们只需要出现一次的，因此需要需要在某数字已经出现两次时将第三次出现抵消。我们可以使用两个变量，seenonce代表出现一次，seentwice代表出现两次初始值均设置为0.遇到一个相同的数字时将
-               seenonce与seemtwice的bitwise not做bit wise and操作，即 ~seenTwice & (seenOnce ^ num)，同理对seentwice做 ~seenOnce & (seenTwice ^ num)操作。我的理解是这样做是为了在遇到第二次时将第一次的记录复原为0，在第三次遇到时将第二次的记录复原为0
-               以达到当且仅当某数字只遇到过一次时是有记录的，更多次数时记录都被xor & ～的运算抵消掉了。这样我们就可以将三次的过滤掉只保留出现一次的。
+               题目要求深拷贝一条特殊的链表，为了阻止循环我们还是需要一个hashmap visitedd来保存原链表节点和复制链表节点的引用。从head开始每次判断是否为null，是的话直接返回。接着判断该原节点是否已经有了一个复制，如果是直接返回该复制的引用。如果以上条件都不满足就要创建该原节点的拷贝了，
+               根据原节点val创建复制节点并加入visited。接下来递归调用head的next节点和random节点即可。值得注意的是由于原节点处于链表上，next不会产生逆序但是random完全是随机的，因此我们每来到一个新节点都要判断该节点是否处理过了，是的话直接返回无需再复制。迭代的思路类似，创建oldnode
+               原节点和newnode复制节点，同样将新老节点的引用存入hashmap visited，在oldnode非空时按照next顺序遍历oldnode和newnode，但是在连接newnode的next和random时要特别注意。由于可能当前位置的next位置已经被之前的random所创建出来了，我们仍然需要判断这个复制节点是否已经被创建过了，
+               如果是直接返回该复制节点，否则再创建这个新节点并加入visited。相当于我们从老链表头部开始，创建每个节点的复制和它next和random索引，当next索引已经被之前random创建过时不再创建复制而直接返回已有的复制。
             </p>
-            <img src = "./src/images/leetcode136.png" height = 500px, width = 1200px alt = "leetcode"/>
+            <img src = "./src/images/leetcode138-1.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
     </main>
 </body>
