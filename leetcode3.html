@@ -587,6 +587,27 @@
                除了bitwise其他方法都没有一开始尝试的sort + onepass效率高，重点看bit wise。观察到bit wise xor的一个性质是会将相同的两个数字抵消成0，而0和任何其他非零数字xor得到另一个数字。所以正适合这道题的场景，最终所有成对的数字在xor运算中抵消为0，而0和剩下那个单个的目标xor
                得到目标。因此我们直接把所有数字和0进行xor运算即可，十分巧妙高效的方法。
             </p>
+            <img src = "./src/images/leetcode136.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/single-number-ii/ target="blank" class = "leetcodelink">
+                    137. Single Number II
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>hashset</li>
+                <li>hashmap</li>
+                <li>bit wise</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+               可以用hashset来去重复，计算set中所有数字总合的三倍后减去数组总合得到目标数字二倍，也可以直接用hashmap计数然后返回只出现了一次的目标数字。重点来看空间o1的bit wise方法。我们根据上一题得知xor运算可以将所有出现偶数次的数字抵消，奇数次的留下。但是怎么区别出现一次和出现三次的
+               呢。我们可以用两个变量seenonce和seentwice，初始值均为0，共同作用来达到将出现三次也抵消的目的。这里用到的操作是先对数字做xor运算然后再对另一个变量的bitwise not做bitwise and运算，即seenOnce = ~seenTwice & (seenOnce ^ num)和seenTwice = ~seenOnce & (seenTwice ^ num)。
+               到达的效果是当某数字2出现一次时，seenonce更新为2。遇到两次时，seentwice更新为2，seenonce被抵消。遇到三次时seentwice也被抵消。所以当且仅当出现一次时该数字没有被抵消，正是我们要的效果。
+            </p>
             <img src = "./src/images/leetcode137.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
         <hr>
