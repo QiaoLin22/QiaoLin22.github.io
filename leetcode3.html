@@ -624,12 +624,55 @@
             </ul>
             <h3>思路整理：</h3>
             <p>
-               题目要求深拷贝一条特殊的链表，为了阻止循环我们还是需要一个hashmap visitedd来保存原链表节点和复制链表节点的引用。从head开始每次判断是否为null，是的话直接返回。接着判断该原节点是否已经有了一个复制，如果是直接返回该复制的引用。如果以上条件都不满足就要创建该原节点的拷贝了，
+               题目要求深拷贝一条特殊的链表，为了阻止循环我们还是需要一个hashmap visited来保存原链表节点和复制链表节点的引用。从head开始每次判断是否为null，是的话直接返回。接着判断该原节点是否已经有了一个复制，如果是直接返回该复制的引用。如果以上条件都不满足就要创建该原节点的拷贝了，
                根据原节点val创建复制节点并加入visited。接下来递归调用head的next节点和random节点即可。值得注意的是由于原节点处于链表上，next不会产生逆序但是random完全是随机的，因此我们每来到一个新节点都要判断该节点是否处理过了，是的话直接返回无需再复制。迭代的思路类似，创建oldnode
                原节点和newnode复制节点，同样将新老节点的引用存入hashmap visited，在oldnode非空时按照next顺序遍历oldnode和newnode，但是在连接newnode的next和random时要特别注意。由于可能当前位置的next位置已经被之前的random所创建出来了，我们仍然需要判断这个复制节点是否已经被创建过了，
                如果是直接返回该复制节点，否则再创建这个新节点并加入visited。相当于我们从老链表头部开始，创建每个节点的复制和它next和random索引，当next索引已经被之前random创建过时不再创建复制而直接返回已有的复制。
             </p>
             <img src = "./src/images/leetcode138-1.png" height = 500px, width = 1200px alt = "leetcode"/>
+            <img src = "./src/images/leetcode138-2.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/word-break/ target="blank" class = "leetcodelink">
+                    139. Word Break
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>dfs</li>
+                <li>dp</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+               暴力和memoization完全劣于dp，因此重点分析dp。首先尝试了基于indexof的dfs并结合memeoization（之前考虑过并失败的位置跳过）方法，达到了不错的效果，核心思想是dfs backtracking但是同一个位置只尝试一次大大加快了速度。接下来看dp，首先dp核心思路在于创建一个起点，通过该起点
+               推导出之后所有的可能性，即每一个位置能否拆分成单词都可以由前面一个位置的情况得知。起点自然是一个空的string，注意空string可以有worddict中的单词组成，即一个也不使用。我们基于这个起点推导之后位置可否被分解。创建两个指针i和j，i负责遍历string，j负责构建dp数组，此时已知dp【0】
+               为true，欲推导dp【s。length（）】位置情况。每当i来到一个位置，j需要从0开始遍历到i，尝试从j到i这个substring是否包含在worddict中，没有自然不可能拆解，有的话仍需要同时满足dp【j】位置是可拆解的。可以理解为只有当一个位置是可拆解的，并且从该位置到i位置的substring在dict中时
+               i位置才确定是可拆解的，两者缺一不可。例如catsanddog中虽然dog是包含在worddict中的，但是catsan这个祖先是不可拆解的，所以catsanddog自然也不可拆解。从上个地方可以来到下个地方，但是从起点无法来到上个地方，那么从起点无法来到下个地方。这样一轮遍历后所有可拆解位置都将被标记，我们
+               只需要返回 dp[s.length()]即可。
+            </p>
+            <img src = "./src/images/leetcode139-1.png" height = 500px, width = 1200px alt = "leetcode"/>
+            <img src = "./src/images/leetcode139-2.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/linked-list-cycle/ target="blank" class = "leetcodelink">
+                    141. Linked List Cycle
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>hashset</li>
+                <li>two pointer</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+               hashset比较好想到，如果是循环那么head终究会到达一个曾经到达过的节点，届时返回true即可。第二种双指针达到了零额外空间，设置一快一慢两个指针分别指向head和head的next指针，此时我们让快节点每次向前移动两个节点而慢节点只移动一个，当快慢不指向同一个节点时持续这个循环。根据环的性质，
+               如果存在环时快终将追上慢，此时循环结束返回true，否则必然会出现快指针越界的情况，即head的next为空或者head的nex的next为空，届时我们捕捉这种情况并返回false即可，此时不存在环。
+            </p>
+            <img src = "./src/images/leetcode141.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
     </main>
 </body>
