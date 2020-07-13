@@ -674,6 +674,46 @@
             </p>
             <img src = "./src/images/leetcode141.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/linked-list-cycle-ii/ target="blank" class = "leetcodelink">
+                    142. Linked List Cycle II
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>hashset</li>
+                <li>two pointer</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+               hashset的思路同样可行但是使用了额外空间，此题有一个巧妙的o1 space方法，结合下图来看。当有环时我们由上题知道快指针一定会追上慢指针，具体位置不知道，但是我们知道快指针一定比慢指针多走了一倍的路程。将总长度分成a，b，c三部分，我们要求的是a部分的长度，而在快指针追上慢指针时他们俩的
+               位置为a+b。此时根据之前分析的我们可以得出等式a+b+c+b= 2（a+b）整理得到a = c！也就是说我们如果此时再创建一个慢指针slow2从开头向后走，同时原慢指针按想通速率移动，当他们相遇时恰好会在位置q，因为a段和c段距离是相等的。因此当slow2指针slow指针相遇时我们直接返回slow2指针即可。
+            </p>
+            <img src = "./src/images/wechat3.png" height = 500px, width = 600px alt = "leetcode"/>
+            <img src = "./src/images/leetcode142.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/reorder-list/ target="blank" class = "leetcodelink">
+                    143. Reorder List
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>3 two pointer methods combined</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                使用hashmap遍历解决了，但是很占额外空间并且速度慢，此题有一种巧妙的方法将问题拆成三个简单问题并且逐一解决。总体思路是先将链表后半部分反转，从反转点（中点）拆成两个独立链表，最后合并成我们想要的答案，合并方式为两个链表的节点每次分别使用其中一个，即merge两个链表。首先是找到中点，
+                用老办法快慢指针快指针跑到头时慢指针正好指向中点。接着是反转，先将头半部分也就是slow的next指向null断开两个链表，接着仍然使用双指针，在后半链表head前设置prev指针，head处设置cur指针。当cur不为空时进行循环，每次先保存cur下一个位置next，然后cur指向prev，prev指向cur，cur指向
+                next就可以完成局部反转，循环结束完成全局反转。最后看merge，当head1不为空时保存head1下个位置next，将head1下个位置指向head2，head1移动到head2位置（即下个位置），head2指向之前存贮的next就可以完成两个节点局部合并。提一下存贮的目的在于不丢失指针，否则head1指向head2后原本head1下一个应该
+                接到head2后的指针就丢失了。循环结束后完成所有合并，题目也就做完了。
+            </p>
+            <img src = "./src/images/leetcode143.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
