@@ -714,6 +714,45 @@
             </p>
             <img src = "./src/images/leetcode143.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/binary-tree-preorder-traversal/ target="blank" class = "leetcodelink">
+                    144. Binary Tree Preorder Traversal
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>dfs iteration traversal with stack</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                此题考察使用iteration而非递归preorder遍历树，我们知道iteration遍历树的老办法bfs用queue，dfs用stack此题也不例外。对于每个节点先将所有左节点入栈，入栈同时加入答案，穷尽后开始从尾部pop找回上个根节点，再进入该根节点右节点继续主循环。具体过程和94题雷同，只是加入res的时机不同而已。
+            </p>
+            <img src = "./src/images/leetcode144.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/lru-cache/ target="blank" class = "leetcodelink">
+                    146. LRU Cache
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>hashmap + doublelinkedlist</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                这是一道热门的题，因为他不仅全面考察了两种数据结构linkedlist和hashmap的使用，对oop编程也有考察，需要自己构建需要的类和数据结构。先谈谈大的框架，首先根据题目我们看出有两个主要要求，快速的存取key value pairs功能，这个肯定是hashmap了很容易想到。其次是这个缓存功能也就是加入最新的去掉最老的
+                这个功能，这个功能在常见数据结构里只有queue有，但是queue没法和hashmap兼容起来。最后就是每当get一个有的数字后这个数字就成为最新的数字，即最近使用过的数字，queue也无法支持内部元素的快速移动。那么哪个数据结构支持快速移动或者删除元素呢，自然想到linkedlist。有了linkedlist和hashmap的想法后我们
+                还需要做一些调整，首先为了快速访问最老的，或者说linkedlist尾部元素，我们可以使用双向linkedlist其次为了适应从key找value的特性，我们需要将node改造成可以存贮一对key value的结构而不只是一个val。有了这个超级数据结构（linkednodelist）后我们只需要将它的节点存放在hashmap中，并结合一些辅助方法达到题目所有要求。
+                为了方便我们可以在linkednodelist两端设置两个dummyhead和dummytail方便快速拿到头尾的node。观察发现我们在get中当这个数字已经有的时候需要更新该数字对应的节点在linkednodelist的head，所以一个movetohead方法是必须的。接着put方法中还是先判断该数字对应节点是否已经有了，有了直接movetohead。没有的话先判断
+                map是否已经满了，如果是就要先移除list尾部，拿到尾部节点（为了从map中移除该节点对应key）再添加新节点到list头部，所以我们还需要addtohead，removetai和gettail三个方法。如果put时该key不在map中且map没满，我们直接addtohead即可无需移除尾部。最后将新新节点添加到map中即可。方法具体实现见图。
+            </p>
+            <img src = "./src/images/leetcode146-1.png" height = 500px, width = 1200px alt = "leetcode"/>
+            <img src = "./src/images/leetcode146-2.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
