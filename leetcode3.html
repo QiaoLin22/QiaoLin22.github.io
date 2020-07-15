@@ -792,6 +792,23 @@
             </p>
             <img src = "./src/images/leetcode148.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/evaluate-reverse-polish-notation/ target="blank" class = "leetcodelink">
+                    150. Evaluate Reverse Polish Notation
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>stack</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                经典的计算机stack四则运算模式，碰到运算符弹出栈顶两个算子按照碰到的运算符做运算后压入栈顶。这个思路明确后实现很简单，初始化两个算子op1，op2碰到运算符时弹出栈顶两个int负值给op1，op2后运算并压入栈顶。没有运算符只是普通string的话转换成int压入栈顶即可。这样所有string全部处理完毕后栈顶只有一个结果值，弹出即可。
+            </p>
+            <img src = "./src/images/leetcode150.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
