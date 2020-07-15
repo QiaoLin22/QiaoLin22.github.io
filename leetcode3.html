@@ -747,11 +747,30 @@
                 这是一道热门的题，因为他不仅全面考察了两种数据结构linkedlist和hashmap的使用，对oop编程也有考察，需要自己构建需要的类和数据结构。先谈谈大的框架，首先根据题目我们看出有两个主要要求，快速的存取key value pairs功能，这个肯定是hashmap了很容易想到。其次是这个缓存功能也就是加入最新的去掉最老的
                 这个功能，这个功能在常见数据结构里只有queue有，但是queue没法和hashmap兼容起来。最后就是每当get一个有的数字后这个数字就成为最新的数字，即最近使用过的数字，queue也无法支持内部元素的快速移动。那么哪个数据结构支持快速移动或者删除元素呢，自然想到linkedlist。有了linkedlist和hashmap的想法后我们
                 还需要做一些调整，首先为了快速访问最老的，或者说linkedlist尾部元素，我们可以使用双向linkedlist其次为了适应从key找value的特性，我们需要将node改造成可以存贮一对key value的结构而不只是一个val。有了这个超级数据结构（linkednodelist）后我们只需要将它的节点存放在hashmap中，并结合一些辅助方法达到题目所有要求。
-                为了方便我们可以在linkednodelist两端设置两个dummyhead和dummytail方便快速拿到头尾的node。观察发现我们在get中当这个数字已经有的时候需要更新该数字对应的节点在linkednodelist的head，所以一个movetohead方法是必须的。接着put方法中还是先判断该数字对应节点是否已经有了，有了直接movetohead。没有的话先判断
+                为了方便我们可以在linkednodelist两端设置两个dummyhead和dummytail方便快速拿到头尾的node。观察发现我们在get中当这个数字已经有的时候需要更新该数字对应的节点到linkednodelist的head，所以一个movetohead方法是必须的。接着put方法中还是先判断该数字对应节点是否已经有了，有了直接movetohead。没有的话先判断
                 map是否已经满了，如果是就要先移除list尾部，拿到尾部节点（为了从map中移除该节点对应key）再添加新节点到list头部，所以我们还需要addtohead，removetai和gettail三个方法。如果put时该key不在map中且map没满，我们直接addtohead即可无需移除尾部。最后将新新节点添加到map中即可。方法具体实现见图。
             </p>
             <img src = "./src/images/leetcode146-1.png" height = 500px, width = 1200px alt = "leetcode"/>
             <img src = "./src/images/leetcode146-2.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href= https://leetcode.com/problems/insertion-sort-list/ target="blank" class = "leetcodelink">
+                    147. Insertion Sort List
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>无</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                链表版插入排序，我们可以在遍历原链表的同时构建出有序的目标链表。创建一个dummyhead作为目标链表头部，dummy作为遍历目标链表的指针，cur作为遍历原链表的指针，next作为指针原链表下一个节点的指针防止原指针丢失。有了这些工具后我们就开始遍历原链表，每次拿到cur后先将next指针更新为cur的next防止指针丢失。接着
+                我们在dummy链表中遍历寻找插入点，也就是第一个比cur大的dummy节点之前的位置。找到后开始连接，先将cur的next连接到dummy节点的next，再将dummy节点的next连接到cur即可。注意顺序否则dummy的next指针会丢失。这样一个原节点就插入到dummy链表的正确位置了，我们将dummy复原到dummyhead位置以及将cur指向之前记录好的
+                next位置，之后开始下一轮while循环插入下一个原节点到正确位置。循环结束后原链表为空所有节点插入dummy完毕返回dummyhead.next即可。
+            </p>
+            <img src = "./src/images/leetcode147.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
     </main>
 </body>
