@@ -46,6 +46,45 @@
             <img src = "./src/images/leetcode151.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
         <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/maximum-product-subarray/ target="blank" class = "leetcodelink">
+                    152. Maximum Product Subarray
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>dp</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                经典dp题型，与以往dp不同的是我们这次在对数组进行遍历时不仅要记录局部最大值，还要同时记录局部最小值，因为对数组稍作观察就会发现两个很大的负数乘积会成为新的局部最大值，如果不做记录我们就得不到这种情况下产生的最大值。明确了这个核心思想
+                就可以开始dp了，初始值max，min，result都设置为数组第一个元素，从第二个元素开始dp。此时有两种情况可以帮助思路更加清晰，第一碰到一个非负数，此时max可能变得更大，min也可能变得更小。max从之前的max乘以cur一定会变得更大（或者持平），而min乘以cur也
+                一定会变得更小（或持平），原因在于当前看到的数字是非负的。我们相应更新min和max即可。另一种情况，看到当前数字是个负数。此时max变得更大只能是从之前的min乘以cur得到的，例如-2，3，-2中前两个数min为-6，再看到-2时max就变成-6*-2得到12。注意在更新
+                max前需要把看到cur前的max记录下来用来更新min，例如-2，3时max为3，我们需要记录此时的max，在看到cur也就是-2时将就max和-2相乘得到新的min -6，原因是当看到一个负数cur时，新的min总是从之前的max和cur相乘得到的。这样我们对于数组每个数组都对max和min
+                对应的更新，res自然就是记录max的全局最大值，也就是保留所有出现过的max局部最大值中的最大者。
+            </p>
+            <img src = "./src/images/leetcode152.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/ target="blank" class = "leetcodelink">
+                    153. Find Minimum in Rotated Sorted Array
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>二分查找</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                经典二分查找题型，在这种数组有反转的情况下我们需要做的是将mid的值与数组两侧的值进行比较从而判断目标的相对位置进而移动start和end的位置。一开始使用mid和start比较但是发现做了无用的判断，因为题目是升序排列的所以更好的做法是将mid和end的值做比较从而达到一次
+                就确定移动方向的目的。例如当mid大于start时我们无法判断最小值位置mid左侧还是右侧，就要进行二次判断。而当mid大于end值时说明最小值一定在mid右侧，因此将start更新为mid+1。同理当mid小于end时将end更改到mid位置。这里要注意不要将end更改到
+                mid-1位置，因为此时我们只知道mid位置比end位置小，并没法判断mid是不是我们要找的最小值所以不能直接跳过mid，例如3，1，2中mid小于end如果直接将end更改为mid-1就把正确答案1直接跳过了，这一点要注意。循环结束时start和end都被移动到最小值处，返回nums【start】即可。
+            </p>
+            <img src = "./src/images/leetcode153.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
