@@ -121,6 +121,25 @@
             </p>
             <img src = "./src/images/leetcode156.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/read-n-characters-given-read4/ target="blank" class = "leetcodelink">
+                    157. Read N Characters Given Read4
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>一轮循环</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                很难懂一道题，简要概括了一下题目的意思。n是需要从file中读取的字符数，并不意味着file中字符就是那么多个，真正的file里有多少个字符我们不知道。我们读取file只有一种方法就是通过read4 api每次读取四个字符并存放到一个数组中。我们还需要在每次读取后将获得的字符写入叫buf的数组中使得buf最后长度恰好为n。
+                由于我们需要读取恰好n个字符写入buf，每次read4 api每次只能读取四个字符，所以我们需要在读取到n个字符时停止，此时read4中可能还有剩余的字符。例如file 内容为leetcode总共八个字符，但是我们只需要读取前五个，此时调用read4会读取两次拿到所有八个字符然而我们只需要前五个。因此我们只需要判断剩余字符
+                数量是否小于4个，一旦小于说明我们已经拿到所需的n个字符，舍弃掉read4里剩余的字符并结束循环。我们设置一个计数器total记录已经读取了多少个字符，一个count表示此次读取我们将会写入buf（确实需要的）的字符数量，一旦（n-total）小于4个时我们知道已经读取了n个需要的字符，结束循环即可。读取和复制到buf的具体实现很简单，见代码。
+            </p>
+            <img src = "./src/images/leetcode157.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
