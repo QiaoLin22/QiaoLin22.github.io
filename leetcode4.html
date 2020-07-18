@@ -176,6 +176,25 @@
             </p>
             <img src = "./src/images/leetcode160.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/one-edit-distance/ target="blank" class = "leetcodelink">
+                    161. One Edit Distance
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>一轮遍历</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                首先观察什么情况下满足题目条件，当两个string长度相同时且只有一个位置不同时满足条件，当两个string长度相差1且除了多出的一个字符其他位置全部相同时满足。我们可以根据这两个条件简化问题。首先我们只考虑string s小于等于string t时的情况，当string t长于string s时我们调用isOneEditDistance(t,s)即可
+                。假定s长度小于t后我们开始从s第一个位置一个个比较，相等自然不用说，不想等时有两种情况。当s和t长度不同时遇到一个不想等字符，例如s = "ab", t = "acb"，我们只需比较s.substring(i)和t.substring(i+1)是否相同，如果相同则满足条件，此时c是那个插入的位置。当s和t长度相同时同理，只需要比较
+                s.substring(i+1)和t.substring(i+1)是否相同，例如 s = "1203", t = "1213"，如果相同满足条件，此时不同的位置是被替换的位置。如果s里所有字符都和t里前s长度个字符相等，我们还需要判断s和t长度是否只相差一个，是的话则满足条件。
+            </p>
+            <img src = "./src/images/leetcode161.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
