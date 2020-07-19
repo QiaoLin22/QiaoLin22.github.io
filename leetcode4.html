@@ -195,6 +195,42 @@
             </p>
             <img src = "./src/images/leetcode161.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/find-peak-element/ target="blank" class = "leetcodelink">
+                    162. Find Peak Element
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>二分查找</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                线性查找的思路很容易想到，二分查找经常用在有序的数组上，此题并未声明有序但是我们依然可以基于一种巧妙的思路将此题转换为二分查找问题从而提升速度。核心思想在于由于我们只需要寻找到任意一个peak，我们可以根据二分查找中mid位置大小和mid+1位置大小来推断出peak的相对位置。当nums[mid] > nums[mid+1]时，peak的
+                数组段处于下降趋势，因此peak只能在mid或者mid左侧，将right更新为mid。当nums[mid] < nums[mid+1]时数组段处于上升阶段，peak只能在mid右侧，更新left为mid+1。这样进行二分查找当循环结束时left和right都必然指向peak位置，返回left即可。
+            </p>
+            <img src = "./src/images/leetcode162.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/missing-ranges/ target="blank" class = "leetcodelink">
+                    163. Missing Ranges
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>无</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                此题可以通过遍历nums数组来构建答案，但是有三个地方要注意edge case，首先是进入nums【0】时，如果nums【0大于lower时需要添加前面缺失的range，如果nums【0】和lower相差1则不需要箭头，否则需要。之后每次更新lower到i+1处，注意当i == upper时需要立即结束循环，避免当i等于2147483647时lower越界。当nums中所有i处理完毕
+                后我们仍需要考虑处在nums最后一个数字和upper之间的range，即当循环结束后lower <= upper时，同理判断upper是否大于lower，如果是需要添加括号，等于则不必。
+            </p>
+            <img src = "./src/images/leetcode163.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
