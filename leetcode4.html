@@ -231,6 +231,43 @@
             </p>
             <img src = "./src/images/leetcode163.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/compare-version-numbers/ target="blank" class = "leetcodelink">
+                    165. Compare Version Numbers
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>无</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                既然要求分开点去比较version号，我们直接调用split api即可，将string1，string2拆分成两个string数组v1和v2.之后我们以较长数组为基准进行遍历，用尽的数组剩余部分设置为0，每次拿出一截版本号parse成interger（v1diigit和v2digit）进行对比。相等暂时无法判断，continue即可。如果v1digit大则必然version1大，返回1。同理
+                v2digit大时必然versoin2大，返回-1.如果所有的都一样则说明version相等，循环结束后返回0.
+            </p>
+            <img src = "./src/images/leetcode165.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/fraction-to-recurring-decimal/target="blank" class = "leetcodelink">
+                    166. Fraction to Recurring Decimal
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>利用长除法性质发现循环，利用long类型避免int overflow</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                题目看似简单，实则很多地方要注意。整理了一下总共有两大部分需要小心，第一是题目核心小数点后循环的判断，第二是经常出现的int整型overflow问题，在除法中经常出现。overflow的问题我们用来办法long代替int即可解决。循环的判断就比较巧妙，标答使用了hashmap来判断。为什么想到hashmap呢，其实是基于长除法的性质，我们来看下1除以6时发生了什么，
+                首先1除以6得到0，这是小数点前的一位，但是由于余数为1长除法没有结束，进入小数点后的部分。此时我们用小学学过的知识，将1乘上10得到10再除以6，得到1为小数点后第一位，余数为4.再把4乘上10得到40，除以6得到6余数为4.此时我们发现循环开始了，原因是余数一直为4，导致商对应位置一直为6.因此基于这个事实我们发现当余数重复出现了以前出现过的数字
+                时可以判定为有循环，此时加入括号终止循环即可。判断重复自然是老办法hashmap，key存储余数，value存储当前商的长度。例如0.16时第一个6的value为3，当下一个6重复时我们在3位置插入左括号，在结尾append一个右括号后结束循环即可。插入操作可以使用stringbuilder自带的insert api来完成，其余操作并不复杂，见下图。
+            </p>
+            <img src = "./src/images/leetcode166.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
