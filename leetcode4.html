@@ -304,6 +304,26 @@
             </p>
             <img src = "./src/images/leetcode168.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/majority-element/ target="blank" class = "leetcodelink">
+                    169. Majority Element
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>hashmap</li>
+                <li>sort</li>
+                <li>divide and conquer</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                主要说说sort的方法，如果只是求出现次数最多的没有给出 more than ⌊ n/2 ⌋ times这个条件，我们就只能分别统计每个不同的数字出现次数，记录下最多次数字的下标然后返回，这个一轮遍历即可完成。答案思路充分利用了题目条件，既然出现次数大于总数一半，我们sort后这个
+                出现次数多于一半的数字必然处于数组中间，也就是nums[nums.length/2]位置，因此我们直接返回该位置数字即可。
+            </p>
+            <img src = "./src/images/leetcode169.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
