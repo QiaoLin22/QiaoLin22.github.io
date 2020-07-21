@@ -252,7 +252,7 @@
         <hr>
         <section class = "section">
             <h2>
-                <a href=https://leetcode.com/problems/fraction-to-recurring-decimal/target="blank" class = "leetcodelink">
+                <a href=https://leetcode.com/problems/fraction-to-recurring-decimal/ target="blank" class = "leetcodelink">
                     166. Fraction to Recurring Decimal
                 </a>
             </h2>
@@ -267,6 +267,42 @@
                 时可以判定为有循环，此时加入括号终止循环即可。判断重复自然是老办法hashmap，key存储余数，value存储当前商的长度。例如0.16时第一个6的value为3，当下一个6重复时我们在3位置插入左括号，在结尾append一个右括号后结束循环即可。插入操作可以使用stringbuilder自带的insert api来完成，其余操作并不复杂，见下图。
             </p>
             <img src = "./src/images/leetcode166.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=hhttps://leetcode.com/problems/two-sum-ii-input-array-is-sorted/ target="blank" class = "leetcodelink">
+                    167. Two Sum II - Input array is sorted
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>双指针</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                我们可以充分利用数组已经有序的条件使用双指针一轮遍历来进行搜索。设置start为0，end为length-1，每次比较nums【start】+nums【end】与target大小关系，相等则返回答案数组，小于则向后移动start指针即start++，大于则向前移动end指针即end--，
+                由于每个输入必有一组答案，找到后直接返回答案即可。
+            </p>
+            <img src = "./src/images/leetcode167.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/excel-sheet-column-title/ target="blank" class = "leetcodelink">
+                    168. Excel Sheet Column Title
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>一轮循环</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                答案的思路非常巧妙，利用了char在utf8字符表中的相对位置来进行int和char之前的转换，简而言之就是根据一个数字距离a的位置来自动将该数字转换成对应的char。为了得到相对字符a的距离，拿到一个int后先对他进行--操作，例如1--得到0说明距离a为0，转换为a，
+                2距离a为1转换为b以此类推。26被转换为z，当距离大于25时重新从0开始计算。例如27距离a为26，也就是走了一轮字母表后回到啊，因此转换成a。创建一个stringbuilder，每次判断末尾转为哪个字符并插入stringbuilder开头，n除以26进入下一位。当n为0时循环结束。
+            </p>
+            <img src = "./src/images/leetcode168.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
     </main>
 </body>
