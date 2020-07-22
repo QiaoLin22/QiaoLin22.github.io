@@ -324,6 +324,60 @@
             </p>
             <img src = "./src/images/leetcode169.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/two-sum-iii-data-structure-design/ target="blank" class = "leetcodelink">
+                    170. Two Sum III - Data structure design
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>hashmap</li>
+                <li>sort</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                自己设计数据结构的two sum，简单说说sort的解法。首先判断使用哪种数据结构，根据题目我们需要动态添加，快速查找的功能，马上想到arraylist。在twosum类里初始化一个arraylist对象并在构造器里实例化，就可以在类里拿来使用了。add方法就是直接往list里add那个数字。
+                find方法我们先调用collections的sort api对list进行排序后，使用双指针进行查找即可。具体实现同167题，见下图。
+            </p>
+            <img src = "./src/images/leetcode170.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/excel-sheet-column-number/ target="blank" class = "leetcodelink">
+                    171. Excel Sheet Column Number
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>一轮循环</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                与168题类似，利用utf8机制在char和int间实现转换，由于a转换成utf是65，我们需要将char转换成int后减去64，每增加一位将结果乘以26即可。
+            </p>
+            <img src = "./src/images/leetcode171.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/factorial-trailing-zeroes/ target="blank" class = "leetcodelink">
+                    172. Factorial Trailing Zeroes
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>计算所有5的幂个数</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                其实是一道基础数论题，0个数由2个数和5个数决定，2肯定够用，所以由5的个数决定。这里要注意5的幂中所有5都要考虑进去，方法很简单，首先计算5的倍数个数，其次25倍数个数，然后125以此类推，知道该5的幂超过n。为了处理整数上限问题
+                我们将base设置为long类型，当base小于等于n时持续计算5的所有幂个数即可。实现很简单见下图。
+            </p>
+            <img src = "./src/images/leetcode172.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
