@@ -378,6 +378,45 @@
             </p>
             <img src = "./src/images/leetcode172.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/binary-search-tree-iterator/ target="blank" class = "leetcodelink">
+                    173. Binary Search Tree Iterator
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>inorder stack traverse</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                首先思考底层用什么数据结构，我们要从小到大traverse一颗bst，也就是inorder traverse，根据以前的经验我们知道stack可以完美实现这个操作。我们先将根节点左子树入stack，为了效率我们每次只添加左子树入stack而不是一口气traverse所有节点
+                造成资源浪费。例如题目中的树，我们先将最小的（左子树）7和3入stack，调用next时我们先对stack进行pop，然后若该节点有右节点，我们需要将以该节点为根节点的左子树入stack。这个顺序和inorder traverse bst的顺序一致。next方法最后返回最先pop
+                的节点的val，hasnext方法直接调用isempty判断stack是否为空即可。
+            </p>
+            <img src = "./src/images/leetcode173.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/largest-number/ target="blank" class = "leetcodelink">
+                    179. Largest Number
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>重写compare方法</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                标答使用的方法是实现了一个自定义的LargerNumberComparator类继承了string的comparator类，然后重写了其中的compare方法，通过这个自定义的string的comparator我们就可以方便的对原数组进行排序得到我们想要的顺序。这个自定义的comparator接受a和b两个string参数，然后比较a+b和b+a大小关系后
+                以逆序输出，例如3和30被转化出330和303进行比较后会得出，303大于330的反向结果，我们需要对比较结果取反的原因是array的sort方法默认从小到大排序，而我们需要从大到小排序，因此定义成逆序后调用sort正好可以得到降序结果。有了这个自定义comparator后我们将原int数组转换成string数组后调用sort就可以得到
+                降序的结果，处理一个edge case即全部为0后将结果string返回即可。个人感觉反向比较的思路不是很自然，我们完全可以就按照从小到大的顺序sort输入的string数组，之后再逆序加入到答案string当中返回，特殊情况判断末位（最大的string）是否为0即可，见下图。
+            </p>
+            <img src = "./src/images/leetcode179.png" height = 500px, width = 1200px alt = "leetcode"/>
+            <img src = "./src/images/leetcode179-1.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
