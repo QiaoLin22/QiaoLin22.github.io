@@ -71,6 +71,9 @@ body {
 .project-section {
     color: #777;
 }
+.project-section h3 {
+    color: antiquewhite;
+}
 
 .project-list-item {
     margin-bottom: 1rem;
