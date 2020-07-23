@@ -391,8 +391,7 @@
             </ul>
             <h3>思路整理：</h3>
             <p>
-                首先思考底层用什么数据结构，我们要从小到大traverse一颗bst，也就是inorder traverse，根据以前的经验我们知道stack可以完美实现这个操作。我们先将根节点左子树入stack，为了效率我们每次只添加左子树入stack而不是一口气traverse所有节点
-                造成资源浪费。例如题目中的树，我们先将最小的（左子树）7和3入stack，调用next时我们先对stack进行pop，然后若该节点有右节点，我们需要将以该节点为根节点的左子树入stack。这个顺序和inorder traverse bst的顺序一致。next方法最后返回最先pop
+                首先思考底层用什么数据结构，我们要从小到大traverse一颗bst，也就是inorder traverse，根据以前的经验我们知道stack可以完美实现这个操作。我们先将根节点左子树入stack，例如题目中的树，我们先将最小的（左子树）7和3入stack，调用next时我们先对stack进行pop，然后若该节点有右节点，我们需要将以该节点为根节点的左子树入stack。这个顺序和inorder traverse bst的顺序一致。next方法最后返回pop
                 的节点的val，hasnext方法直接调用isempty判断stack是否为空即可。
             </p>
             <img src = "./src/images/leetcode173.png" height = 500px, width = 1200px alt = "leetcode"/>
