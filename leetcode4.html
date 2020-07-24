@@ -416,6 +416,44 @@
             <img src = "./src/images/leetcode179.png" height = 500px, width = 1200px alt = "leetcode"/>
             <img src = "./src/images/leetcode179-1.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/reverse-words-in-a-string-ii/ target="blank" class = "leetcodelink">
+                    186. Reverse Words in a String II
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>reverse string + reverse word</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                此题意在让我们用o1 space来实现变换。观察到对数组的变换可以拆分成两步，第一步reverse整个数组，这个o1很容易实现。第二步是对空格之间的每一个word进行reverse，我们可以使用双指针来定位需要reverse的起点和终点来实现这个局部reverse。也就是说我们只需要实现一个将数组中两个特定指针之间的部分reverse即可。
+                这个可以用一轮while循环加首位交换完成。reverse每个word时我们设置start，end两个指针，end先找到下一个空格位置，然后reverse start和end-1之间的部分，将start，end移动到end+1位置，当end小于s长度时重复这一循环即可完成每个word的reverse。
+            </p>
+            <img src = "./src/images/leetcode186.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/repeated-dna-sequences/ target="blank" class = "leetcodelink">
+                    187. Repeated DNA Sequences
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>hashset</li>
+                <li>rolling hashing</li>
+                <li>bitmask</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                bitmask核心思路和hashset类似，简单说下好想到的hashset方法。遍历所有长度为10的substring，初始化两个hashset，seen和output，seen记录所有见过的substring，如果添加时某个string已经见过了则说明满足题目条件，加入ouput集合中，否则就是只出现一次的不满足条件。所有substring
+                筛选完成后将output集合，即出现过多余一次的string的集合转换为arraylist返回即可。
+            </p>
+            <img src = "./src/images/leetcode187.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
