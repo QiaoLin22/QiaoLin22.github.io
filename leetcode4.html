@@ -454,6 +454,61 @@
             </p>
             <img src = "./src/images/leetcode187.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/rotate-array/ target="blank" class = "leetcodelink">
+                    189. Rotate Array
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>Cyclic Replacements</li>
+                <li>Using Reverse</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                说下reverse的方法，思路为首先reverse整个数组，然后再将数组分成k之前和之后两部分分别reverse得到我们需要的结果。reverse方法为设定start end两个指针，在start小于end时一次交换两个指针之间所有位置的数字，实现见下图。
+            </p>
+            <img src = "./src/images/leetcode189.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/reverse-bits/ target="blank" class = "leetcodelink">
+                    190. Reverse Bits
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>bit manipulation</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                题目要求反转所有的bit，自然想到bit manipulation，我们需要从input的右侧开始复制每一位bit直到左侧。观察发现通过右移input我们可以拿到input右侧开始的每一位，那么怎么判断这一位上是1还是0呢。可以使用（n & 1）的方法快速判断
+                n的右侧bit是1还是0，如果是1我们就要将res左侧位置变为1，通过res++方法实现，0的话不用做处理。这样我们就将res左侧复制为了input n右侧对应位置的bit值，进入下一轮循环后将res左移重复上述操作即可（开始复制res左侧下一个位置为input右侧对应位置）。
+            </p>    
+            <img src = "./src/images/leetcode190.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/number-of-1-bits/ target="blank" class = "leetcodelink">
+                    191. Number of 1 Bits
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>bit manipulation</li>
+                <li>bit manipulation trick</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                思路一是通过右移操作检查n的每一位并记录有多少个1出现，判断末位是否为1的方法和上题相同，使用（n & 1）操作。第二种思路很巧妙，每次直接找到n 右侧下一个1，计数，将该位置1变为0，直到n本身变为0循环结束。难点在于如何将n右侧下一个1变为0，答案使用了
+                n & （n-1）操作，n-1将n右侧下一个1位置变为0，右侧所有位置变为1，&操作再将右侧所有位置变为0，也就是将n右侧下一个1位置变为了0。总结下两个位运算技巧，第一判断末位是1还是0时使用（n & 1）操作。第二将右侧下一个1位置变为0时使用 n & （n-1）操作。
+            </p>    
+            <img src = "./src/images/leetcode191.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
