@@ -509,6 +509,45 @@
             </p>    
             <img src = "./src/images/leetcode191.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/house-robber/ target="blank" class = "leetcodelink">
+                    198. House Robber
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>dp</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                经典dp题型，我们直到dp的关键就是如何从前面的已知状态推导出下一个未知状态，此题也不例外。观察发现每次新房子所能得到的最大值取决于前两个房子处的最大值，假设前两个房子所有取得的最大值分别是prevmax和curmax，那么新curmax自然是旧prevmax+当前房子值和
+                旧curmax中的较大者，因为我们不能从连续的房子中取的值。那么初始premax和curmax设置为0，每次先将旧premax值保存，更新旧premax为旧curmax，更新旧curmax为max（旧prevmax+当前值，旧curmax）即可。dp问题看上去很抽象，实则本质一般就是一个数学通向归纳
+                或者递推关系式，比如此题每个房子处取得最大值和前两个房子处的关系为f(k) = max(f(k – 2) + Ak, f(k – 1))，而该等式一般可由题目条件得出。
+            </p>    
+            <img src = "./src/images/leetcode198.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/binary-tree-right-side-view/ target="blank" class = "leetcodelink">
+                    199. Binary Tree Right Side View
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>iteration</li>
+                <li>recursion</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                很容易想到level order traverse，然后每层只拿最右边一个node。方法我们已经很熟悉了，recursion或者iteration。iteration自然想到用queue，每次处理一层node时只将最后一个node加入答案即可。recursion则是需要先递归右子树，并且每层只将第一个来到的
+                最右边节点加入答案。
+            </p>    
+            <img src = "./src/images/leetcode199.png" height = 500px, width = 1200px alt = "leetcode"/>
+            <img src = "./src/images/leetcode199-2.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
