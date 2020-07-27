@@ -564,11 +564,29 @@
             <p>
                经典2d array搜索题型，方法我们已经很清楚有dfs或者bfs两种常规思路。先看dfs，典型实现是recursion，当然stack iteration也是可以的只是没有特别必要。该题型为了不在搜索时走回头路往往需要记录走过的格子，这里将格子值从1变为0就可以达到这个目的。遍历二维数组，发现
                1时即进入dfs并且将答案++，进入dfs recursion后首先判断是否满足条件，即不出界和值为1，如果满足条件则将值变为0后递归它上下左右的格子将这个island全部标记好。我们最后只要返回主循环中进入了多少次dfs即可找到island个数。iteration只能使用queue，同样在主循环中
-               遍历二维数组，找到值为1的格子后答案++并将值变为0，我们每次将这个格子的行数乘以总列数+列数加入队列，每次拿到这个数后再拆分成行数和列数。将该格子入队后在队列非空时循环添加该格子上下左右所有满足条件的格子，即bfs的过程。一个while循环将修改一整个island的值为0，之后
+               遍历二维数组，找到值为1的格子后答案++并将值变为0，我们每次将这个格子的行数乘以总列数+列数加入队列，每次拿到这个数后再拆分成行数和列数。将该格子入队后在队列非空时循环添加该格子上下左右所有满足条件的格子到queue，即bfs的过程。一个while循环将修改一整个island的值为0，之后
                同理返回主循环进入bfs的次数即可。
             </p>    
             <img src = "./src/images/leetcode200.png" height = 500px, width = 1200px alt = "leetcode"/>
             <img src = "./src/images/leetcode200-2.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/bitwise-and-of-numbers-range/ target="blank" class = "leetcodelink">
+                    201. Bitwise AND of Numbers Range
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>bit shit</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+               十分巧妙的bit wise op题目，要点是观察到答案其实就是m和n的最长公共前缀，common prefix。由于二进制和位运算的性质，在m到n的所有二进制数中，只要任何一位上出现过0，在结果中这一位就是0，这是bit wise and的性质。于是问题变成了寻找m和n的公共前缀的问题，在找到这个前缀后
+               再将后面的位补全为0即可。寻找前缀的方法是当m和n不想等时，说明没有找到公共前缀，将m和n都进行右移，并记录下右移的次数（为了之后补全0使用）。在相等后我们就找到了公共前缀，通过左移将之前右移去掉的0补全即可。
+            </p>    
+            <img src = "./src/images/leetcode201.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
     </main>
 </body>
