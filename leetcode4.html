@@ -548,6 +548,28 @@
             <img src = "./src/images/leetcode199.png" height = 500px, width = 1200px alt = "leetcode"/>
             <img src = "./src/images/leetcode199-2.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/number-of-islands/ target="blank" class = "leetcodelink">
+                    200. Number of Islands
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>iteration bfs</li>
+                <li>recursion dfs</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+               经典2d array搜索题型，方法我们已经很清楚有dfs或者bfs两种常规思路。先看dfs，典型实现是recursion，当然stack iteration也是可以的只是没有特别必要。该题型为了不在搜索时走回头路往往需要记录走过的格子，这里将格子值从1变为0就可以达到这个目的。遍历二维数组，发现
+               1时即进入dfs并且将答案++，进入dfs recursion后首先判断是否满足条件，即不出界和值为1，如果满足条件则将值变为0后递归它上下左右的格子将这个island全部标记好。我们最后只要返回主循环中进入了多少次dfs即可找到island个数。iteration只能使用queue，同样在主循环中
+               遍历二维数组，找到值为1的格子后答案++并将值变为0，我们每次将这个格子的行数乘以总列数+列数加入队列，每次拿到这个数后再拆分成行数和列数。将该格子入队后在队列非空时循环添加该格子上下左右所有满足条件的格子，即bfs的过程。一个while循环将修改一整个island的值为0，之后
+               同理返回主循环进入bfs的次数即可。
+            </p>    
+            <img src = "./src/images/leetcode200.png" height = 500px, width = 1200px alt = "leetcode"/>
+            <img src = "./src/images/leetcode200-2.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
