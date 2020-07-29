@@ -656,7 +656,7 @@
             </ul>
             <h3>思路整理：</h3>
             <p>
-              要判断两个string是否护卫舰isophormic，我们需要每个char的位置信息，自然想到用hashmap去track这个信息。遍历string s，每次将s和t对应位置的char存贮为m和n，当m或者n在s或t里见过时，例如m在string s里见过，将上次见过的位置通过get取出，判断t在该位置上的char是否为n，如果不是则不是isophormic。
+              要判断两个string是否互为isophormic，我们需要每个char的位置信息，自然想到用hashmap去track这个信息。遍历string s，每次将s和t对应位置的char存贮为m和n，当m或者n在s或t里见过时，例如m在string s里见过，将上次见过的位置通过get取出，判断t在该位置上的char是否为n，如果不是则不是isophormic。
               当n在string t里见过时同理操作。最后将（m，i）（n，i）分别存入map，记录下上次看到某个char时的位置。如果全部通过返回true即可。
             </p>    
             <img src = "./src/images/leetcode205.png" height = 500px, width = 1200px alt = "leetcode"/>
