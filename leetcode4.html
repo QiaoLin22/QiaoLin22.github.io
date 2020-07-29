@@ -661,6 +661,25 @@
             </p>    
             <img src = "./src/images/leetcode205.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/reverse-linked-list/ target="blank" class = "leetcodelink">
+                    206. Reverse Linked List
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>iteration</li>
+                <li>recursion</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                iteration很简单，每次修改前后两个node链接即可。recursion则是通过修改head的next到head本身的链接来完成反转，当head或者head的next为空时达到结束条件直接返回head，其他情况递归调用head的next并保存在节点temp中，修改head的next链接使其指向head，而head指向null避免出现循环。最后
+                返回temp即可。递归中我们可以将问题简化为做这一步需要做的事然后将其余工作推给下一层递归，即一个范围小一步的同样问题，在这里我们先将head以后的节点推给递归完成并将结果保存在temp中，然后将这一步的链接连接好，最后返回temp即可。
+            </p>    
+            <img src = "./src/images/leetcode206-2.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
