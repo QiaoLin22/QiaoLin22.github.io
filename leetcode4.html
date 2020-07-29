@@ -680,6 +680,26 @@
             </p>    
             <img src = "./src/images/leetcode206-2.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/course-schedule/ target="blank" class = "leetcodelink">
+                    207. Course Schedule
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>dfs</li>
+                <li>topological sort</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                主要看对于图的深度优先搜索，首先对于图我们要先创建adjacency list，也就是表示每个node都连接到哪些其他node。此题根据prerequisites创建即可。其次搜索前我们注意到可以使用数组来跟踪每节课搜索完成的状态，我们一共需要三种状态，未搜索过还不知道有没有环的为0，正在搜索中的标记为1，已经搜索完毕
+                没有环形成的标记为2，标记的作用在于防止重复搜索提升速度。有了这个核心思想后我们就可以开始搜索，具体方法为在主循环中对所有课程一次进行dfs搜索，进入dfs后先将该课标记为1，然后对该课的所有adjacency list中的子课程进行遍历，如果某个子已经被标记为1则说明有环形成，返回false。没有则对该课程
+                递归进行dfs搜索。如果某门课所有子课程dfs完成后均无环产生则将它标记为2表示已经搜索完毕，之后不会再对它进行搜索。如果主循环结束后仍无环产生则说明这一系列课是可以完成的，return true。
+            </p>    
+            <img src = "./src/images/leetcode207.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
