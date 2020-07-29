@@ -625,6 +625,42 @@
             </p>    
             <img src = "./src/images/leetcode203.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=hhttps://leetcode.com/problems/count-primes/ target="blank" class = "leetcodelink">
+                    204. Count Primes
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li> 一轮遍历</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+              我们先设置一个长度为n的boolean数组，初始值全部为false。由于0，1不是质数我们从2开始记录质数的个数。每当遇到一个false时说明这是一个质数，count++并且将从该位置开始的所有该位数倍数的位置标记为true，例如第一次遇到2时2被按照质数记录，而4，8则被标记为非质数。同理3质数，5和9非质数。每当遇到一个
+              位置为true时说明它是非质数，直接跳过节省时间。这样一轮遍历后返回count即可。
+            </p>    
+            <img src = "./src/images/leetcode204.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/isomorphic-strings/ target="blank" class = "leetcodelink">
+                    205. Isomorphic Strings
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>hashmap</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+              要判断两个string是否护卫舰isophormic，我们需要每个char的位置信息，自然想到用hashmap去track这个信息。遍历string s，每次将s和t对应位置的char存贮为m和n，当m或者n在s或t里见过时，例如m在string s里见过，将上次见过的位置通过get取出，判断t在该位置上的char是否为n，如果不是则不是isophormic。
+              当n在string t里见过时同理操作。最后将（m，i）（n，i）分别存入map，记录下上次看到某个char时的位置。如果全部通过返回true即可。
+            </p>    
+            <img src = "./src/images/leetcode205.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
