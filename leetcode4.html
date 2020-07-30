@@ -738,6 +738,24 @@
             </p>    
             <img src = "./src/images/leetcode209.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/course-schedule-ii/ target="blank" class = "leetcodelink">
+                    210. Course Schedule II
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>dfs</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                基本思路和207题一致还是构建adjacency list后对每个course的依赖课程进行dfs搜索看有无环产生，有则返回空数组，区别在于没有环产生时我们需要按照某次dfs顺序记录下访问每个course的顺序。我们可以在dfs中添加一个arraylist来记录到达的每个course，为了防止重复
+                添加课程我们采用老方法将dfs走过的课标记为2，正在搜索的标记为1，没找过的标记为0三种情况。最后我们将这个记录了dfs搜索顺序的ans转化为答案需要的数组即可。
+            </p>    
+            <img src = "./src/images/leetcode210.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
