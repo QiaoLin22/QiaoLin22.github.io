@@ -756,6 +756,44 @@
             </p>    
             <img src = "./src/images/leetcode210.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/add-and-search-word-data-structure-design/ target="blank" class = "leetcodelink">
+                    211. Add and Search Word - Data structure design
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>trie</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                看到word add search类型的题目首先想到使用trie数据结构每个trienode由一个长度为26的trienode数组和一个isword boolean值构成，isword代表一个word的结束。有了这个数据结构add很简单，将word分解成char后从root开始判断是否有该char的trienode，有则
+                移动到那个trienode，没有则在对应位置创建一个新trienode再移动到新到新node。add完毕后在对应node设置isword为true即可。search（match）是一个递归方法，初始值传入下标0和root节点，每次分两种情况判断，下标k对应char为.或者不是。是.的话则遍历所有children trienode
+                找到一个非空trienode后递归调用match方法并将下标k++，如果最终返回true则说明找到了对应string返回true。如果k位置char不是.则在对应位置直接判断非空并递归调用match。整个match过程类似tree的traverse过程，只不过traverse的是trienode而不是treenode。
+            </p>    
+            <img src = "./src/images/leetcode211.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/house-robber-ii/ target="blank" class = "leetcodelink">
+                    213. House Robber II
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>dp</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                和198题思路基本雷同，唯一的区别在于由于房子称环形排列，第一栋房子没法和最后一栋房子同时取值，也就是二者只能取其一。那么问题就转化成了两个198题，即从第一栋房子到倒数第二栋房子之间，以及第二栋房子到最后一栋房子之间，哪个所能取得的值最大最终答案就是几。
+                我们只需要在复制方法中通过双指针来控制dp的范围就可以达到此目的，dp每次更新cur和pre的值（初始值均为0），每次cur更新为（原cur）和（prev+当前房子值）两者中的较大者，pre再更新为原cur的值。原因在于每次来到一个新房子我们都可以选择抢或者不抢，抢则获得pre
+                和该房子的值，不抢则保留cur的值，具体取决于两者大小关系，这个dp的思路和198题一致。
+            </p>    
+            <img src = "./src/images/leetcode213.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
