@@ -794,6 +794,25 @@
             </p>    
             <img src = "./src/images/leetcode213.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/kth-largest-element-in-an-array/ target="blank" class = "leetcodelink">
+                    215. Kth Largest Element in an Array
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>dp</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                sort后拿倒数第k个位置，或者maxheap priorityqueue的思路都比较好想到，此题比较有意思的是一个基于quicksort思想的quickselect思路。与quicksort类似，我们每次选取一个数字作为pivot，将数组partition为小于该pivot的一边和大于pivot的一边，具体实现
+                方法为双指针+交换，见下图。由该方法我们就可以得知pivot是数组的第几大元素，假设pivot为第i大元素，通过将k和i对比我们就能找到第k大元素在数组中的相对位置进而缩小搜索范围，这一过程和二分查找思想类似。如果最终我们找到某个元素是数组第k大元素，直接返回该元素，
+                没有则返回-1.
+            </p>    
+            <img src = "./src/images/leetcode215.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
