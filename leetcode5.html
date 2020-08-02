@@ -29,21 +29,37 @@
     <main class = "leetcodemain">
         <section class = "section">
             <h2>
-                <a href= target="blank" class = "leetcodelink">
-                   
+                <a href=https://leetcode.com/problems/contains-duplicate/ target="blank" class = "leetcodelink">
+                    217. Contains Duplicate
                 </a>
             </h2>
             <h3>官方思路:</h3>
             <ul>
-                <li></li>
+                <li>hashset</li>
             </ul>
             <h3>思路整理：</h3>
             <p>
-                
+                本来以为有bit相关的巧解，结果就是普通的set记录duplicate，很简单的题。
             </p>    
             <img src = "./src/images/leetcode217.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
         <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/contains-duplicate-ii/ target="blank" class = "leetcodelink">
+                    219. Contains Duplicate II
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>hashmap</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                使用hashmap同时记录数字和他们出现的位置，遇到之前看到过的数字判断距离是否不超过k，是则直接返回true，否则更新map对应数字为新的位置。遇到没见过的则添加到hashmap。如果遍历数组结束依然没找到距离不超过k的则返回false。
+            </p>    
+            <img src = "./src/images/leetcode219.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
