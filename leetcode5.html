@@ -60,6 +60,25 @@
             </p>    
             <img src = "./src/images/leetcode219.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/contains-duplicate-iii/ target="blank" class = "leetcodelink">
+                    220. Contains Duplicate III
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>bst</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                首先题目要求两个位置距离不超过看，并且在这个基础上两个数字差值不能超过t。答案使用的思路是通过二叉查找树来维护一个大小为k的窗口，这个树使用treeset数据结构来达到自平衡的效果。每次新加入一个元素x我们就在窗口内查找x的successor，
+                也就是大于x的最小数字与x差值是否在t以内，是的话return true，同时查找x的predecessor，也就是比x小的最大元素与x差值是否在t以内，是的话return true。如果加入x后窗口大小超过了k，移除窗口内最老的数子，也就是最早加入的数字来维护窗口
+                大小不超过k。
+            </p>    
+            <img src = "./src/images/leetcode220.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
