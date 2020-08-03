@@ -75,7 +75,7 @@
             <p>
                 首先题目要求两个位置距离不超过看，并且在这个基础上两个数字差值不能超过t。答案使用的思路是通过二叉查找树来维护一个大小为k的窗口，这个树使用treeset数据结构来达到自平衡的效果。每次新加入一个元素x我们就在窗口内查找x的successor，
                 也就是大于x的最小数字与x差值是否在t以内，是的话return true，同时查找x的predecessor，也就是比x小的最大元素与x差值是否在t以内，是的话return true。如果加入x后窗口大小超过了k，移除窗口内最老的数子，也就是最早加入的数字来维护窗口
-                大小不超过k。
+                大小不超过k。bst的思路适用于比较一定范围内数字任意两者间最小差值或者类似问题，因为celing和floor api 提供了比较一个数字和距离最近的上下邻居的简便途径。
             </p>    
             <img src = "./src/images/leetcode220.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
