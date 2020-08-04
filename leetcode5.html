@@ -169,6 +169,26 @@
             </p>    
             <img src = "./src/images/leetcode226.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/basic-calculator-ii/ target="blank" class = "leetcodelink">
+                    227. Basic Calculator II
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>stack</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                四则运算的常见想法是利用stack中的数字结合运算符来计算结果，此题也不例外。但是有两个点值得注意，第一个是如何处理连续的digit产生的数字，我们可以每次将num更新为num*10 + (s.charAt(i)-'0')。乘以10的操作同时处理了连续digit和不连续两种情况，
+                连续时数字正确的进行了累加，不连续时由于num被重置为了0所以乘以10不会造成影响，巧妙解决了这个问题。另一个点是在遇到运算符时我们直到需要进行结算，注意初始运算符总是加号，将num和stack顶部弹出的数字做当前运算符对应的操作，加或者减法操作直接将num入栈，乘法和除法需要将
+                弹出的数字乘以num或者除以num后再入栈。值得注意的是当遍历到s最后一个位置时也需要进行结算，尽管此时s对应位置上是digit，如果忘记这个细节就会导致最后一个digit没有被处理而出错。结算完毕后更新sign，重置num即可。最后我们遍历stack将其中所有数字相加就可以得到最终计算结果。
+                此题思路不难但是需要注意的细节相当多。
+            </p>    
+            <img src = "./src/images/leetcode227.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
