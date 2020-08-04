@@ -134,6 +134,41 @@
             </p>    
             <img src = "./src/images/leetcode223.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/implement-stack-using-queues/ target="blank" class = "leetcodelink">
+                    225. Implement Stack using Queues
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>one queue reverse to stack</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                除了push其他方法queue和stack没有本质的区别，可以直接套用queue的方法，唯一不同的是push方法。queue将新加入元素放入头部，而stack则是放入尾部，所以每次push新元素后我们需要手动去将queue内部元素位置reverse来将新元素放入尾部。具体方法很简单，
+                以queue的方式加入新元素到头部后记录queue大小，之后重复将queue poll出来的元素加入头部，进行size-1次就可以将queue内元素顺序转化成stack应有的顺序，即新加入的元素在queue尾部。
+            </p>    
+            <img src = "./src/images/leetcode225.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/invert-binary-tree/ target="blank" class = "leetcodelink">
+                    226. Invert Binary Tree
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>recursion</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                简单题，使用递归对每个root的左右子树进行交换即可，root为空时返回空，root为leef时返回自己。
+            </p>    
+            <img src = "./src/images/leetcode226.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
