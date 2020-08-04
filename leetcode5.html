@@ -116,6 +116,24 @@
             </p>    
             <img src = "./src/images/leetcode222.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/rectangle-area/ target="blank" class = "leetcodelink">
+                    223. Rectangle Area
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>通过边界计算overlap</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                分别计算两块区域的面积很简单，关键在于判断有无重叠以及计算重叠区域面积。我们首先计算两个左边界（a，e）中较大的一方计为left，两个右边界（c，g）中较小的一方计为right，同理计算两个上边界（d，h）中较大的一方计为top，两个下边界中较小的一方计为
+                bottom。要判断有无重叠只需要判断是否满足（left < right && bottom < top）即可，如果满足则计算重叠区域，否则overlap值为0.最后用两块区域面积和减去overlap区域面积即可。
+            </p>    
+            <img src = "./src/images/leetcode223.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
