@@ -75,9 +75,27 @@
             <p>
                 首先题目要求两个位置距离不超过看，并且在这个基础上两个数字差值不能超过t。答案使用的思路是通过二叉查找树来维护一个大小为k的窗口，这个树使用treeset数据结构来达到自平衡的效果。每次新加入一个元素x我们就在窗口内查找x的successor，
                 也就是大于x的最小数字与x差值是否在t以内，是的话return true，同时查找x的predecessor，也就是比x小的最大元素与x差值是否在t以内，是的话return true。如果加入x后窗口大小超过了k，移除窗口内最老的数子，也就是最早加入的数字来维护窗口
-                大小不超过k。bst的思路适用于比较一定范围内数字任意两者间最小差值或者类似问题，因为celing和floor api 提供了比较一个数字和距离最近的上下邻居的简便途径。
+                大小不超过k。bst的思路适用于比较一定范围内数字任意两者间最小差值或者类似问题，因为ceiling和floor api 提供了比较一个数字和距离最近的上下邻居的简便途径。
             </p>    
             <img src = "./src/images/leetcode220.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/maximal-square/ target="blank" class = "leetcodelink">
+                    221. Maximal Square
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>dp</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                此题使用了一个巧妙的dp思路，根据原数组中1出现的位置通过dp一轮遍历来获得最大1矩阵的边长。具体方法为遍历原矩阵，构建长宽都大1的dp矩阵，每当原矩阵对应位置为1时（matrix[i-1][j-1] == '1'），更新dp矩阵i，j位置为dp[i-1][j-1]，
+                dp[i-1][j]，和dp[i][j-1]即左上，左和上位置三者中的最小者+1，因此只有当矩阵全部由1构成时边长才回达到正确数值。在遍历中同时记录下出现过的最大边长，最后返回边长的平方即可。我们也可以使用一维度dp数组来进一步简化空间复杂度。
+            </p>    
+            <img src = "./src/images/leetcode221.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
     </main>
 </body>
