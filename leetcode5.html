@@ -97,6 +97,25 @@
             </p>    
             <img src = "./src/images/leetcode221.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/count-complete-tree-nodes/ target="blank" class = "leetcodelink">
+                    222. Count Complete Tree Nodes
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>binary search</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                普通recursion一个个计算node数量的思路容易想到，但就像答案所说的，这样做没有充分利用题目给出的complete binary tree这个条件。我们知道当一个树是complete的时候它的节点数可以直接用2的深度次方-1得出，我们可以利用这个公示结合题目给出的
+                complete binary tree的条件将时间从o（n）进一步提升。我们可以通过计算左右子树的深度来判断该数是否是完整的，是的话直接用公式返回节点数，否的话递归调用该节点左右子树后+1得到总节点数。由于题目性质，每一层中总会至少有一颗完整的子数可以用
+                公式直接返回，直到找到最底层最右边节点（导致深度不同的原因），所用时间和搜索特定节点时间相同为o（logn），而计算每层深度又需要o（logn）所以总时间为o（log^2n）。使用位运算而不是math pow计算2的幂的原因是位运算的速度要快上很多。
+            </p>    
+            <img src = "./src/images/leetcode222.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
