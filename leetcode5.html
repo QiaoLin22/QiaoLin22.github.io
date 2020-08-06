@@ -206,6 +206,27 @@
             </p>    
             <img src = "./src/images/leetcode228.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/majority-element-ii/ target="blank" class = "leetcodelink">
+                    229. Majority Element II
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>boyer-moore majority vote algorithm</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                此题介绍了一种用于选出数组中出现次数最多的元素的高效算法，boyer-moore majority vote algorithm。首先根据题目要求可能有不同个数个candidate，当要求多余数组一半时只能有一个满足条件的数字因此只有一个candidate，此题最多可以有两个满足条件的candidate。
+                算法本身的思想很简单，不同的数字个数互相抵消，相同的数字个数累加，数字个数为0时更新原candidate为新的candidate并将个数重置为1.由于majority的性质，最后满足条件的candidate一定不会被抵消。例如数组12211，首先看到1，由于个数为0，candidate更新为1。下一个
+                是2，candidate为1，个数抵消为0。下一个还是2，由于个数为0，candidate更新为2，个数重置为1.下一个为1，candidate为2，个数抵消为0.下一个为1，由于个数为0，candidate被更新为1，于是最终结果1是majority vote。宏观来看由于1有三个而2只有两个，所以2不可能将
+                1完全抵消从而最终会剩下一个1作为答案，该算法利用了这个思想以o（n）速度找出结果。此题我们需要稍作变形，将初始candidate数量变成两个，更新方式保持不变。但是要注意最终两个candidate不一定都大于总数的1/3,我们只保证找到出现次数前二多的数字，是否大于总数1/3需要
+                再进行一轮单独计算，只有当candidate确实大于总数1/3时才加入答案。
+            </p>    
+            <img src = "./src/images/leetcode229.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
