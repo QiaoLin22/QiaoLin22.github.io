@@ -246,6 +246,25 @@
             </p>    
             <img src = "./src/images/leetcode230-1.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/kth-smallest-element-in-a-bst/ target="blank" class = "leetcodelink">
+                    231. Power of Two
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>O(1) bitwise</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                此题讨论了两种bitwise operation的常数时间解法。第一种是拿到最右侧的1bit，基于的思想是x和-x只有一个bit是相同的，即右侧第一个1bit，因此我们用x & （-x）可以直接将除了最右侧1之外的其他bit全部变为0。再观察到2的幂的性质，在所有bit中只有一个1，该1也是最右侧的1.
+                因此我们只需将n转化为long类型后判断n & （-n）是否等于n就可以判断n是否为2的幂。另一种思想基于将最右侧1变为0，我们知道用x & （x-1）就可以将最右侧1变为0，由于2的幂只有这一个1，因此该操作后2的幂后变为0。我们只需判断x & （x-1）是否为0即可。此题有两个bit op的技巧
+                值得总结，第一是将除了最右侧的1bit其余bit全部变为0的x & （-x）。第二个是将最右侧的1bit变为0的x & （x-1）两个操作。
+            </p>    
+            <img src = "./src/images/leetcode230-1.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
