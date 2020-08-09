@@ -263,7 +263,24 @@
                 因此我们只需将n转化为long类型后判断n & （-n）是否等于n就可以判断n是否为2的幂。另一种思想基于将最右侧1变为0，我们知道用x & （x-1）就可以将最右侧1变为0，由于2的幂只有这一个1，因此该操作后2的幂后变为0。我们只需判断x & （x-1）是否为0即可。此题有两个bit op的技巧
                 值得总结，第一是将除了最右侧的1bit其余bit全部变为0的x & （-x）。第二个是将最右侧的1bit变为0的x & （x-1）两个操作。
             </p>    
-            <img src = "./src/images/leetcode230-1.png" height = 500px, width = 1200px alt = "leetcode"/>
+            <img src = "./src/images/leetcode231.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/implement-queue-using-stacks/ target="blank" class = "leetcodelink">
+                    232. Implement Queue using Stacks
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>modify push</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                为了更改stack中元素的顺序为queue中元素顺序，可以先将原有stack中原有元素保存在temp中，之后清空stack，添加新元素到空栈中后再将temp中的元素按照原有queue的顺序添加到栈中即可。
+            </p>    
+            <img src = "./src/images/leetcode232.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
     </main>
 </body>
