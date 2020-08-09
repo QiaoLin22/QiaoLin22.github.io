@@ -282,6 +282,25 @@
             </p>    
             <img src = "./src/images/leetcode232.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/palindrome-linked-list/ target="blank" class = "leetcodelink">
+                    234. Palindrome Linked List
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>reverse second half</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                o（1）的空间要求使得我们只能原地改变linkedlist后通过一轮遍历来判断是否是回文数。原地修改容易想到反转linkedlist，此题我们需要反转的是后半部分，而通过比较反转后后半部分和前半部分的一致性就可以得知原linkedlist是否是回文数。
+                后半部分的反转有两部分组成，首先是找到中点，其次是从中点处到结尾处的反转，这些都是经典操作了。通过快慢指针找到中点，双指针做反转就可以得到结果。之后我们同时遍历反转的后半部分和前半部分，如果后半部分与前半部分完全一致（后半可能比前半短一个node，不影响结果）
+                则说明是回文数，有任何一个node值不相同则不是回文数。
+            </p>    
+            <img src = "./src/images/leetcode234.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
