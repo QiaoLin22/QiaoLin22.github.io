@@ -304,7 +304,7 @@
         <hr>
         <section class = "section">
             <h2>
-                <a href=hhttps://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree// target="blank" class = "leetcodelink">
+                <a href=https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree// target="blank" class = "leetcodelink">
                     235. Lowest Common Ancestor of a Binary Search Tree
                 </a>
             </h2>
@@ -317,6 +317,41 @@
                 此题就是充分利用bst的性质，root大于左子节点小于右子节点。对树进行traverse，当root第一次处于p节点和q节点值中间（闭区间）时就来到了目标的lca节点，返回即可。其他只有两种情况，即root比两个节点值都小，此时进入右子树递归。或者root比两个节点都大，此时进入左子树递归。
             </p>    
             <img src = "./src/images/leetcode235.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/ target="blank" class = "leetcodelink">
+                    236. Lowest Common Ancestor of a Binary Tree
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>recursion</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                我们要寻找两个节点的最低公共祖先，也就是某个节点即使p的祖先，又是q的祖先，或者他自己是其中之一。我们可以从root开始遍历，第一个找到的满足上述要求的节点即使目标lca。traverse的过程中，没来到一个节点，先判断是否为空，空则返回null，接着判断是否是p或者q节点，是的话返回该节点。两个
+                条件都不满足时先进入左子树递归将返回值存入left，在进入右子树递归返回值存为right。当left和right都不为空时说明找到了lca，直接返回，否则判断是否left和right中有一个不为空，返回不为空的那一边（此时对应lca为p或者q其中之一的情况）。
+            </p>    
+            <img src = "./src/images/leetcode236.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/delete-node-in-a-linked-list/ target="blank" class = "leetcodelink">
+                    237. Delete Node in a Linked List
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>swap with next node</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                由于题目条件给出要删除的node一定不是最后一个node，因此我们可以直接将要删除的node替换为他的下一个node的值，并把node的next指针指向node的下下个node。例如4，5，1，9删除5，先将5替换为1，再将原本的1节点删除即可。
+            </p>    
+            <img src = "./src/images/leetcode237.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
     </main>
 </body>
