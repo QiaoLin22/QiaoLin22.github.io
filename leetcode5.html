@@ -391,6 +391,24 @@
             </p>    
             <img src = "./src/images/leetcode240.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/different-ways-to-add-parentheses/ target="blank" class = "leetcodelink">
+                    241. Different Ways to Add Parentheses
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>recursion</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                对input string进行遍历，每当遇到一个运算符就将原input string partition成左右两个substring，分别进行递归调用得到两个结果集leftRet和rightrRet。对leftRet中每一个数字和rightRet中每一个数字group后根据运算符进行计算后加入答案。如果输入中
+                已经没有运算符则达到了base case，直接将input转化为数字加入ret即可。递归调用后返回ret得到所有组合。核心思想是通过运算符将总组合数转化为两个子字符串结果的组合，通过运算符计算后得到最终结果。具体过程通过递归实现，base case为一个单独字符的情况。
+            </p>    
+            <img src = "./src/images/leetcode241.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
