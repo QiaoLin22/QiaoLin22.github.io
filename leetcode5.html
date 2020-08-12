@@ -353,6 +353,44 @@
             </p>    
             <img src = "./src/images/leetcode237.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/product-of-array-except-self/ target="blank" class = "leetcodelink">
+                    238. Product of Array Except Self
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>multiply from two arrays</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                由于题目不让使用除法，因此全部乘起来再除以nums【ℹ】的思路就不可行了，但是有一种只用乘法的方法可以达到同样的效果。观察到nums【i】目标值是由它左边所有数字乘积乘以它右边所有数字乘积构成的，因此可以基于这个思路构建left和right两个
+                乘积数组表示某个index左边所有数字乘积和右边所有数字乘积。left数组初始值自然为1，之后的数字可以从 left[i+1] = left[i] * nums[i]得出，右边也是类似，最右边index初始值为1，左边所有数字由right[i-1] = right[i] * nums[i]得出。
+                构建出这两个left和right数组后，对于nums每一个index i我们都能直接得出i左边所有数字乘积以及右边所有数字乘积（从left【i】和right【ℹ】取得），直接将nums【i】替换为left[i] * right[i]即可。时间为o（n）空间为o（n）。我们也可以不创建
+                两个额外数组而是直接将左边乘积和右边乘积存贮在变量中达到o（1）空间。
+            </p>    
+            <img src = "./src/images/leetcode238.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/search-a-2d-matrix-ii/ target="blank" class = "leetcodelink">
+                    240. Search a 2D Matrix II
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>Search Space Reduction</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                答案一共给了四种方法，重点看下最快也是最简洁的第四种方法。首先我们观察到在横向和纵向上是有序的。也就是说左上角和右下角最大，基于这个特点我们可以从左下角或者右上角开始搜索，例如从左下角开始，向上必然减小，向右必然增加方向都是有序的。我们可以根据
+                当前数字和target大小关系来确定移动方向，若已经移动超出界限还未找到target则说明target不存在，否则一定能找到target。由于递增和递减的有序性，所以一定不会产生疏漏。
+            </p>    
+            <img src = "./src/images/leetcode240.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
