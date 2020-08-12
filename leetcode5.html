@@ -409,6 +409,41 @@
             </p>    
             <img src = "./src/images/leetcode241.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/valid-anagram/ target="blank" class = "leetcodelink">
+                    242. Valid Anagram
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>hashtable</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                此题比较容易联想到hashmap也确实可行，但不是最优解。由于只有26个字母，我们可以直接创建一个长度26的int数组来充当hashtable统计字符出现次数。根据anagram定义，s和t长度必须相同饿，而且每个字符出现次数相同。因此我们可以在一轮遍历中解决，每在s中看到一个字符就在
+                hashtable对应位置++，同理每在t中看到一个字符就在hashtable对应位置--，根据定义当且仅当最后hashtable所有位置都为0时s和t互为nangram，我们在最后遍历一遍hashtable，有任何位置不为0返回false，全部通过返回true。
+            </p>    
+            <img src = "./src/images/leetcode242.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/shortest-word-distance/ target="blank" class = "leetcodelink">
+                    243. Shortest Word Distance
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>one pass</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                一轮遍历加双指针法，p1指针记录最新一次word1出现的位置，p2指针记录最新一次word2出现的位置，当p1和p2都确实匹配到对应位置时更新min看看有没有更小的距离出现。一轮遍历结束min等于距离最近的word1和word2的距离，返回min即可。
+            </p>    
+            <img src = "./src/images/leetcode243.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
