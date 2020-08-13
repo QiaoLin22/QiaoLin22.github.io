@@ -444,6 +444,24 @@
             </p>    
             <img src = "./src/images/leetcode243.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/shortest-word-distance-ii/ target="blank" class = "leetcodelink">
+                    244. Shortest Word Distance II
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>one pass</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                首先为每个WordDistance类创建一个hashmap，为每个出现过的单词创建一个index数组记录出现过的位置，并在构造器中通过遍历words数组完成map的创建。在shortest方法中我们先将word1和word2的出现位置数组通过map取出，通过双循环组合
+                所有word1和word2出现过的位置，并找出其中距离最小的那一个组合记录在min中，最后返回min即可。
+            </p>    
+            <img src = "./src/images/leetcode244.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
