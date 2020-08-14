@@ -453,7 +453,7 @@
             </h2>
             <h3>官方思路:</h3>
             <ul>
-                <li>one pass</li>
+                <li>hashmap</li>
             </ul>
             <h3>思路整理：</h3>
             <p>
@@ -461,6 +461,41 @@
                 所有word1和word2出现过的位置，并找出其中距离最小的那一个组合记录在min中，最后返回min即可。
             </p>    
             <img src = "./src/images/leetcode244.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/shortest-word-distance-iii/ target="blank" class = "leetcodelink">
+                    245. Shortest Word Distance III
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>hashmap</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                与上一题思路雷同，唯一不同点在于计算word1和word2出现index组合时跳过所有index相同的组合，因为根据题意我们要找的两个word应该处于不同位置，其他思路完全一致。
+            </p>    
+            <img src = "./src/images/leetcode245.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/strobogrammatic-number/ target="blank" class = "leetcodelink">
+                    246. Strobogrammatic Number
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>one pass</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                对字符串前半部分进行扫描，观察到只有6，9，8，1，0有构成Strobogrammatic 的可能性，因此遇到之外的字符一律返回false，遇到了6，9，8，1，0其中之一也要进一步判断字符串另一半对应位置上字符是否对应9，6，8，1，0，
+                如果不是同样返回false。如果一轮遍历结束没有问题则返回true。
+            </p>    
+            <img src = "./src/images/leetcode246.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
     </main>
 </body>
