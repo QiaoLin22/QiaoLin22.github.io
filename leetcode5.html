@@ -497,6 +497,25 @@
             </p>    
             <img src = "./src/images/leetcode246.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/strobogrammatic-number-ii/ target="blank" class = "leetcodelink">
+                    247. Strobogrammatic Number II
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>recursion</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                我们需要构建所有长度为n的strobogrammatic，根据strobogrammatic的性质，一个strobogrammatic想要增加长度只有一种方法就是在两侧添加符合要求的字符对，例如0，0 1，1 6，9 9，6 和8，8只有这些，注意0，0不能添加在开头处。
+                有了这个框架后就不难想到recursion，从长度n-2的strobogrammatic构建出长度为n的。首先观察base case，自然为长度为0或者1时。长度为0返回空的list，长度为1时有三种可能即0，1和8。进入recursion创建一个待写入的空新list，接着遍历在长度为n-2的list的所有string元素
+                并在两侧添加所有满足要求的字符对后加入新list后返回即可，注意当m等于n时也就是最外层recursion时不能添加0，0字符对，避免string元素开头出现0。
+            </p>    
+            <img src = "./src/images/leetcode247.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
