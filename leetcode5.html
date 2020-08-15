@@ -516,6 +516,63 @@
             </p>    
             <img src = "./src/images/leetcode247.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/group-shifted-strings/ target="blank" class = "leetcodelink">
+                    249. Group Shifted Strings
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>hashmap</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                容易想到用hashmap将不同string group到一起，问题在于如何找到string间的共同点也就是hashmap的key。观察发现可以可以通过shift互相转换的string之间有一个共同点就是字符之间的距离差距是恒定的。例如abc中a到b距离为1，b到c距离为1，bcd中b到c距离为1，c到d距离为1，因此
+                abc可以shift为bcd。要注意的一点是从z shift到 a时会产生负数距离影响判断。例如a到z距离25，而b到a距离-1，但az和ba可以互相转换，为了避免该问题我们在判断距离时一旦发现负数距离就将它+26转换为正距离。明确这些点后我们根据每一个string构建key并通过hashmap将key相同
+                也就是可以shift转换的string group到一起就可以了。最后将map的values以list形式返回。
+            </p>    
+            <img src = "./src/images/leetcode249.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/count-univalue-subtrees/ target="blank" class = "leetcodelink">
+                    250. Count Univalue Subtrees
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>dfs</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                通过dfs recursion自底向上计算符合条件子树的个数。为了将已经判断过的子树的状态传递给父节点，我们需要对每一个子树返回一个boolean值来提供是否是Univalue Subtree这一信息。当且仅当一个父节点两个子树都是univalue时才进入下一步判断，否则直接返回false。我们通过helper方法传递
+                boolean值告知父节点子树是否是univalue tree，并在适当条件下更新全局变量res的值。当两个子树都为univalue，判断父节点和非空左右子节点值是否一致，如果不一致则该树不是univalue，返回false并不更新res。如果都一致说明以该父节点为根节点的树也是univalue tree，更新res后返回true。
+                base case为到达叶子节点直接返回true。如此从根节点开始自底向上判断所有满足条件子树并更新res后返回res就可以得到所有univalue subtree数量。
+
+            </p>    
+            <img src = "./src/images/leetcode250.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/flatten-2d-vector/ target="blank" class = "leetcodelink">
+                    251. Flatten 2D Vector
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>two pointer</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                由于是在二维数组上进行操作，不难想到two pointer的方法，一个指针指向外层index，另一个指向外层index。next方法首先判断是否存在下一个位置，调用hasnext方法，如果有直接返回当前位置数字或内层index++。hasnext方法首先判断在外层不出界前提下内层是否该前往下一个subarray，也就是当
+                inner等于v[outer].length时将outer++并将inner重置为0，将该操作放在while loop中的原因是跳过空subarray知道来到下一个有值的位置，最后返回outer是否出界即可。
+            </p>    
+            <img src = "./src/images/leetcode251.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
