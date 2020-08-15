@@ -568,8 +568,8 @@
             </ul>
             <h3>思路整理：</h3>
             <p>
-                由于是在二维数组上进行操作，不难想到two pointer的方法，一个指针指向外层index，另一个指向外层index。next方法首先判断是否存在下一个位置，调用hasnext方法，如果有直接返回当前位置数字或内层index++。hasnext方法首先判断在外层不出界前提下内层是否该前往下一个subarray，也就是当
-                inner等于v[outer].length时将outer++并将inner重置为0，将该操作放在while loop中的原因是跳过空subarray知道来到下一个有值的位置，最后返回outer是否出界即可。
+                由于是在二维数组上进行操作，不难想到two pointer的方法，一个指针指向外层index，另一个指向外层index。next方法首先判断是否存在下一个位置，调用hasnext方法，如果有直接返回当前位置数字后内层index++。hasnext方法首先判断在外层不出界前提下内层是否该前往下一个subarray，也就是当
+                inner等于v[outer].length时将outer++并将inner重置为0，将该操作放在while loop中的原因是跳过空subarray知道来到下一个有值的位置，最后返回outer是否出界，如果没出界就说明存在下一个位置，出界则说明没有。
             </p>    
             <img src = "./src/images/leetcode251.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
