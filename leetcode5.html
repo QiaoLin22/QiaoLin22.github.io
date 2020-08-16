@@ -573,6 +573,24 @@
             </p>    
             <img src = "./src/images/leetcode251.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/meeting-rooms/ target="blank" class = "leetcodelink">
+                    252. Meeting Rooms
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>sort</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                表达提供了两种思路，暴力和sort。暴力法的精髓在于两个区间overlap的定义，一个简洁的版本是minend小于等于maxstart时不发生overlap，minend大于maxstart时发生overlap。我们可以基于这个标准判断两个区间是否overlap。sort方法这里采用了java8写法，先按照start时间排序后遍历检查是否有
+                会议开始时间小于上一个会议结束时间，如果有返回false，全部通过返回true即可。
+            </p>    
+            <img src = "./src/images/leetcode252.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
