@@ -594,8 +594,8 @@
         <hr>
         <section class = "section">
             <h2>
-                <a href=https://leetcode.com/problems/meeting-rooms/ target="blank" class = "leetcodelink">
-                    252. Meeting Rooms
+                <a href=https://leetcode.com/problems/meeting-rooms-ii/ target="blank" class = "leetcodelink">
+                    253. Meeting Rooms II
                 </a>
             </h2>
             <h3>官方思路:</h3>
@@ -608,6 +608,23 @@
                 没有选择是能再开启一个新的房间，如果有就可以复用之前的房间而不单开房间。当一个会议结束时间被使用过后我们直接将指针指向下一个会议结束时间即可（数组是有序的）。一轮遍历统计出所有会议开始时没有任何会议结束的会议个数，既是我们要的房间数。
             </p>    
             <img src = "./src/images/leetcode253.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/factor-combinations/ target="blank" class = "leetcodelink">
+                    254. Factor Combinations
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>backtrack</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                经典backtrack题型，值得注意的是有两个地方预减枝会极大提升速度。首先注意到每次找factor时没必要从start一直找到n，而是找到sqrt（n）为止避免后半部分重复计算，因为当我们找到因数i时，也同时找到了因数（n/i）可以直接将两者加入答案后再去掉list末尾进行backtracking，循环最后需要再一次去掉末尾最先加入的i进行backtracking。减枝后速度从100ms提升至1ms。
+            </p>    
+            <img src = "./src/images/leetcode254.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
     </main>
 </body>
