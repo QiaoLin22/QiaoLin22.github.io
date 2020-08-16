@@ -591,6 +591,24 @@
             </p>    
             <img src = "./src/images/leetcode252.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/meeting-rooms/ target="blank" class = "leetcodelink">
+                    252. Meeting Rooms
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>Chronological Ordering</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                答案给出的解法是时间顺序排序，重点在于将所有单个会议的开始时间和结束时间拆开分别放进由开始时间和结束时间组成的两个独立数组中进行排序。这样做的好处是简化了问题，由于开始和结束时间都是有序的，我们遍历所有会议开始时间，当一个会议开始时我们只需要检查它是否大于结束数组中下一个会议的结束时间，如果会议开始时没有任何会议结束那么
+                没有选择是能再开启一个新的房间，如果有就可以复用之前的房间而不单开房间。当一个会议结束时间被使用过后我们直接将指针指向下一个会议结束时间即可（数组是有序的）。一轮遍历统计出所有会议开始时没有任何会议结束的会议个数，既是我们要的房间数。
+            </p>    
+            <img src = "./src/images/leetcode253.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
