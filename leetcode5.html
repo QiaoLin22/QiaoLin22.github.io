@@ -626,6 +626,63 @@
             </p>    
             <img src = "./src/images/leetcode254.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/verify-preorder-sequence-in-binary-search-tree/ target="blank" class = "leetcodelink">
+                    255. Verify Preorder Sequence in Binary Search Tree
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>recursion</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                为了简化思路我们默认数组是按照preorder顺序遍历的，那么这样的话我们遍历数组时用当前位置数字给左右子节点设置upper bound和lower bound，并且检查每个节点数字是否落在这个范围内。如果数组是按照preorder遍历的话所有节点数字都会落在相应区间内，如果落在区间外或者遍历结束返回后检查index时候达到了数组末尾，如果达到了末尾
+                说明中途没有节点落在区间外，是preorder顺序，否则说明有区间外节点，那么必然不是preorder顺序。用数组遍历树乍看很奇怪，但紧遵preorder的定义，根据每个节点值为后续预定preorder遍历顺序设置上下界来判断会使问题变得简单。
+            </p>    
+            <img src = "./src/images/leetcode255.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/paint-house/ target="blank" class = "leetcodelink">
+                    256. Paint House
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>dp</li>
+                <li>dp with Optimized Space Complexity</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                注意到dp的话此题就不难，第一种dp是修改原数组的。从第二行开始每次在前一行的cost基础上加上不同颜色的cost中较小值，一直加到最后一行。每次将当前行三个颜色都更新为paint当前房子时cost的最小值，遍历结束时返回最后一行三个颜色中最小值。第二种方法不更改原数组，初始数组prerow同样为costs第一行，每次从原数组拷贝下一行的复制，注意
+                这里是深拷贝，所以更改该复制不会更改原数组。然后再该复制上更新当前cost后再将prerow替换为该复制。遍历结束后prerow中即是截止到最后一行三种颜色房子的三个cost，返回最小者既是答案。
+            </p>    
+            <img src = "./src/images/leetcode256-1.png" height = 500px, width = 1200px alt = "leetcode"/>
+            <img src = "./src/images/leetcode256-2.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/binary-tree-paths/ target="blank" class = "leetcodelink">
+                    257. Binary Tree Paths
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>dfs string recursion</li>
+                <li>dfs stringBuilder recursion</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                看下比较简短的dfs recursion方法，比较简单递归终止条件为root为空或者为叶子，空返回，叶子将root加入string，string加入答案后返回。未达到终止条件时将root的val和箭头加入string后递归调用左右分支即可。stringbuilder效率更高因为没有重复new string对象，但相对的要注意backtrack时将stringbuilder重置为之前的长度避免答案中重复出现之前的路径。
+            </p>    
+            <img src = "./src/images/leetcode257-1.png" height = 500px, width = 1200px alt = "leetcode"/>
+            <img src = "./src/images/leetcode257-2.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
