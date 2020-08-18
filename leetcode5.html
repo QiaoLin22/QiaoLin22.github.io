@@ -700,6 +700,24 @@
             </p>    
             <img src = "./src/images/leetcode258.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/3sum-smaller/ target="blank" class = "leetcodelink">
+                    259. 3Sum Smaller
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>two pointers</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                o（n^2）只能是双循环，在i固定的情况下，设置双指针，j为i+1，k为nums.length-1，每次通过比较nums[j]+nums[k]和remain大小关系来确定如何j和k指针，并通过k-j直接将区间内符合要求的j，k对个数加入答案（不用遍历j到k而是直接获得个数，因为数组有序）进而将复杂度从三次方降低到了平方。对于每个i我们将所有区间内
+                满足要求j，k对个数加入答案，通过遍历i获得所有满足条件i，j，k个数对数量。
+            </p>    
+            <img src = "./src/images/leetcode259.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
