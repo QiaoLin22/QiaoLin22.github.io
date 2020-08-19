@@ -774,6 +774,25 @@
             </p>    
             <img src = "./src/images/leetcode263.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/ugly-number-ii/ target="blank" class = "leetcodelink">
+                    264. Ugly Number II
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>dp</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                题目要求求第n个uglynumber，既然是uglynumber那么允许的因数只能由2，3，5或者由这三个数的组合得到，关键是如何保证有序性，即从小到大排列并找到第n个。观察到数组中所有数字都是由前面的数字乘以2，3或者5得到的，自然联想到dp。我们可以维护三个指针，p1，p2和p3。创建一个长度为n的dp数组，dp【0】初始值为1，
+                三个指针初始位置都为0。对于每个之后的位置i，比较2*dp[p1]，3*dp[p2]和5*dp[p3]并将dp【i】设置为三者中最小值，然后判断该最小值是从哪个指针得到的，并将那个指针向后移动一位。这样做的目的是确保dp数组确实是有序的，只有当某指针生成的下个uglynumber是所有指针能生成的值中最小的时才移动对应指针。将n-1个
+                位置全部填充完毕后dp【n-1】位置就是从小到大的第n个uglynumber。
+            </p>    
+            <img src = "./src/images/leetcode264.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
