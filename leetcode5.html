@@ -718,6 +718,62 @@
             </p>    
             <img src = "./src/images/leetcode259.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/single-number-iii/ target="blank" class = "leetcodelink">
+                    260. Single Number III
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>bitmask</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                我们知道将所有数xor能得到那两个单独数字的xor结果，问题是怎么将他们两个单独拆出来呢。切入点在于找到这两个单独数字不同的一个bit，既然我们已经知道了他们两个xor的结果那么一种简单方法就是直接拿到xor结果最右边的一个1bit，这个方法我们也很熟悉，用diff & （-diff）就可以拿到只有最右边1保留其他bit全部set为0的一个bitmask。
+                拿到这个bitmask之后问题就简单了，重新遍历数组并根据这个bitmask将所有数字partition成两组，第一组该bit为0第二组该bit为1。我们又知道两个单独数字分别是这两个组里唯一一个单独的，因此再次使用xor将每个组里所有数字xor起来就可以分别得到这两个单独的数字。
+            </p>    
+            <img src = "./src/images/leetcode260.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/graph-valid-tree/ target="blank" class = "leetcodelink">
+                    261. Graph Valid Tree
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>graph theory + graph dfs & recursive traverse</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                重点看结合tree相关图论的第二种方法的dfs itervative 和recursive实现。首先观察到结合图论可以使得问题简化不少，我们知道n个节点若想组成一颗有效的树必须满足两个条件，edge数量必须是n-1，并且必须每个node都是可达的。结合答案原话就是Check whether or not there are n - 1 edges. 然后Check whether or not the graph is fully connected. 
+                当且仅当两个条件都满足时这n个节点才构成一颗valid tree。基于这个思想graph的traverse就是必然了，edge数量可以从edges的长度直接判断，但是否fully connected需要traverse才能知道。先构建adjacencylist，注意由于是 undirected edges为每个node添加neighbour时要双向添加。构建完成后就可以traverse了，先看dfs iterative方法。老办法使用stack，
+                同时为了避免无限循环创建hashset seen记录见过的节点，之后当stack非空时while循环遍历，当某节点某个neighbour已经见过时不再加入stack，未见过加入stack即可。循环结束判断是否所有节点都见过了，由于distinct直接通过长度判断即可。dfs recursive通过递归调用dfs方法来达到同样的效果，进入dfs时先判断节点是否已经见过，见过直接return，否则对它的所有neighbour
+                进行递归调用，之后同样长度判断是否所有节点都见过了。
+            </p>    
+            <img src = "./src/images/leetcode261-1.png" height = 500px, width = 1200px alt = "leetcode"/>
+            <img src = "./src/images/leetcode261-2.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/ugly-number/ target="blank" class = "leetcodelink">
+                    263. Ugly Number
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>recursion</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                容易想到recursion的思路，特殊判断num为0时返回false。base case为num等于1时返回true，其他情况逐一判断num是否为2，3，5的倍数，如果是的话递归调用isUgly(num >> 1)，isUgly(num /3)，isUgly(num /5)。若num不是2，3，5中任意一个的倍数，则原num必然不是ugly number，return false。
+            </p>    
+            <img src = "./src/images/leetcode263.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
