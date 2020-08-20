@@ -793,6 +793,43 @@
             </p>    
             <img src = "./src/images/leetcode264.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/palindrome-permutation/ target="blank" class = "leetcodelink">
+                    266. Palindrome Permutation
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>map</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                核心思路是记录有多少个字符出现次数为奇数个，根据palindrome定义不能多余1个，可以是1个或者0个。根据这个思路我们创建map计数并统计出现奇数个数的字符数量，如果数量小于等于1返回true，否则返回false。
+            </p>    
+            <img src = "./src/images/leetcode266.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/palindrome-permutation-ii/ target="blank" class = "leetcodelink">
+                    267. Palindrome Permutation II
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>backtracking</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                判断是否是palindrome的过程和上一题类似，这里为了方便后续处理没有使用map而是使用了长度为128的数组来计数，128个位置分别对应了所有字符的ascii编码，便于在char和int之间来回转换。遍历原始字符串s记录出现奇数次字符的个数。如果多于1个或者s为空直接返回空list。
+                否则初始化一个stringbuilder开始为后续bt作准备（sb效率高于普通string操作）。首先注意到我们需要在有一个奇数个数字符的情况下将那个字符先加入sb，因为之后我们构建sb的方法是将字符成对加入头部和尾部，因此必然出现在中间的那个出现奇数次字符不会被加入sb，需要提前处理。例如
+                a出现了三次，那么其中两个a会被成对加入sb但是剩下一个不会，从而导致sb长度永远无法达到s的长度。考虑到这点后问题就简单了，backtrack方法首先将达到s长度的sb加入答案，未达到长度则遍历计数数组并将出现个数仍然大于1的字符成对加入sb后数组对应位置个数-2后对新sb递归调用backtrack方法。
+                注意由于是sb对象，需要在backtrack后手动更改为之前状态，也就是将头部char和尾部char去掉，使用deletecharat方法可以简单做到，同时计数数组对应位置个数也要通过+2达到之前状态。
+            </p>    
+            <img src = "./src/images/leetcode267.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
