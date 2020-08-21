@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Leetcode Blogs</title>
+</head>
+<body>
+    <header class = "header">
+        <h1 class = "header-title">Leetcode Blogs</h1>
+      </header>
+      <nav class = "leetcodenav">
+        <ul class = "link-list">
+          <li class = "link"><a href = './index.html'>Home</a></li>
+          <li class = "link"><a href = "https://github.com/QiaoLin22" target = "blank">GitHub</a></li>
+          <li class = "link"><a href = './leetcode.html'>Leetcode</a></li>
+        </ul>
+      </nav>
+      <nav class = "leetcodenav">
+        <ul class = "link-list">
+          <li class = "link"><a href = './leetcode.html'>1</a></li>
+          <li class = "link"><a href = "./leetcode2.html">2</a></li>
+          <li class = "link"><a href = "./leetcode3.html">3</a></li>
+          <li class = "link"><a href = "./leetcode4.html">4</a></li>
+          <li class = "link"><a href = "./leetcode5.html">5</a></li>
+          <li class = "link"><a href = "./leetcode6.html">6</a></li>
+        </ul>
+      </nav>
+    <main class = "leetcodemain">
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/missing-number/ target="blank" class = "leetcodelink">
+                    268. Missing Number
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>gaussian formula</li>
+                <li>bit</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                用高斯求和算出应该有的总合后减去实际有的总合就可以直接得到漏掉的数字。或者使用bit manipulation方法，观察到从缺失的那一位开始index都比实际数字少1，我们可以利用这个性质。先将missing value设置为nums.length。然后遍历nums数组将missing
+                每次分别和index i以及实际数字 nums[i] 做xor运算。结果是不缺失的数字都是成对出现于是两两相消，最后只剩下未消掉的缺失数字，也就是答案。
+            </p>    
+            <img src = "./src/images/leetcode268.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/closest-binary-search-tree-value/ target="blank" class = "leetcodelink">
+                    270. Closest Binary Search Tree Value
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>inorder recursive</li>
+                <li>binary search</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                最先想到inorder recursive，简单暴力，由于没有helper当root为空时返回距离target最远距离，其他情况比较root值，左子树返回值以及右子树返回值（recursive）并返回距离target最近的值即可。并一种更简洁并且充分利用bst性质的方法是binary search，在root节点
+                不为空时持续向下寻找，每次通过判断当前root值于target大小关系决定向左边还是右边寻找，距离target最近的节点值必然存在于这条路径中，在搜索途中维护一个全局最接近target值，最后作为结果返回即可。
+            </p>    
+            <img src = "./src/images/leetcode270.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/encode-and-decode-strings/ target="blank" class = "leetcodelink">
+                    271. Encode and Decode Strings
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>Chunked Transfer Encoding</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                思路很有意思一道题，encode所采用的策略是将list中的每个string的长度信息和string本身一起encode进一个string里（注意长度string和substring本身需要用一个非数字字符分隔开方便之后拆分），相对的decode时每次根据一下个要拆分的string长度信息结合indexof方法定位
+                substring的位置。decode具体做法为设置一个指针初始值为0，在i指针未达到s结尾时进行while循环，每次调用indexof方法直接得到下个分隔字符位置index1（字符前面为位置信息，后面为substring本身）。我们知道从i到index为储存位置信息的字符段，用integer的valueof方法拿到下个substring长度（len）后就可以通过substring
+                index+1到index+1+len直接拿到substring本身。这样一个substring的decode就结束了，将i指针移动到下个substirng长度信息字符串开始位置，即index+1+len即可。
+            </p>    
+            <img src = "./src/images/leetcode271.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+    </main>
+</body>
+</html>
