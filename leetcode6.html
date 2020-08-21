@@ -84,6 +84,23 @@
             </p>    
             <img src = "./src/images/leetcode271.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/h-index/ target="blank" class = "leetcodelink">
+                    274. H-Index
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>sort</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                画图有助于理解此题，题目问的其实就是在x轴index和每个citation值组成的图形中最大的正方形边长。有了这个思路后自然要对数组排序，之后从i等于0进行搜索，当i不越界以及citations[citations.length - 1 - i] > i时向右移动i。最后返回i即可，i即是我们要的index h。
+            </p>    
+            <img src = "./src/images/leetcode274.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
