@@ -101,6 +101,44 @@
             </p>    
             <img src = "./src/images/leetcode274.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/h-index-ii/ target="blank" class = "leetcodelink">
+                    275. H-Index II
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>binary search</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                此题沿用了上题核心思路，即寻找数组中出现的第一个满足条件citations[i] >= n - i 的数字，再加上数组有序自然想到二分。具体实现二分很简单见下图，找到后返回数组长度-start即使题目要求的h index。
+            </p>    
+            <img src = "./src/images/leetcode275.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/paint-fence/ target="blank" class = "leetcodelink">
+                    276. Paint Fence
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>dp</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                一看就是dp的套路，但想到点上不那么容易，重点是理清思路。观察到对于每个n来说，组成总paint的数量可以拆分成两部分，即最后连个房子是同种颜色和最后两个房子是不同颜色，观察到这点可以使问题大大简化，因为我们可以在dp时将这两个情况分开考虑从而避开出现多于2个相邻房子同种
+                颜色的情况。先看base case，当n为1时自然有k种方法，n为2也是base case，从这里我们就要将前两个房子相同和不同颜色的情况分开计算了，不同颜色自然是k*（k-1）种，相同则还是k种，比较直接。从第三个房子到第n个房子就是我们dp的范围了。从第三个房子开始，我们每次分别更新
+                diffCount和sameCount。我们知道，截止到上一个房子，第i-1个房子时paint的总数为 diffCount+sameCount，又知道当前第i个房子和上个颜色不同，那么新diffCount自然为(sameCount + diffCount) * (k-1)。再看sameCount的情况，这里要注意的点是避开出现三个连续同色
+                的房子，方法很简单，我们不能从之前的sameCount继承任何paint法，因为都将造成三个同色，因此只能从之前diffCount继承，又知道和上个房子同色，因此新的sameCount和旧diffCount数量是相同的。注意到这点就简单了，直接将原diffCount提前保存后负值给新sameCount。到此一轮
+                dp就更新完毕，接着只要循环即可。最后总的paint数量为截止到第n个房子的sameCount和diffCount数量之和。
+            </p>    
+            <img src = "./src/images/leetcode276.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
