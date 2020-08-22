@@ -139,6 +139,26 @@
             </p>    
             <img src = "./src/images/leetcode276.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/find-the-celebrity/ target="blank" class = "leetcodelink">
+                    277. Find the Celebrity
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>Logical Deduction</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                此题注意到关键逻辑点就不难。注意到每次我们调用knows（int a，int b） api的时候根据celebriy的定义都可以排除a 或者 b其中一个人是celebrity的可能性。我们知道作为celebrity，必须不认识除了自己外的其他人，同时其他人全部认识他。那么每次调用knows进行询问的时候
+                只有两个可能。第一，a认识b，那么a必然不是celebrity。第二，a不认识b，那么b必然不是celebrity。既然每次调用knows都可以确实排除一个人，我们只需要从第0个人开始（0是初始候选人）到n依次调用knows询问当前候选人和下一个人直接是否认识就一定可以通过一轮遍历将候选人缩小至一个人，
+                因为题目给出最多一个celebrity（或者没有）。确定这个最终候选人后还没有结束，该候选人未必一定是celebrity，因为我们并没有将所有人两两配对调用knows，所以依然可能该候选人a认识其他人或者有其他人不认识他，只是我们没有对那个组合进行询问。这个也好解决，最后单独对a进行一轮遍历，
+                检查是否有他不认识的人或者别人不认识他，如果有那么a也不是celebrity，那么只能是不存在celebrity，返回-1.如果通过了检查，那么a确实是celebrity，返回a。
+            </p>    
+            <img src = "./src/images/leetcode277.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
