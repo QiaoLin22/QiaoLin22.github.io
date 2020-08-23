@@ -159,6 +159,42 @@
             </p>    
             <img src = "./src/images/leetcode277.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/first-bad-version/ target="blank" class = "leetcodelink">
+                    278. First Bad Version
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>binary search</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                明显的二分，题目比较简单，按照二分标准套路来就行。
+            </p>    
+            <img src = "./src/images/leetcode278.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/perfect-squares/ target="blank" class = "leetcodelink">
+                    279. Perfect Squares
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>dp</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                比较明显的dp，关键在于发现如何从前n-1个位置推导出第n个位置。观察到由于每个数字都是由若干perfect square所组成，那么第n个位置数字一定也是由之前某个位置数字+一个不超过n的perfect square组成，而该perfect square的数量是有限且
+                确定的，例如12，不超过它的perfect square只有1，4，9三个，那么第12个位置数字必然由位置11数字+1或者位置8数字+1，或者位置3数字+1得来，而我们需要的是找到这若干种情况中最小的数字并把它作为第n位置数字。还是12的例子，位置11数字+1是
+                4，位置8数字+1为3，位置3数字+1为4，所以位置12数字是3。该dp方法遍历长度为n数组，每次确定第n个位置数字时又从sqrt（n）个候选人中遍历得出最小，因此总复杂度为o（n根号n）。
+            </p>    
+            <img src = "./src/images/leetcode279.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
