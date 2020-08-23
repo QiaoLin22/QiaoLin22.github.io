@@ -195,6 +195,24 @@
             </p>    
             <img src = "./src/images/leetcode279.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/wiggle-sort/ target="blank" class = "leetcodelink">
+                    280. Wiggle Sort
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>one pass</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                观察到大小关系的顺序为从左至右偶数位上的数字小于等于奇数位上的数字，奇数位上的数字大于等于偶数位上的数字。那么我们从左至右一轮遍历，检查对应位置上的两个数字大小关系是否不符合要求，如果不符合，那么将两个数字互换即可。交换全部完成后原数组必然为
+                wiggle sort（评论区有严格证明）。时间为o（n），空间为in place。
+            </p>    
+            <img src = "./src/images/leetcode280.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
