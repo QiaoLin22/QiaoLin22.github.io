@@ -213,6 +213,24 @@
             </p>    
             <img src = "./src/images/leetcode280.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/zigzag-iterator/ target="blank" class = "leetcodelink">
+                    281. Zigzag Iterator
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>two pointer</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                首先想到双指针法，两个指针依次在两个数组上遍历，当两个指针有任何一个未达到末尾时说明zigzag iteration未完成，也就是hasnext会return true。next方法我们需要一个boolean 变量flag来标记当前处在哪个数组之中，true表示第一个数组，false表示第二个数组。
+                当数组数量从2扩展到任何k的时候可以用boolean 变量down 和 up来表示。当两个指针均为达到终点时在两个数组之间zigzag 遍历，每次返回当前指针数字后更改flag为！flag。当有一个数组到达终点时在另一个数组上直接遍历到终点即可。注意两个指针，数组和flag都是全局变量。
+            </p>    
+            <img src = "./src/images/leetcode281.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
