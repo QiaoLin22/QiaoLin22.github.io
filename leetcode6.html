@@ -231,6 +231,24 @@
             </p>    
             <img src = "./src/images/leetcode281.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/move-zeroes/ target="blank" class = "leetcodelink">
+                    283. Move Zeroes
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>one pass swap</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                不改动数组意味着基本就是swap，关键在于怎么swap，题目要求在保持非0数字相对位置不变的前提下将所有0移动到数组末端。我们从头扫描数组，同时设置一个指针j初始值为0，j之前的数字全部不为0，而j之后的不确定。每次从j开始向后找到下一个不为0的数字，将其位置i与j互换后j++。一轮
+                遍历后所有不为0数字会按顺序被交换到所有0前面且相对位置不变，正满足题目要求。
+            </p>    
+            <img src = "./src/images/leetcode283.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
