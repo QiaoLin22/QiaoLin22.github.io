@@ -267,6 +267,24 @@
             </p>    
             <img src = "./src/images/leetcode284.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/inorder-successor-in-bst/ target="blank" class = "leetcodelink">
+                    285. Inorder Successor in BST
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>binary search + updating potential Successor</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                题目要求找特定节点的successor，既是比p大的节点中最小的。我们可以充分利用bst的性质，从root出发寻找successor，同时设置一个变量succ更新每次更新可能为successor的节点。观察到每次只有两个情况，root比p大，此时root可能为successor，更新succ为当前root，同时下一次寻找应该进入左子树
+                因为右子树全部大于root，因此右子树中不可能有successor。第二种情况是root小于等于p，此时root不可能是successor无需更新，同时我们只要如果处在successor那么只能在当前root的右子树中，因此进入右子树寻找。最后返回succ指向的节点即可。复杂度最好情况o（logn）最坏情况o（n）。
+            </p>    
+            <img src = "./src/images/leetcode285.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
