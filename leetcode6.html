@@ -249,6 +249,24 @@
             </p>    
             <img src = "./src/images/leetcode283.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/peeking-iterator/ target="blank" class = "leetcodelink">
+                    284. Peeking Iterator
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>cache</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                我们可以使用cache的技巧将it这个iterator实例的下一个数字存入cache中，在调用peek方法时直接把cache中的值拿出来。constructer中将cache初始化为第一个数字，在next中我们先将当前cache保存，然后根据hasnext判断it有没有下一个元素，有则更新cache值为下一个元素值，没有
+                cache为null即可，方法最后返回原先cache中的值。hasnext方法直接通过cache是否为null判断判断it有无下一个元素。另外简单点可以直接用queue来实现这个peek方法，构造器将所有元素装进queue，next时poll，peek和hasnext直接使用queue提供的peek和isempty方法也可以达到同样的效果。
+            </p>    
+            <img src = "./src/images/leetcode284.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
