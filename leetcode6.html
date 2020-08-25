@@ -285,6 +285,27 @@
             </p>    
             <img src = "./src/images/leetcode285.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/walls-and-gates/ target="blank" class = "leetcodelink">
+                    286. Walls and Gates
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>dfs</li>
+                <li>bfs</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                2d搜索自然有dfs，bfs两种选择，不论哪一种基本思路一致。搜索的出发点为所有的0位置，也就是gate，而不是inf，这样会大大简化问题。先看dfs，从0出发寻找，将当前最短距离存入一个变量d。每次判断上下左右四个位置是否越界或者已经取得过一个比当前0出发最短距离短的距离，这些情况下都意味着搜索结束。
+                其他情况说明该位置需要更新，更新该位置距离为当前距离+1后进入四个位置递归dfs搜索即可。bfs老办法用queue进行搜索，还是从0出发，先将所有0加入队列作为bfs的第一层后开始bfs搜索，每次拿到当前位置。在判断相邻下一个位置（上下左右）不越界切切还未被搜索过时，更新该位置值并将该位置加入队列即可。由于
+                bfs的性质，从一次搜索出发只要是更新过的位置必然是距离gate的最短距离。
+            </p>    
+            <img src = "./src/images/leetcode286-1.png" height = 500px, width = 1200px alt = "leetcode"/>
+            <img src = "./src/images/leetcode286-2.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
