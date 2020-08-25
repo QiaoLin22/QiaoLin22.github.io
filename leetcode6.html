@@ -306,6 +306,25 @@
             <img src = "./src/images/leetcode286-1.png" height = 500px, width = 1200px alt = "leetcode"/>
             <img src = "./src/images/leetcode286-2.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/find-the-duplicate-number/ target="blank" class = "leetcodelink">
+                    287. Find the Duplicate Number
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li> Floyd's Tortoise and Hare(Cycle Detection)</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                又是一道可以用龟兔赛跑巧解的题，具体证明和142题非常类似。在这里由于是list，走两步用fast = nums[nums[fast]]表示，走一步用slow = nums[slow]表示，根据龟兔赛跑的原理快慢指针必然会相遇，实际上快慢指针在一个循环中相遇，而循环的起点必然是duplicate的数字，具体证明在142题的图中有说明。当快慢指针
+                相遇后我们将慢指针移动回开头，再让快慢指针以相同速度前进，那么当他们再次相遇时必然是在循环开始处也就是duplicate数字处，此时返回快慢指针中任意者即可。
+            </p>
+            <img src = "./src/images/leetcode287.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
     </main>
 </body>
 </html>
