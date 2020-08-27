@@ -344,6 +344,25 @@
             <img src = "./src/images/leetcode288.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
         <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/game-of-life/ target="blank" class = "leetcodelink">
+                    289. Game of Life
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>o(1) space</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                o（1）space方法技巧性比较强，怎么在不复制原数组的前提下做到更新一个位置状态确不影响后续位置更新时的判断呢，答案给出的方法是可以用另一个值来替代本来原更新为的值，该替换者不影响后续状态。具体来说状态变化共有三种，没变（死到死，活到活）这种情况无需记录或者更改，死到活，和活到死。其中活到死的情况原本应该将
+                原来位置上的1替换为0，但是这样做会影响后续活数量的判断。我们可以用-1代替0来更新当前位置，这样做的好处是后续位置可以通过判断四周位置是否是1的绝对值来判断该位置之前状态是否是活。同理死到活的情况原本应该将0替换为1，为了不影响后续，我们用2（可以是非-1，0，1的任何数）替代1。这样一轮遍历下来每个位置靠计算四周
+                活的数量来更新相应状态（活的数量通过四周8个位置中不出界且值的绝对值为1的个数来判断），并且通过上述技巧做到了状态间互不干涉。最后我们再进行一次遍历，将所有-1更新为0，所有2更新为1即可。
+            </p>
+            <img src = "./src/images/leetcode289.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
     </main>
 </body>
 </html>
