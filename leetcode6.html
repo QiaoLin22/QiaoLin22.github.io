@@ -325,6 +325,25 @@
             <img src = "./src/images/leetcode287.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
         <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/unique-word-abbreviation/ target="blank" class = "leetcodelink">
+                    288. Unique Word Abbreviation
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>hashmap + set</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                题目说的很绕但其实逻辑很清楚，判断一个word是不是unique有两个标准，先看是否dic中没有单词的abbr和他一样，如果没有则这个word直接是unique的，如果有则进入第二个条件。dic中所有和word的abbr一样的单词是否都是word本身，如果这个条件通过则word也被判定为unique。明确两个条件后思路就明确了，对dic中所有单词
+                group by abbr，即通过hashmap把所有abbr一样的单词划分为一组（一个hashset）。那么当拿到一个新word时先判断map有没有word的abbr这个key，没有直接true，如果有再判断map中对应该key的set中是否包含word并且大小为1，如果该条件通过也return true。都未通过return
+                false即可。设置辅助方法计算abbr可以让代码简洁，ValidWordAbbr方法中我们根据dict把map搭建好，isUnique方法直接根据已有map做判断即可。
+            </p>
+            <img src = "./src/images/leetcode288.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
     </main>
 </body>
 </html>
