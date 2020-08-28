@@ -363,6 +363,41 @@
             <img src = "./src/images/leetcode289.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
         <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/word-pattern/ target="blank" class = "leetcodelink">
+                    290. Word Pattern
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>hashmap</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                hashmap的思路比较好想到，key我们存贮char或者string，而value我们存贮index也就是位置信息。准备工作为先将str拆分成一个string数组再，比较该数组长度和pattern长度，不一样直接返回false因为pattern不可能一致。长度一样则开始进行一轮遍历，顺次拿到pattern的下一个char和数组的下一个string，若map中没有对应的
+                key则加入map，然后再比较char和string在map中的值是否相同，按照该算法如果在map中值不相同则不是一个pattern返回false。全部通过则返回true。
+            </p>
+            <img src = "./src/images/leetcode290.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/nim-game/ target="blank" class = "leetcodelink">
+                    292. Nim Game
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>数学策略</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                学过奥数的都知道，先手的话只要把剩下石头数量拿成4的倍数就是必胜策略，为什么是4呢，因为能拿的只有1，或者3也就是说只有4的倍数我们能够在范围内完美应对，不论对面拿什么我们都能去凑成4。因此如果一次剩下石头是4的倍数，我们就不断跟对面凑4最后拿到最后一块石头必然是我们。因此只有当石头原本就是4的倍数时我们会输，
+                因为此时对面只要用同样策略就能战胜我们。因此直接判断n是否为4倍数即可。
+            </p>
+            <img src = "./src/images/leetcode292.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
