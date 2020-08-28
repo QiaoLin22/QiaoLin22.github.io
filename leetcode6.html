@@ -415,6 +415,25 @@
             </p>
             <img src = "./src/images/leetcode293.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/flip-game-ii/ target="blank" class = "leetcodelink">
+                    294. Flip Game II
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>backtracking + memoization</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                基本思路为backtrack dfs搜索，遍历当前string找到下一个可以将++反转成--的地方，反转，将新的string（next）进行递归调用，如果canWin(next)返回false，则说明对手下一步没地方可以反转了，那么当前string就是有必胜策略的。可以说我们判断当前string
+                有无必胜策略的方法是基于每一个可能的反转生成的下一个string是否能让对手无处可走，如果有任何一种反转是则返回true，有必胜策略。如果当前string已经无处可以反转了（没有连续两个+），则当前搜索结束（当前选手无处可走）。为了速度我们可以加入memoization
+                避免重复计算。
+            </p>
+            <img src = "./src/images/leetcode294.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
