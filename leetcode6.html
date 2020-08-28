@@ -434,6 +434,24 @@
             </p>
             <img src = "./src/images/leetcode294.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/binary-tree-longest-consecutive-sequence/ target="blank" class = "leetcodelink">
+                    298. Binary Tree Longest Consecutive Sequence
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>top down dfs traversal</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                递归对树进行top down traversal，记录下连续节点数量的最大值。traversal这里采用preorder方式，helper方法对递归方法，root为空时终止，节点和上个不连续时重置len为0，符合条件时更新pre，len以及max后（max为用来记录答案的全局变量）递归调用左右子树。
+                主方法对根节点左右子树都进行traverse后返回max即可。
+            </p>
+            <img src = "./src/images/leetcode298.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
