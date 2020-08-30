@@ -472,6 +472,28 @@
             </p>
             <img src = "./src/images/leetcode299.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/longest-increasing-subsequence/ target="blank" class = "leetcodelink">
+                    300. Longest Increasing Subsequence
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>dp o(n^2)</li>
+                <li>dp with binary search o(nlogn)</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                先来看dp o（n^2）思路，核心思想依旧是基于dp的从前面已有信息推导出下一个位置信息的基本思想。设置一个dp数组长度和nums相同，将dp【0】设置为1，因为一个数字自己就是一个increasing subsequence。接着思考怎么确定每个dp【i】的值，即截止到i位置的lis值。对于每个i位置我们设置它的初始
+                lis值为0，然后扫描一遍它前面位置，对于前面所有小于num【i】的nums【j】，nums【i】可以成为之前Increasing Subsequence的下一个数字，因此我们需要找到前面比nums【i】小的位置中最大的dp【j】（curmax）。对前面位置扫描结束后dp【i】的值就可以确定为curmax+1。对每一个i都做该操作后
+                全局最大lis就是所有dp【i】中的最大值，我们可以在计算dp【i】值的循环中顺带着将这个值（res）更新，最后返回res即可。binary search的方法维护一个dp数组，长度为nums。对nums中的每一个数字，在dp数组中进行binary search，用i储存返回值。当dp中不存在数字x时则返回(-(insertion point) - 1)，
+                此时 -(i + 1)表示插入x到dp数组后应该在的位置，若此时i和len相等则len++，最后将x的值付给dp【i】。循环结束len即为最大lis。
+            </p>
+            <img src = "./src/images/leetcode300-1.png" height = 500px, width = 1200px alt = "leetcode"/>
+            <img src = "./src/images/leetcode300-2.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
