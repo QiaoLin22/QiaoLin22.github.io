@@ -530,6 +530,26 @@
             </p>
             <img src = "./src/images/leetcode304.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/additive-number/ target="blank" class = "leetcodelink">
+                    306. Additive Number
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>iteration + recursion</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                首先写一个辅助方法isAddictive判断给定两个数字和一个string时，该string是否是满足要求的。方法为计算两个数字和后更新两个数字和string，之后递归调用isAddictive方法，若在某一时刻str为空了则string满足条件，若出现string的开头不是两个数字和的string则不满足要求，return false。有了该辅助方法后我们
+                只需要在初始string中将每对儿起始数字的可能性尝试一遍即可知道该string是否符合要求（有任何一对儿初始num满足要求就是满足要求），若所有可能性都无法满足条件则string自身不是Additive Number。除了暴力尝试所有可能外我们可以做一些预剪处理，使得速度更快。例如第一个数字长度不可能超过总长度的一半，因此我们只需要
+                尝试1 到 (len-1)/2 这个区间中的所有可能性。再比如我们知道总长度减去num1和num2长度后剩余的长度一定大于等于num1和num2中的长度较大者，因此可以用此条件来限制num2的长度范围，进行预剪可以将速度从3ms提升到1ms。另外还需要注意题目给出的 Numbers in the additive sequence cannot have leading zeros
+                的条件，当两个数字长度大于1且以0开头时直接break即可无需尝试。另外为了避免整形overflow的问题整形全部用long存贮而不是int。
+            </p>
+            <img src = "./src/images/leetcode306.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
