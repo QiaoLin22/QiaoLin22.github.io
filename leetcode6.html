@@ -569,6 +569,25 @@
             </p>
             <img src = "./src/images/leetcode307.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/ target="blank" class = "leetcodelink">
+                    309. Best Time to Buy and Sell Stock with Cooldown
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>state machine + dp</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                标答给出的解法是有三个state的解法，在评论区看到一个只是用两个state，即buy和sell结合dp的答案，十分简洁易懂。假设我们有两个数组buy【i】和sell【i】。buy表示截止到第i天的最后一次操作是buy，sell同理。那么我们根据cool down的限制就可以得出buy[i] = Math.max(buy[i - 1], sell[i - 2] - prices[i])，
+                即在第i天我们可以保持不变，维持buy【i-1】状态，或者在第i-2天时卖出并在i天买入，取得的收益为sell[i - 2] - prices[i]。sell【i】同理可以选择不变（sell[i - 1]），或者前一天买入，取得收益buy[i - 1] + prices[i]。每次buy【i】或者sell【i】到底如何操作取决于两个状态中的较大值（收益最大）。有了这个dp
+                思路后我们进行一轮遍历更新从2到len-1区间内buy和sell值后返回sell[len - 1]即可，因为我们知道最大收益一定是以sell结尾，即sell数组最后一个位置的值。
+            </p>
+            <img src = "./src/images/leetcode309.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
