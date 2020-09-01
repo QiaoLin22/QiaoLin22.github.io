@@ -550,6 +550,25 @@
             </p>
             <img src = "./src/images/leetcode306.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/range-sum-query-mutable/ target="blank" class = "leetcodelink">
+                    307. Range Sum Query - Mutable
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>segment tree</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                使用segment tree的原因是可以将数组中特定区间段的数字cache起来从而达到update 和 sum都为log（n）的时间复杂度。搭建并使用segment tree的步骤有三，1，Pre-processing step which builds the segment tree from a given array. 2，Update the segment tree when an element is modified.
+                3，Calculate the Range Sum Query using the segment tree.先来看步骤一搭建tree，根据线段树性质我们知道只要知道了最低层叶子节点，就可以根据非叶子节点左右index分别是2*i和2*i+1的性质一轮遍历（o（n））将所有inex上的数字求出。更新和求和的思路都很类似，先通过index+n找到底层节点的index，再不断
+                想parent方向更新或者累加直到root或者左右l，r index相等为止。不论是update 还是 sum都是从叶子层对应的节点开始，通过叶子和parent index之间的关系向上更新（累加）从而达到log（n）时间内完成操作。
+            </p>
+            <img src = "./src/images/leetcode307.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
