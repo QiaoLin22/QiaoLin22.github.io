@@ -607,6 +607,23 @@
             </p>
             <img src = "./src/images/leetcode310.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/sparse-matrix-multiplication/ target="blank" class = "leetcodelink">
+                    311. Sparse Matrix Multiplication
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>matrix definition triple loop</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                根据矩阵计算法则，每次拿a第一行和b所有列分别两两相乘得到结果矩阵第一行，a第i行和b所有列两两相乘得到结果矩阵第i行，以此类推。我们可以设置一个中间循环（变量k遍历a宽度，方便我们将a行中和b列中的元素两两对应）来简化计算同时跳过所有a和b中所有0位置来提升效率，利用一个结合矩阵乘法定义的三重循环直接将结果矩阵计算完毕。
+            </p>
+            <img src = "./src/images/leetcode311.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
