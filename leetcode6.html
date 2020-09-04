@@ -624,6 +624,25 @@
             </p>
             <img src = "./src/images/leetcode311.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/super-ugly-number/ target="blank" class = "leetcodelink">
+                    313. Super Ugly Number
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                <li>dp</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                首先需要理清cur数组在dp中起到的作用，这是难点。经过简单总结，我将cur数组的作用归纳为负责track，也就是跟踪对于每个prime因子而言，下一个用于形成candidate（对应prime*数组之前某位置数字）的数字在数组中的位置。听起来可能很绕，我们来看一个例子。例如我们已经找到第11个答案28，想要推导出第12个也就是32，此时cur数组是什么样子的呢。
+                cur此时是【7，3，2，1】，翻译过来就是说下一个candidate其中一个该使用答案第7个位置数字和2相乘得到，也就是16*2=32，另一个candidate用答案第3个位置*7得到，7*7=49，同理得到另两个candidate 4*13=52和2 * 19 = 38，接着从中选出最小的也就是32作为第12个位置最终答案。那么这个cur数组需要保证的是对应位置 * 对应prime第一定要大于
+                前一个答案，例如这里的32，49，52和38都大于28，否则就没有意义。因此在计算candidate之前需要先将cur数组更新到相应状态（所有位置*prime比前一个答案大）。总而言之cur数组其实就是track若干个prime在之前已有的答案数组中对应的位置，使得该位置数字*对应prime大于上一个答案。一轮dp即可解决问题。复杂度取决于n和k大小，为o（nk）。
+            </p>
+            <img src = "./src/images/leetcode313.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
