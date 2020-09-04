@@ -659,7 +659,7 @@
                 使用map根据col数字去分组的思路容易想到。注意到traverse树的方式只能是level order traverse，否则每个column上的node顺序会不符合要求。level order traverse自然是用queue，那么我们怎么track col数呢，我们可以再使用一个queue专门track col数，并将traverse中遇到的每个node根据对应的col数group到相应的组中，并使用map来存贮
                 每个col数对应的node组，由于treemap自带的排序性质，我们只需要将向左traverse的节点col数-1，向右的+1，分组后输出顺序自然按照key从小到大，也就是符合题目从左至右的要求。大思路明确后代码很简单，用一个whlile loop实现treemap，再将treemap转换成arraylist输出，见下图。
             </p>
-            <img src = "./src/images/leetcode313.png" height = 500px, width = 1200px alt = "leetcode"/>
+            <img src = "./src/images/leetcode314.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
     </main>
 </body>
