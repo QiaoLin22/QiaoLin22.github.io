@@ -37,11 +37,13 @@
             </h2>
             <h3>官方思路:</h3>
             <ul>
-                
+                Optimize noCommonLetters function : Bitmasks + Precomputation
             </ul>
             <h3>思路整理：</h3>
             <p>
-                
+                此题关键点在于如何判断两个string没有重复的字符，使用了一个巧妙的方法，即bitmasks。对于words中的每个word，我们用一个32位的bitmask来记录出现过哪些字符，具体做法为对word里的每个字符c，进行masks[i] |= 1 << c - 'a'操作。masks是一个长度为words的数组，专门用来存放bitmask。
+                c - 'a'是为了将字符转换对对应的数字（到a的距离），然后通过将1左移相应次数将bitmask中对应位置变为1，在通过 ｜= 操作更新bitmask对应位置。举个例子，abc会被转换为111，即a位置，b位置和c位置均出现过。通过将每个word转换为bitmask我们可以o（1）时间判断两个string是否有重复字符，
+                这就是bitmask操作的主要目的。之后剩下的就是找到最大长度，遍历所有两两组合，在不重复字符的情况下更新max即可，最后返回max。用bitmask表示字母字符串是此题的要点。
             </p>    
             <img src = "./src/images/leetcode318.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
