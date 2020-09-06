@@ -64,6 +64,25 @@
             </p>    
             <img src = "./src/images/leetcode319.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/generalized-abbreviation/ target="blank" class = "leetcodelink">
+                    320. Generalized Abbreviation
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                backtracking
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+               典型backtrack题型，tricky的地方在于怎么把abbreviation和字母分开track，标答使用了一个单独的变量count用来记录目前abbreviation的数量。在backtrack时我们对每一个字母有两种处理方式，abbreviate和不abbreviate。abbreviate的话自然count++，
+               count就是用来track当前abbreviation个数的用的，同时index+1后进入backtracking。另一种选择自然是不使用abbreviation，此时需要先把当前的（之前积攒的）count也就是abbreviation数加入cur，然后再将当前字母加入cur，再将count清零从新计数。完成这一系列
+               操作后才能进入backtracking。终止条件为index达到末尾也就是word.length()，此时先将count加入cur，再将cur加入答案，最后返回答案即可。
+            </p>    
+            <img src = "./src/images/leetcode320.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
