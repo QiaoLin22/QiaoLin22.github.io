@@ -97,7 +97,7 @@
             <h3>思路整理：</h3>
             <p>
                注意此题是经典dp题型，greedy是不可行的，反例很容易找出不再赘述。dp的思路也很直接，使用bottom up的基本思想，从前n个位置推导出第n+1个位置的值。先创建一个dp数组长度为n+1表示每个amount最少用多少枚硬币可以组成。dp【0】自然为0，即不需要硬币就可以组合。从amount1到amountn就
-               进入dp主循环，每次更新一个位置（根据coins数组和dp数组前面已有位置信息）。对于每一个新位置dp【i】先将它的值设置为maxvalue（这个其实无所谓，-1也完全可以主要用来和真实值作区分），然后遍历coins数组，当i >= coins[j]并且dp[i - coins[j]] != Integer.MAX_VALUE 时更新dp【i】
+               进入dp主循环，每次更新一个位置（根据coins数组和dp数组前面已有位置信息）。对于每一个新位置dp【i】先将它的值设置为maxvalue，然后遍历coins数组，当i >= coins[j]并且dp[i - coins[j]] != Integer.MAX_VALUE 时更新dp【i】
                值为Math.min(dp[i],dp[i-coins[j]]+1)。注意两个条件必须全部满足，第一个不满足会引起出界错误，第二个则是为了确保之前的位置确实是有值的不引起跟新混乱。这样每个dp【i】都被确实跟新为从前面amount可以使用一枚硬币达到时的硬币数，并且该值一定是全局最少的。遍历结束后我们直接判断
                dp[amount]是否是dummy value（maxvalue），若是则没有组合可以达到amount返回-1，否则返回dp【amount】的值即可。
             </p>    
