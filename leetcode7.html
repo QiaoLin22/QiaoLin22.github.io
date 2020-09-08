@@ -103,6 +103,26 @@
             </p>    
             <img src = "./src/images/leetcode322.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/ target="blank" class = "leetcodelink">
+                    323. Number of Connected Components in an Undirected Graph
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+               <li>dfs recursive</li>
+               <li>bfs iterative</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+               典型图搜索题，自然是dfs recursive 和 bfs iterative都可以。首先建立adjlist，使用常见的map实现即可。为了避免重复和无限循环，还是经典的visited set存储已经搜索过的node。接着就可以开始搜索，先看dfs。从0开始遍历所有的node，若该node没有被搜索过则代表着一块全新的componet，res++后
+               进入dfs搜索。dfs方法内部也是经典操作，先将当前node加入visited，然后从adjlist中拿到当前node全部neighbours，遍历并将其中未被搜索过（不再visited中）的beighbour进行递归dfs搜索，所有搜索结束后回到主方法，返回res即可。bfs使用传统的queue来进行iteration，还是对0到n-1所有node进行遍历，
+               若node未被搜索过，将node加入visited，res++后进入bfs搜索，在queue不为空时不断将当前node的邻居（为搜索过）加入队列。所有搜索结束后返回res。
+            </p>    
+            <img src = "./src/images/leetcode323-1.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
