@@ -161,6 +161,25 @@
             </p>    
             <img src = "./src/images/leetcode325.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=hhttps://leetcode.com/problems/power-of-three/ target="blank" class = "leetcodelink">
+                    326. Power of Three
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+              <li>naive</li>
+              <li>base change + re</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+               后两种方法有些fancy，实用性不强。主要看第二种方法，第一种方法就是普通的recursion，n非0时只有不停/3最后得到1才是3的幂。第二种方法需要注意的是java中常见的用于转换base的api，String baseChange = Integer.toString(number, base)。该api可以将任何n转换成想要的base并以string形式保存。除此之外就是
+               正则表达式的运用，^1表示string以1开始，0*表示跟上0个或者若干个0，$表示没有其他字符出现。显而易见三的幂string形式正是匹配上述正则的唯一可能性，因此直接返回转换base后的字符串是否匹配上述正则即可。
+            </p>    
+            <img src = "./src/images/leetcode326.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
