@@ -142,6 +142,25 @@
             </p>    
             <img src = "./src/images/leetcode324.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/ target="blank" class = "leetcodelink">
+                    325. Maximum Size Subarray Sum Equals k
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+               one pass + hashmap cache
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+               评论区提供的巧妙思路，一轮遍历每次记录截止到index i之前的数字总合并将i之前总合和indexi记录到hashmap中cache起来。遍历中有两种情况需要更新max，第一种是从index 0开始到i的总合恰好是要找的target，此时更新max为截止到当前的最大距离。第二种情况是index i之前总合sum和map中存贮的之前某index j之前的
+               总合之差是我们要找的数字，此时j到i之间的subarray也满足总合为target的要求，因此更新max为当前max和i-map.get(sum-target)中的较大者。除了这两种情况更新以外还需要在出现一个map中没出现过的key（截止到某index总合）时将该key和index存入map中，注意出现过的key不再更新的原因是我们希望找的是最大距离，保留
+               最先出现的key恰好使得后续总合减去相对早出现的index总合满足要求时距离差距最大。一轮更新完成后返回max即可。
+            </p>    
+            <img src = "./src/images/leetcode325.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
