@@ -180,6 +180,24 @@
             </p>    
             <img src = "./src/images/leetcode326.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/odd-even-linked-list/ target="blank" class = "leetcodelink">
+                    328. Odd Even Linked List
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+              <li>Put the odd nodes in a linked list and the even nodes in another. Then link the evenList to the tail of the oddList.</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+               思路很直接，将所有奇数位置node的next链接指向下一个奇数node，所有偶数node的next指向下一个偶数node，最后再将奇数node串接上偶数node串即可。我们以第一个even node作为基准遍历一轮，并在途中修改所有链接。当even不为空且他的下一个位置也不为空时（否则空指针），将odd的next指向此时even的next，将奇数node链接修改好，
+               接着移动odd到下一个odd位置，此时even的next正是此时的odd的next位置，修改even的next为此时odd的next，然后移动even到下一个even位置，一轮修改就完成了。循环修改好所有链接后，将evenhead接在odd后面，然后返回head（其实就是oddhead）即可。
+            </p>    
+            <img src = "./src/images/leetcode328.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
