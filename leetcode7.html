@@ -216,6 +216,24 @@
             </p>    
             <img src = "./src/images/leetcode331.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/reconstruct-itinerary/ target="blank" class = "leetcodelink">
+                    332. Reconstruct Itinerary
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+              <li>Hierholzer's Algorithm</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+               虽然叫做Hierholzer's Algorithm，但引用答案的解释其实就是postorder DFS (Depth-First Search) in a directed graph, from a fixed starting point（jfk）。为了保证顺序我们构建adjlist时使用priorityqueue来存放一个node的neighbours即可。之后从jfk出发开始postorder dfs搜索，在当前node的neighbours不为空
+               时，从当前node neighbours中删除最小neighbour，并对该neighbour进行递归dfs搜索，在dfs搜索最后将dfs起点node反向加入答案即可。
+            </p>    
+            <img src = "./src/images/leetcode332.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
