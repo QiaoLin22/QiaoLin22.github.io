@@ -234,6 +234,24 @@
             </p>    
             <img src = "./src/images/leetcode332.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/largest-bst-subtree/ target="blank" class = "leetcodelink">
+                    333. Largest BST Subtree
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+              <li>top down || bottom up traversal, check, count</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+               使用top down 代码最简便但是复杂度为n方。isvalid方法top down检查一棵树是否为bst（通过上下界check）而count方法数一颗bst的node个数用于返回答案。最后在主方法中top down递归找出第一课出现的bst，并通过count方法返回它的个数。可见该方法进行了多次重复计算，使用bottom up traverse配合自定义的类（同时check和count）可以将速度
+                提升到o（n）。
+            </p>    
+            <img src = "./src/images/leetcode333.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
