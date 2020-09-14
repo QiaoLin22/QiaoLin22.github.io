@@ -252,6 +252,24 @@
             </p>    
             <img src = "./src/images/leetcode333.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/increasing-triplet-subsequence/ target="blank" class = "leetcodelink">
+                    334. Increasing Triplet Subsequence
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+              <li>one pass two pointers</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                用dp也可以解决但是复杂度高于o（n），答案给出的思路比较巧妙，既然要寻找一个长度为3的递增subsequence，我们维护两个指针，一个指向当前遇到的最小的数字min，一个指向当前遇到的第二小的数字secmin。在一轮遍历过程中，每当遇到一个小于小于min的数字则替换min成为最小数字，secmin同理但不能和min是同一个数字。在遍历过程中，如果出现不同于
+                min和secmin的第三个数字，并且该数字大于min和secmin，则该数字和min以及secmin必然构成一个长度为3的subsequence，也就是找到了这样一个subsequence，返回true。如果一轮遍历结束这样的数字依旧没有出现则整个数组中必然没有满足要求的subsequence，返回false即可。
+            </p>    
+            <img src = "./src/images/leetcode334.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
