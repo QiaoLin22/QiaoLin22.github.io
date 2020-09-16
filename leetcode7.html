@@ -288,7 +288,8 @@
                 结果就是两种情况中的最大者，最后返回该结果即可。为了避免重复计算我们用map存贮见过的节点，当再次来到计算过的节点时直接返回结果，复杂度从n方降低为n，但依旧是top down。为了从算法上就避免重复的可能性，我们可以在计算节点时就将rob该节点和不rob两种情况的最大值同时存贮起来，答案使用了一个长度为2的数组来存贮。此时同样是两种情况，不rob
                 root时，左右子节点可以选择rob或者不rob，我们取两个节点两种情况中的最大值之和，即Math.max(left[0],left[1]) + Math.max(right[0],right[1])，作为res【0】。rob root时两个子节点只能选择不rob，此时最大值为root.val + left[0] + right[0】。最后返回整个树root处数组两个位置中最大值即可。
             </p>    
-            <img src = "./src/images/leetcode334.png" height = 500px, width = 1200px alt = "leetcode"/>
+            <img src = "./src/images/leetcode337.png" height = 500px, width = 1200px alt = "leetcode"/>
+            <img src = "./src/images/leetcode337-2.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
     </main>
 </body>
