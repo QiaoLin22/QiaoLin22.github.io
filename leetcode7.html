@@ -291,6 +291,44 @@
             <img src = "./src/images/leetcode337.png" height = 500px, width = 1200px alt = "leetcode"/>
             <img src = "./src/images/leetcode337-2.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/counting-bits/ target="blank" class = "leetcodelink">
+                    338. Counting Bits
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+              <li>DP + Least Significant Bit</li>
+              <li>DP + Last Set Bit</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                看两种dp的思路，都是根据之前的数1的个数推出当前数1的个数。假设当前推理到n中1的个数，第一种思路是基于（n/2）的二进制表示恰好是n二进制表示去掉Least Significant Bit得到的。那么n的个数可以直接从（n/2）继承除了最后一位其他1的个数，然后根据最后一位是0还是1判断是否+1。最后一位可以直接通过（n % 2）得出。也就是通项公式可以归纳为
+                ans[i] = ans[i >> 1] + (i & 1)。第二种思路是基于n & n-1可以得到n将Last Set Bit 变为0的二进制表示为基础，从dp【n&n-1】去推出dp【n】，而dp【n】自然是前者+1。通项公式归纳为ans[i] = ans[i & (i - 1)] + 1。有了通项公式后dp自然也就完成了，dp【0】也就是0中1个数为0，后续全部通过通项公式推出即可。
+            </p>    
+            <img src = "./src/images/leetcode338-1.png" height = 500px, width = 1200px alt = "leetcode"/>
+            <img src = "./src/images/leetcode338-2.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/nested-list-weight-sum/ target="blank" class = "leetcodelink">
+                    339. Nested List Weight Sum
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+              <li>recursion</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                题目给出了一个自定义的类型nestedinteger，并提供了一系列接口，包括判断nestedinteger是否是一个数字（int），如果是拿到该数字，判断是否是一个list，如果是则拿到该list。nested这个性质很契合recursion的思路，我们在每一层中计算每个数字和它们depth的乘积，并通过一个辅助方法计算每一层的深度。最后返回从给定list的第一层递归调用结果
+                即可。对于每一层，遍历该层所有的nestedinteger，如果是int，则将它的值和depth乘积加入sum，如果是list则递归调用该list并将结果加入sum，最后返回该层的sum。这样从原始list和depth 1开始递归后返回所有nestedlist的sum总合
+            </p>    
+            <img src = "./src/images/leetcode339.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
