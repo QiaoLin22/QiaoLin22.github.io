@@ -347,6 +347,27 @@
             </p>    
             <img src = "./src/images/leetcode341.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/power-of-four/ target="blank" class = "leetcodelink">
+                    342. Power of Four
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+              <li>count 0 in binary</li>
+              <li>use bit mask</li>
+              <li>math</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                首先2的power很好判断是需要n & n-1 == 0即可，关键在于区分2power和4power，拿8和16来举例。8是1000，16是10000，最直观的是0个数不一样，2power有奇数个0而4power有偶数个，可以根据这个来区分也就是方法一。第二种比较聪明，利用了现成的bit mask (101010...10)，即1在偶数位而0在奇数位.观察到4power的1在奇数位，因此自然有
+                (num & 0xaaaaaaaa) == 0)这一判断条件（0xaaaaaaaa是bitmask的16进制表示）,0x55555555也可以，只要0或者1分别占据奇数位或者偶数位即可。最后一种方法利用了数论性质，观察到(4^k mod3)=((3+1)^k mod3) = 1， 因此power4在power2的基础上必须mod 3余1，将此作为第二个条件即可。
+                ​
+            </p>    
+            <img src = "./src/images/leetcode342.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
