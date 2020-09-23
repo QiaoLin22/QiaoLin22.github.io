@@ -368,6 +368,25 @@
             </p>    
             <img src = "./src/images/leetcode342.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/integer-break/ target="blank" class = "leetcodelink">
+                    343. Integer Break
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+              <li>Math</li>
+              <li>deep</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                可以用纯数学方法做，或者dp。数组全部初始化为0，dp【1】为1，从2开始到n开始dp填充数组。对于每个新位置i，我们使用指针j遍历从1到i/2闭区间，对于每个j，我们取j和dp【j】中较大者，即Math.max(j,dp[j])。对于每个与j配对的i-j，我们同理取Math.max(i - j, dp[i - j])。dp【i】的最大值必然产生于所有这些可能组合中的最大值，每次通过遍历j
+                将该最大值找出。一轮遍历结束后返回dp【n】既是n所能分解出的的最大乘积。
+            </p>    
+            <img src = "./src/images/leetcode343.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
