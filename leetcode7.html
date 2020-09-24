@@ -404,6 +404,24 @@
             </p>    
             <img src = "./src/images/leetcode344.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/reverse-vowels-of-a-string/ target="blank" class = "leetcodelink">
+                    345. Reverse Vowels of a String
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+              <li>two pointers + check vowels</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                与上题不同此题我们只亮亮交换所有的原音char，也就是我们在使用two pointers时需要先找到对应的两个原音char的位置再进行交换而略过所有非原音char。我们可以用一个string保存所有原音char并通过string的contains方法判断某个char是否是原音char。（set或者indexof也可以），
+                之后方法与上题类似，使用双指针从头尾开始，头指针略过非原音char来到正确位置，尾指针同理略过非原音char来到正确位置，之后进行交换（注意题目给的是string，需要先通过tochararray将s变为一个char数组再进行交换操作）直到start与end指针相遇停止即可完成所有原音字符的交换。
+            </p>    
+            <img src = "./src/images/leetcode345.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
