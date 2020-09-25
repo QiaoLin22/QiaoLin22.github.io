@@ -422,6 +422,24 @@
             </p>    
             <img src = "./src/images/leetcode345.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/moving-average-from-data-stream/ target="blank" class = "leetcodelink">
+                    346. Moving Average from Data Stream
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+              <li>queue</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                很容易想到队列的数据结构，剩下问题就是如何优化效率。我们可以保存上次的队列中数字总合（sum），每次有新数字入队并且超出最大size（maxsize）时，用之前总合减去队头元素，再加上新入队元素就可以得到当前总合，除以最大size就得到了平均值。
+                再加入一个新数字到队列后，sum加上新数字，接着判断是否加入该数字后队列大小超出maxsize，如果是进行poll操作并且sum减去出队的数字完成更新，最后返回新的队列总合除以当前队列大小即可。
+            </p>    
+            <img src = "./src/images/leetcode346.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
