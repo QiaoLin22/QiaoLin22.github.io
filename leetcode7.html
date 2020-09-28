@@ -440,6 +440,24 @@
             </p>    
             <img src = "./src/images/leetcode346.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/top-k-frequent-elements/ target="blank" class = "leetcodelink">
+                    347. Top K Frequent Elements
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+              <li>priority queue</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                既然求出现频率前k高的数字，自然想到维护一个大小为k的maxheap，首先使用hashmap统计出所有数字和出现频率，然后遍历该map的keyset，将所有数字按照频率大小构成minheap。为了保持大小为k，遍历中一旦heap大小超过k则poll。minheap可以用priorityqueue去实现。遍历完成后
+                通过poll操作反向将数字按照出现频率从大到小装入答案数组。时间复杂度为o（nlogk），每一次heapify需要logk时间，总共进行n次操作。
+            </p>    
+            <img src = "./src/images/leetcode347.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
