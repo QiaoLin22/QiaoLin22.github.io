@@ -458,6 +458,24 @@
             </p>    
             <img src = "./src/images/leetcode347.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/design-tic-tac-toe/ target="blank" class = "leetcodelink">
+                    348. Design Tic-Tac-Toe
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+              <li>track sum of rows, cols, diagonal and antiDiagonal</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                答案提供的思路很巧妙，答案指出我们无需track整个矩阵中是否有玩家获胜，而只需track是否对应的行，列或者对角线达成了获胜条件。具体track方法如下，每当player1走一步，对应行列对角线+1，而player2则是-1，每一步完成后检查对应行列对角线上的总合的绝对值是否达到了n（总行数），
+                如果达到了则说明当前玩家获胜，返回当前玩家即可，否则说明没有玩家获胜返回0.此题巧妙之处在于将行列和对角线独立于矩阵分开记录，将玩家1每一步标记为+1而玩家2标记为-1使得检查获胜条件变得简单，从而达到o（1）复杂度。
+            </p>    
+            <img src = "./src/images/leetcode348.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
