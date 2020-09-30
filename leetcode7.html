@@ -476,6 +476,24 @@
             </p>    
             <img src = "./src/images/leetcode348.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/intersection-of-two-arrays/ target="blank" class = "leetcodelink">
+                    349. Intersection of Two Arrays
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+              <li>two sets</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                本题需要找出两个array 的 intersection，即共同包含的元素并且不能有重复，自然适用于set数据结构。首先用nums1中所有元素构建set，之后遍历nums2，每当发现一个intersection元素就将该元素添加进一个list。为了避免重复，在某个元素被判定为intersection之后，将该元素
+                从set中删除，之后不再考虑以达到去重复的目的。最后将list转化为array返回即可。
+            </p>    
+            <img src = "./src/images/leetcode349.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
