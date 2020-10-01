@@ -494,6 +494,26 @@
             </p>    
             <img src = "./src/images/leetcode349.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/intersection-of-two-arrays-ii/ target="blank" class = "leetcodelink">
+                    350. Intersection of Two Arrays II
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+              <li>hashmap</li>
+              <li>two pointers</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                此题针对前两个follow up有两种针对性的解法。对于两个array都sort好的情况，双指针法更适用因为省去了sort复杂度为o（n），算法本身很简单。首先排序nums1和nums2，之后使用双指针i，j在i不超过nums1长度j不超过nums2长度时对数组进行遍历，指针对应数字相等则i++，j++并
+                将nums1【i】处数字加入答案，若i数字小于j数字仅i++，j数字小于i时仅j++，循环结束时返回答案数字即可。针对第二种follow up，即若nums1和nums2长度相差很大时hashmap则更实用，我们首先判断nums1和2长短，并选择短的那个建立hashmap，之后遍历较长的数组，每当遇到set里
+                有对应key的数字且个数大于0时将该数字加入答案，之后set中对应key的个数-1（防止加入多余元素），遍历完成后返回答案数组即可。
+            </p>    
+            <img src = "./src/images/leetcode350.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
