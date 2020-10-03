@@ -514,6 +514,26 @@
             </p>    
             <img src = "./src/images/leetcode350.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/android-unlock-patterns/ target="blank" class = "leetcodelink">
+                    351. Android Unlock Patterns
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+              <li>DFS backtracking + jumping table + symmetric</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                此题描述有点模糊，但本质上是个标准的dfs backtracking模版。可以理解为此题要求生成从1到9的所有combination，但是其中有一些限制，我们只需要在dfs中避开这些限制即可。限制具体来说就是两个特定数字要想链接的话他们中间的数字必须已经被访问过，例如想从1连接到3的话2必须已经
+                包含在pattern里。另一个限制则是pattern长度必须在m到n闭区间之间。将题目理解为有以上两个限制的backtracking后问题变得简单很多。我们可以创建一个10，10的矩阵jump记录所有限制一要求的连接时必须已经访问过的数字，例如jump【1】【3】就是2。利用对称的性质，本来应该dfs九次
+                的循环降低为只需要从1，2和5出发的三次，一边dfs一边记录pattern个数。dfs过程中只记录大于等于m的pattern的个数，长度超过n则返回个数，进入循环前将visited[num]标记为true，然后进入1到9循环（下一个要连接到的数字），在下一个数不等于当前数字且下一数字不涉及中间数限制或者
+                中间数已经被访问过时进入递归dfs。循环结束后将visited[num]标记为false完成backtracking后返回count，至此从某个特定数字开始的所有pattern个数统计完毕，将所有3个需要统计的位置依次进行dfs后相加即可得到总个数。
+            </p>    
+            <img src = "./src/images/leetcode351.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
