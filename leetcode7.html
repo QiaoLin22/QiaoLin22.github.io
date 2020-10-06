@@ -534,6 +534,27 @@
             </p>    
             <img src = "./src/images/leetcode351.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/design-snake-game/ target="blank" class = "leetcodelink">
+                    353. Design Snake Game
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+              <li>snake as Dequeue, check outbound and eatself at each step, check eatfood to decide add tail back or not</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                代码虽然长但是逻辑非常清晰，下面逐步分析一下。首先创建一个新的class point，其中有横纵坐标用来构成蛇的身体。其他有待初始化的变量有蛇本身（一个用linkedlist实现的deque），游戏界面大小row和col，存储食物信息的矩阵food和目前得分k。下一步就是初始化这些变量，需要注意的是
+                由于蛇头一开始处于00位置，初始化后需要把头加上（snake.offerFirst(new point(0,0));）。接下来看move逻辑，首先使用peekfirst拿到旧头部，旧尾部则是直接polllast（这里很巧妙，因为除非吃到食物，否则旧尾部就被移除snake了），创建新的point newhead初始值为旧head的横纵坐标。然后进入移动逻辑。
+                根据移动的方向direction判断如何更改newhead横纵坐标。更新完成后首先需要判断是否达成了输的条件，即出界或者咬到自己，任何一种情况直接return -1.出界很简单，直接将newhead坐标和row，col做比较即可，接着判断咬到自己的情况。咬到自己则要遍历当前蛇身体的每一个point，
+                判断是否有一个point和newhead重叠，有则咬到自己。如果这两种情况都未发生就可以将newhead添加到snake了。下一步则是判断是否吃到食物，因为吃到食物时我们需要加长snake，更新分数k。当k小于food.length并且newhead和当前食物坐标重合时则吃到食物（当前食物坐标可以从分数k取得，即food[k][0]和food[k][1]）。
+                若吃到食物则将旧tail添加回snake（这就是之前polllast的好处），然后k++完成所有更新，最后按照要求return k即可。
+            </p>    
+            <img src = "./src/images/leetcode353.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
