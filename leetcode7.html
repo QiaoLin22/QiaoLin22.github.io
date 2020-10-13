@@ -555,6 +555,24 @@
             </p>    
             <img src = "./src/images/leetcode353.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/line-reflection/ target="blank" class = "leetcodelink">
+                    356. Line Reflection
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+              <li>hashmap + set + 对称</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                使用hashmap把相同纵坐标的点group到一起的思路不难想到，之后可以有多种处理方法来判断是否符合题目要求。其中一种利用对称性的思路很有意思，要点是在所有点的横坐标中找出最大值和最小值max和min，那么如果题目条件成立，所有纵坐标相同的点所组成的set中的每一个点一定存在另一个点和它关于（max+min）对称，而
+                我们就从这点入手去判断。map建立完成后遍历map中每一个set，对于set中每一个点x在该set中寻找（mid-x），如果任意一个未找到就返回false，全部找到则返回true。
+            </p>    
+            <img src = "./src/images/leetcode356.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
