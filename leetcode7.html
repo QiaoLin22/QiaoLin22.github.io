@@ -590,6 +590,26 @@
             </p>    
             <img src = "./src/images/leetcode357.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/logger-rate-limiter/ target="blank" class = "leetcodelink">
+                    359. Logger Rate Limiter
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+              <li>hashmap</li>
+              <li>hashmap + queue</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                先看纯hashmap的方法，很直接，将每个dictinct的message的它的timestamp存贮在hashmap中，每当来了个新message，若这是一条没见过的消息或者之前见过但是存在时间超过10秒，则将该message和timestamp加入（更新）到hashmap。其他情况说明不用log返回
+                false即可。这种好处是hashmap o（1）时间但是空间会无限增长。加入queue可以更合理利用空间，也就是第二种方法。该方法仍然将message和timestamp存在hashmap中，但同时将message单独存在queue中。每当收到新message，我们首先对hashmap和queue作出清理，
+                清理掉那些处于10秒这个timeframe之外的信息和timestamp，之后再判断该message之后存在于hashmap中，如果没有则加入queue和hashmap，否则不用log返回false。
+            </p>    
+            <img src = "./src/images/leetcode359.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
