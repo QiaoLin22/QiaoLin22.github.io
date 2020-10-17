@@ -610,6 +610,25 @@
             </p>    
             <img src = "./src/images/leetcode359.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/sort-transformed-array/ target="blank" class = "leetcodelink">
+                    360. Sort Transformed Array
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+              <li>two pointer + 二次函数</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                双指针的思路不难想到，此题有趣的地方在于结合了二次函数的特点让问题得到简化。我们知道a系数大于0时函数两端打中间小，相反a小于0时中间大两端小，我们还知道输入数组是已经排好序的，因此我们知道a大于0时答案数组从后向前添加而a小于0时从前向后添加。设置指针
+                cur = a >=0 ? n-1 : 0， start指向0，end指向length-1.在start小于等于end时每次比较头尾的函数值，在a大于0时将较大者从尾部加入正确位置（因为此时剩余最大者必然在start或者end之中），之后移动cur指针--和较大者指针。a小于0时同理，只不过是将
+                较小者从头部加入到正确位置。当start小于end时循环结束所有位置添加完成并按照升序排列。
+            </p>    
+            <img src = "./src/images/leetcode360.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
