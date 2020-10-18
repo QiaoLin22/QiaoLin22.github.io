@@ -629,6 +629,24 @@
             </p>    
             <img src = "./src/images/leetcode360.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/bomb-enemy/ target="blank" class = "leetcodelink">
+                    361. Bomb Enemy
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+              <li>dp</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+              此题可以用dp从四个方向对count数组完成更新，并在最后返回最大count（count为enemy最大数量）。首先对行进行更新，列则分为两个方向，即左到右和右到左。只有两个方向都更新后某一个0位置在特定行能kill的enemy数量才是完整的。更新具体方法为track一个变量temp，
+              看到0时添加到count，看到e时自身++，看到w时则重置，完美符合题目的要求。对行的两个方向完成更新后同样要对列的两个方向更新，而我们要找的全局最大count可在更新全部完成后在最后一个循环中顺带找出后返回即可。
+            </p>    
+            <img src = "./src/images/leetcode361.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
