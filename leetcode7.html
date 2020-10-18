@@ -647,6 +647,24 @@
             </p>    
             <img src = "./src/images/leetcode361.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/design-hit-counter/ target="blank" class = "leetcodelink">
+                    362. Design Hit Counter
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+              <li>queue</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+               场景立即联想到queue，并没有什么特殊的trick，就是hit时将新的timestamp加入队列，get时则将那些队首已经过时的hit移除队列。具体做法是当队列非空时进行while循环，每次peek队首元素，若处在300s之外则poll移除队列，知道剩余的全部是300s以内的hit。最后返回
+               题目需要的300s以内hit数量也就是当前队列的size。
+            </p>    
+            <img src = "./src/images/leetcode362.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
