@@ -665,6 +665,24 @@
             </p>    
             <img src = "./src/images/leetcode362.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/nested-list-weight-sum-ii/ target="blank" class = "leetcodelink">
+                    364. Nested List Weight Sum II
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+              <li>queue + bfs</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+               容易想到使用bfs分层处理，每次处理一层nestedinteger，并通过记录cur当前总合并在每层结束后将cur添加到total从而得到最终的total。每次通过poll拿到该层的每个nestedinteger，若已经是integer则直接加入cur，若仍是list则将整个list加入queue。注意如果
+               已经是integer则将它的值加入cur，否则不需要，因为根据题目nested层数越多的integer depth越小，也就是越晚被加入cur。而早被拆解为integer的数字则早加入cur，再后面的层中再次加入到total之中。当queue为空时循环结束total也添加完毕。
+            </p>    
+            <img src = "./src/images/leetcode364.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
