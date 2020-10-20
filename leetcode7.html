@@ -683,6 +683,24 @@
             </p>    
             <img src = "./src/images/leetcode364.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/water-and-jug-problem/ target="blank" class = "leetcodelink">
+                    365. Water and Jug Problem
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+              <li>queue + bfs</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+               这是一道数学最大公因数相关经典问题，这里不谈论数学解法而探讨更相关的bfs解法。观察发现每次可做的操作可以抽象成四种，添加x，减去x，添加y，减去y。不考虑越界的情况（总水量小于0或者大于x+y），我们还需要一个visited set用来避免重复计算已经计算过的情况。由于
+               x和已确定后总的操作数量是有限的，因此我们只要bfs到queue为空，判断是否能找到目标z，如果能则返回true，否则说明穷尽所有操作仍未找到z，返回false即可。bfs过程就是经典的queue分层操作不赘述。
+            </p>    
+            <img src = "./src/images/leetcode365.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
