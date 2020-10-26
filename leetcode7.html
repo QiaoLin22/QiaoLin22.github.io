@@ -720,6 +720,24 @@
             </p>    
             <img src = "./src/images/leetcode366.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=leetcode.com/problems/valid-perfect-square/ target="blank" class = "leetcodelink">
+                    367. Valid Perfect Square
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+              <li>binary search</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+               我们知道一个数字的开根结果一定不超过自己的一半，我们利用这个性质进行二分查找。首先当num为1时特判直接返回true。其次设置start为1，end为num/2开始进行二分查找，这里注意由于mid*mid会出现integer overflow，所以要将start，end，以及存贮mid*mid的变量（这里是cur）
+               全部初始化为long。之后就是常规二分查找。找到cur == num则返回true，未找到循环结束返回false即可。
+            </p>    
+            <img src = "./src/images/leetcode367.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
