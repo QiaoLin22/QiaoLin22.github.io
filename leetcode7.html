@@ -701,6 +701,25 @@
             </p>    
             <img src = "./src/images/leetcode365.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/find-leaves-of-binary-tree/ target="blank" class = "leetcodelink">
+                    366. Find Leaves of Binary Tree
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+              <li>bottom up DFS</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+               此题使用dfs bottom up的方法计算出每一个节点的level，例如叶子节点为第0 level，而每向上一层level+1.使用bottom up可以在o（n）时间计算出每一个节点的level数，从而根据每个节点的level数将它们的值添加进答案arraylist对应的位置。level计算具体方法为
+               当node为空时计为-1 level，其余情况一个节点的level计为1+左子树level和右子树level中的较大者。当来到一个从未见过的level（更大的level）时将新的arraylist加入答案arraylist后添加到答案list，见过的level则直接添加到对应level对应位置即可。为了简便我们可以
+               将计算level和添加进list的方法放在辅助方法内，主方法调用辅助方法完成答案数组的构建。
+            </p>    
+            <img src = "./src/images/leetcode366.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
