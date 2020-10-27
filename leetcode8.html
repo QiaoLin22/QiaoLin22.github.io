@@ -49,6 +49,23 @@
             <img src = "./src/images/leetcode392.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
         <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/kth-largest-element-in-a-stream/ target="blank" class = "leetcodelink">
+                    703. Kth Largest Element in a Stream
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                two pointers
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                看到stream和第k大自然想到priorityqueue，非常适合此题的场景。先写add方法，此处要点在于维护pq的大小恒定为k，现将val加入pq，之后检查若pq大小超过k则pop，之后return pq的队列顶元素也就是当前队列最小元素，也就是我们要的
+                第k大的元素。有了这个add方法后我们可以在constructor中直接调用该add方法构建初始pq，将nums中的数字装进pq并维持pq大小为k。
+            </p>    
+            <img src = "./src/images/leetcode703.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
     </main>
 </body>
 </html>
