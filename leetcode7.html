@@ -202,6 +202,24 @@
         <hr>
         <section class = "section">
             <h2>
+                <a href=https://leetcode.com/problems/longest-increasing-path-in-a-matrix/ target="blank" class = "leetcodelink">
+                    329. Longest Increasing Path in a Matrix
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+              <li>DFS + Cache</li>
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+               很清晰的dfs+cache捆绑解题思路，主方法中遍历所有位置每次调用辅助方法dfs计算单个位置dfs结果并通过比较得到并维持最大值，最后返回max。dfs方法首先判断是否位置已被cache过，有则直接返回结果。没有则向四个方向分别循环拓展，判断是否有越界或者不比上个位置大的情况，有则跳过。未越界且比上个位置大时，进入dfs并将最终结果存贮在
+               len中并找出该位置四个方向中的最大结果(recursive)。循环结束后将结果cache到cache中并返回该位置Longest Increasing Path in a Matrix。
+            </p>    
+            <img src = "./src/images/leetcode329.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
                 <a href=https://leetcode.com/problems/verify-preorder-serialization-of-a-binary-tree/ target="blank" class = "leetcodelink">
                     331. Verify Preorder Serialization of a Binary Tree
                 </a>
