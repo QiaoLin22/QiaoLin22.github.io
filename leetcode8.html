@@ -69,6 +69,24 @@
         <hr>
         <section class = "section">
             <h2>
+                <a href=https://leetcode.com/problems/sort-integers-by-the-number-of-1-bits/ target="blank" class = "leetcodelink">
+                    1356. Sort Integers by The Number of 1 Bits
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                PriorityQueue + define comparator
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                此题要求先比较bitcount大小，若bitcount相等则顺序尤数字原本的大小决定。看到这我们想到自定义comparator并且排序，而这两步骤恰好可以用priorityqueue数据结构解决，因为我们知道pq可以自定义comparator用来比较元素大小关系。
+                我们根据此题的条件构造comparator后使用pq对原数组进行排列，最后再用排序好的pq覆盖原数组。由于pq是按照从小到大的顺序，我们从index0开始依次使用pq poll覆盖原数组即可实现原数组按要求从小到大重新排序。
+            </p>    
+            <img src = "./src/images/leetcode1356.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
                 <a href=https://leetcode.com/problems/shuffle-the-array/ target="blank" class = "leetcodelink">
                     1470. Shuffle the Array
                 </a>
@@ -82,6 +100,23 @@
                 答案有bit等fancy的解法，这里看个最普通的o（n）space解法。遍历原数组，偶数位置将原数组i/2位置赋值给新数组，奇数位置则要将n+i/2位置数字赋值给新数字i位置。简而言之就是将旧数组按照奇偶位置交替映射到新数组，最后返回新数组即可。
             </p>    
             <img src = "./src/images/leetcode1470.png" height = 500px, width = 1200px alt = "leetcode"/>
+        </section>
+        <hr>
+        <section class = "section">
+            <h2>
+                <a href=https://leetcode.com/problems/running-sum-of-1d-array/ target="blank" class = "leetcodelink">
+                    1480. Running Sum of 1d Array
+                </a>
+            </h2>
+            <h3>官方思路:</h3>
+            <ul>
+                linear 
+            </ul>
+            <h3>思路整理：</h3>
+            <p>
+                很简单，从index1开始遍历数组，每次inplace地将nums【i】更新为nums【i-1】+nums【i】，循环结束返回nums即可。
+            </p>    
+            <img src = "./src/images/leetcode1480.png" height = 500px, width = 1200px alt = "leetcode"/>
         </section>
     </main>
 </body>
